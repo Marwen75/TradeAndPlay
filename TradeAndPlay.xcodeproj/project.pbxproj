@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C2B36FB32573C09D00282E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FB22573C09D00282E45 /* AppDelegate.swift */; };
+		C2B36FB52573C09D00282E45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FB42573C09D00282E45 /* SceneDelegate.swift */; };
+		C2B36FB72573C09D00282E45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FB62573C09D00282E45 /* ViewController.swift */; };
+		C2B36FBA2573C09D00282E45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B36FB82573C09D00282E45 /* Main.storyboard */; };
+		C2B36FBD2573C09D00282E45 /* TradeAndPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FBB2573C09D00282E45 /* TradeAndPlay.xcdatamodeld */; };
+		C2B36FBF2573C0A000282E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B36FBE2573C0A000282E45 /* Assets.xcassets */; };
+		C2B36FC22573C0A000282E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B36FC02573C0A000282E45 /* LaunchScreen.storyboard */; };
+		C2B36FCD2573C0A100282E45 /* TradeAndPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FCC2573C0A100282E45 /* TradeAndPlayTests.swift */; };
+		C2B36FD82573C0A100282E45 /* TradeAndPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FD72573C0A100282E45 /* TradeAndPlayUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C2B36FC92573C0A100282E45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2B36FA72573C09D00282E45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2B36FAE2573C09D00282E45;
+			remoteInfo = TradeAndPlay;
+		};
+		C2B36FD42573C0A100282E45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2B36FA72573C09D00282E45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2B36FAE2573C09D00282E45;
+			remoteInfo = TradeAndPlay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C2B36FAF2573C09D00282E45 /* TradeAndPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeAndPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2B36FB22573C09D00282E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2B36FB42573C09D00282E45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C2B36FB62573C09D00282E45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C2B36FB92573C09D00282E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2B36FBC2573C09D00282E45 /* TradeAndPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TradeAndPlay.xcdatamodel; sourceTree = "<group>"; };
+		C2B36FBE2573C0A000282E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2B36FC12573C0A000282E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C2B36FC32573C0A000282E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2B36FC82573C0A100282E45 /* TradeAndPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeAndPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2B36FCC2573C0A100282E45 /* TradeAndPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeAndPlayTests.swift; sourceTree = "<group>"; };
+		C2B36FCE2573C0A100282E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2B36FD32573C0A100282E45 /* TradeAndPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeAndPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2B36FD72573C0A100282E45 /* TradeAndPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeAndPlayUITests.swift; sourceTree = "<group>"; };
+		C2B36FD92573C0A100282E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C2B36FAC2573C09D00282E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2B36FC52573C0A100282E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2B36FD02573C0A100282E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C2B36FA62573C09D00282E45 = {
+			isa = PBXGroup;
+			children = (
+				C2B36FB12573C09D00282E45 /* TradeAndPlay */,
+				C2B36FCB2573C0A100282E45 /* TradeAndPlayTests */,
+				C2B36FD62573C0A100282E45 /* TradeAndPlayUITests */,
+				C2B36FB02573C09D00282E45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C2B36FB02573C09D00282E45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36FAF2573C09D00282E45 /* TradeAndPlay.app */,
+				C2B36FC82573C0A100282E45 /* TradeAndPlayTests.xctest */,
+				C2B36FD32573C0A100282E45 /* TradeAndPlayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2B36FB12573C09D00282E45 /* TradeAndPlay */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36FB22573C09D00282E45 /* AppDelegate.swift */,
+				C2B36FB42573C09D00282E45 /* SceneDelegate.swift */,
+				C2B36FB62573C09D00282E45 /* ViewController.swift */,
+				C2B36FB82573C09D00282E45 /* Main.storyboard */,
+				C2B36FBE2573C0A000282E45 /* Assets.xcassets */,
+				C2B36FC02573C0A000282E45 /* LaunchScreen.storyboard */,
+				C2B36FC32573C0A000282E45 /* Info.plist */,
+				C2B36FBB2573C09D00282E45 /* TradeAndPlay.xcdatamodeld */,
+			);
+			path = TradeAndPlay;
+			sourceTree = "<group>";
+		};
+		C2B36FCB2573C0A100282E45 /* TradeAndPlayTests */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36FCC2573C0A100282E45 /* TradeAndPlayTests.swift */,
+				C2B36FCE2573C0A100282E45 /* Info.plist */,
+			);
+			path = TradeAndPlayTests;
+			sourceTree = "<group>";
+		};
+		C2B36FD62573C0A100282E45 /* TradeAndPlayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36FD72573C0A100282E45 /* TradeAndPlayUITests.swift */,
+				C2B36FD92573C0A100282E45 /* Info.plist */,
+			);
+			path = TradeAndPlayUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C2B36FAE2573C09D00282E45 /* TradeAndPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2B36FDC2573C0A100282E45 /* Build configuration list for PBXNativeTarget "TradeAndPlay" */;
+			buildPhases = (
+				C2B36FAB2573C09D00282E45 /* Sources */,
+				C2B36FAC2573C09D00282E45 /* Frameworks */,
+				C2B36FAD2573C09D00282E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TradeAndPlay;
+			productName = TradeAndPlay;
+			productReference = C2B36FAF2573C09D00282E45 /* TradeAndPlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C2B36FC72573C0A100282E45 /* TradeAndPlayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2B36FDF2573C0A100282E45 /* Build configuration list for PBXNativeTarget "TradeAndPlayTests" */;
+			buildPhases = (
+				C2B36FC42573C0A100282E45 /* Sources */,
+				C2B36FC52573C0A100282E45 /* Frameworks */,
+				C2B36FC62573C0A100282E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2B36FCA2573C0A100282E45 /* PBXTargetDependency */,
+			);
+			name = TradeAndPlayTests;
+			productName = TradeAndPlayTests;
+			productReference = C2B36FC82573C0A100282E45 /* TradeAndPlayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C2B36FD22573C0A100282E45 /* TradeAndPlayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2B36FE22573C0A100282E45 /* Build configuration list for PBXNativeTarget "TradeAndPlayUITests" */;
+			buildPhases = (
+				C2B36FCF2573C0A100282E45 /* Sources */,
+				C2B36FD02573C0A100282E45 /* Frameworks */,
+				C2B36FD12573C0A100282E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2B36FD52573C0A100282E45 /* PBXTargetDependency */,
+			);
+			name = TradeAndPlayUITests;
+			productName = TradeAndPlayUITests;
+			productReference = C2B36FD32573C0A100282E45 /* TradeAndPlayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C2B36FA72573C09D00282E45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					C2B36FAE2573C09D00282E45 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					C2B36FC72573C0A100282E45 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = C2B36FAE2573C09D00282E45;
+					};
+					C2B36FD22573C0A100282E45 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = C2B36FAE2573C09D00282E45;
+					};
+				};
+			};
+			buildConfigurationList = C2B36FAA2573C09D00282E45 /* Build configuration list for PBXProject "TradeAndPlay" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C2B36FA62573C09D00282E45;
+			productRefGroup = C2B36FB02573C09D00282E45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2B36FAE2573C09D00282E45 /* TradeAndPlay */,
+				C2B36FC72573C0A100282E45 /* TradeAndPlayTests */,
+				C2B36FD22573C0A100282E45 /* TradeAndPlayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2B36FAD2573C09D00282E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2B36FC22573C0A000282E45 /* LaunchScreen.storyboard in Resources */,
+				C2B36FBF2573C0A000282E45 /* Assets.xcassets in Resources */,
+				C2B36FBA2573C09D00282E45 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2B36FC62573C0A100282E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2B36FD12573C0A100282E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C2B36FAB2573C09D00282E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2B36FB72573C09D00282E45 /* ViewController.swift in Sources */,
+				C2B36FB32573C09D00282E45 /* AppDelegate.swift in Sources */,
+				C2B36FBD2573C09D00282E45 /* TradeAndPlay.xcdatamodeld in Sources */,
+				C2B36FB52573C09D00282E45 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2B36FC42573C0A100282E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2B36FCD2573C0A100282E45 /* TradeAndPlayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2B36FCF2573C0A100282E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2B36FD82573C0A100282E45 /* TradeAndPlayUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2B36FCA2573C0A100282E45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2B36FAE2573C09D00282E45 /* TradeAndPlay */;
+			targetProxy = C2B36FC92573C0A100282E45 /* PBXContainerItemProxy */;
+		};
+		C2B36FD52573C0A100282E45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2B36FAE2573C09D00282E45 /* TradeAndPlay */;
+			targetProxy = C2B36FD42573C0A100282E45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C2B36FB82573C09D00282E45 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2B36FB92573C09D00282E45 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C2B36FC02573C0A000282E45 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2B36FC12573C0A000282E45 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C2B36FDA2573C0A100282E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C2B36FDB2573C0A100282E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2B36FDD2573C0A100282E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PTPRZC36QH;
+				INFOPLIST_FILE = TradeAndPlay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.marwen.TradeAndPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C2B36FDE2573C0A100282E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PTPRZC36QH;
+				INFOPLIST_FILE = TradeAndPlay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.marwen.TradeAndPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C2B36FE02573C0A100282E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PTPRZC36QH;
+				INFOPLIST_FILE = TradeAndPlayTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.marwen.TradeAndPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeAndPlay.app/TradeAndPlay";
+			};
+			name = Debug;
+		};
+		C2B36FE12573C0A100282E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PTPRZC36QH;
+				INFOPLIST_FILE = TradeAndPlayTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.marwen.TradeAndPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeAndPlay.app/TradeAndPlay";
+			};
+			name = Release;
+		};
+		C2B36FE32573C0A100282E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PTPRZC36QH;
+				INFOPLIST_FILE = TradeAndPlayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.marwen.TradeAndPlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TradeAndPlay;
+			};
+			name = Debug;
+		};
+		C2B36FE42573C0A100282E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PTPRZC36QH;
+				INFOPLIST_FILE = TradeAndPlayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.marwen.TradeAndPlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TradeAndPlay;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C2B36FAA2573C09D00282E45 /* Build configuration list for PBXProject "TradeAndPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2B36FDA2573C0A100282E45 /* Debug */,
+				C2B36FDB2573C0A100282E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2B36FDC2573C0A100282E45 /* Build configuration list for PBXNativeTarget "TradeAndPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2B36FDD2573C0A100282E45 /* Debug */,
+				C2B36FDE2573C0A100282E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2B36FDF2573C0A100282E45 /* Build configuration list for PBXNativeTarget "TradeAndPlayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2B36FE02573C0A100282E45 /* Debug */,
+				C2B36FE12573C0A100282E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2B36FE22573C0A100282E45 /* Build configuration list for PBXNativeTarget "TradeAndPlayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2B36FE32573C0A100282E45 /* Debug */,
+				C2B36FE42573C0A100282E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C2B36FBB2573C09D00282E45 /* TradeAndPlay.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C2B36FBC2573C09D00282E45 /* TradeAndPlay.xcdatamodel */,
+			);
+			currentVersion = C2B36FBC2573C09D00282E45 /* TradeAndPlay.xcdatamodel */;
+			path = TradeAndPlay.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C2B36FA72573C09D00282E45 /* Project object */;
+}

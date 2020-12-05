@@ -3,19 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25FF610D2EC20F4D9E70D2EA /* Pods_TradeAndPlay_TradeAndPlayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC5A15B6B467EA823357459 /* Pods_TradeAndPlay_TradeAndPlayUITests.framework */; };
+		5F06DECCD567B9A85F3D920F /* Pods_TradeAndPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC5B6C2AAFD3DCD802ED4C8 /* Pods_TradeAndPlay.framework */; };
+		663E5BE376DB64E29AC78E8F /* Pods_TradeAndPlayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC033BE585C80F3C3B38EC4 /* Pods_TradeAndPlayTests.framework */; };
 		C2B36FB32573C09D00282E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FB22573C09D00282E45 /* AppDelegate.swift */; };
 		C2B36FB52573C09D00282E45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FB42573C09D00282E45 /* SceneDelegate.swift */; };
-		C2B36FB72573C09D00282E45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FB62573C09D00282E45 /* ViewController.swift */; };
 		C2B36FBA2573C09D00282E45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B36FB82573C09D00282E45 /* Main.storyboard */; };
 		C2B36FBD2573C09D00282E45 /* TradeAndPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FBB2573C09D00282E45 /* TradeAndPlay.xcdatamodeld */; };
 		C2B36FBF2573C0A000282E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B36FBE2573C0A000282E45 /* Assets.xcassets */; };
 		C2B36FC22573C0A000282E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B36FC02573C0A000282E45 /* LaunchScreen.storyboard */; };
 		C2B36FCD2573C0A100282E45 /* TradeAndPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FCC2573C0A100282E45 /* TradeAndPlayTests.swift */; };
 		C2B36FD82573C0A100282E45 /* TradeAndPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FD72573C0A100282E45 /* TradeAndPlayUITests.swift */; };
+		C2B36FF62573E12C00282E45 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FF52573E12C00282E45 /* SearchViewController.swift */; };
+		C2B36FFE2574026900282E45 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FFD2574026900282E45 /* ApiKey.swift */; };
+		C2B3701425764E2400282E45 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3701325764E2400282E45 /* ApiError.swift */; };
+		C2B3704025768C4900282E45 /* IgdbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3703F25768C4900282E45 /* IgdbService.swift */; };
+		C2B3704A2576957600282E45 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B370492576957600282E45 /* TabBarViewController.swift */; };
+		C2B3704F2576997A00282E45 /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3704E2576997A00282E45 /* Extension+ViewController.swift */; };
+		C2B3705425769D1100282E45 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3705325769D1100282E45 /* GamesViewController.swift */; };
+		C2B3705A2576A68900282E45 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B370582576A68900282E45 /* GameTableViewCell.swift */; };
+		C2B3705B2576A68900282E45 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B370592576A68900282E45 /* GameTableViewCell.xib */; };
+		C2B370BA2577C03700282E45 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B370B92577C03700282E45 /* Extension+UIImageView.swift */; };
+		C2B370DC257AACD300282E45 /* IgdbWrapperClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B370DB257AACD300282E45 /* IgdbWrapperClient.swift */; };
+		C2B370E4257B7F9300282E45 /* ClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B370E3257B7F9300282E45 /* ClientProtocol.swift */; };
+		C2B370EC257B91BB00282E45 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B370EB257B91BB00282E45 /* GameDetailViewController.swift */; };
+		C2B370F1257B953A00282E45 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B370F0257B953A00282E45 /* GameModel.swift */; };
+		C2B370F9257BB43300282E45 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B370F8257BB43300282E45 /* NibView.swift */; };
+		C2B370FE257BB48200282E45 /* GameDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B370FD257BB48200282E45 /* GameDetailView.xib */; };
+		C2B37103257BB82400282E45 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B37102257BB82400282E45 /* GameDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +55,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15DA03A70084F7ECF951DBEA /* Pods-TradeAndPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlay.release.xcconfig"; path = "Target Support Files/Pods-TradeAndPlay/Pods-TradeAndPlay.release.xcconfig"; sourceTree = "<group>"; };
+		4598AA730AD7A85212564AB3 /* Pods-TradeAndPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlay.debug.xcconfig"; path = "Target Support Files/Pods-TradeAndPlay/Pods-TradeAndPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		5CDA64841BD22AA02DAC53E5 /* Pods-TradeAndPlay-TradeAndPlayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlay-TradeAndPlayUITests.debug.xcconfig"; path = "Target Support Files/Pods-TradeAndPlay-TradeAndPlayUITests/Pods-TradeAndPlay-TradeAndPlayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6DC5A15B6B467EA823357459 /* Pods_TradeAndPlay_TradeAndPlayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeAndPlay_TradeAndPlayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABC033BE585C80F3C3B38EC4 /* Pods_TradeAndPlayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeAndPlayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B36FAF2573C09D00282E45 /* TradeAndPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeAndPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B36FB22573C09D00282E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2B36FB42573C09D00282E45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C2B36FB62573C09D00282E45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C2B36FB92573C09D00282E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2B36FBC2573C09D00282E45 /* TradeAndPlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TradeAndPlay.xcdatamodel; sourceTree = "<group>"; };
 		C2B36FBE2573C0A000282E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +74,27 @@
 		C2B36FD32573C0A100282E45 /* TradeAndPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeAndPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B36FD72573C0A100282E45 /* TradeAndPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeAndPlayUITests.swift; sourceTree = "<group>"; };
 		C2B36FD92573C0A100282E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2B36FF52573E12C00282E45 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C2B36FFD2574026900282E45 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
+		C2B3701325764E2400282E45 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		C2B3703F25768C4900282E45 /* IgdbService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgdbService.swift; sourceTree = "<group>"; };
+		C2B370492576957600282E45 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		C2B3704E2576997A00282E45 /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
+		C2B3705325769D1100282E45 /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
+		C2B370582576A68900282E45 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		C2B370592576A68900282E45 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
+		C2B370B92577C03700282E45 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
+		C2B370DB257AACD300282E45 /* IgdbWrapperClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgdbWrapperClient.swift; sourceTree = "<group>"; };
+		C2B370E3257B7F9300282E45 /* ClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProtocol.swift; sourceTree = "<group>"; };
+		C2B370EB257B91BB00282E45 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
+		C2B370F0257B953A00282E45 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		C2B370F8257BB43300282E45 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		C2B370FD257BB48200282E45 /* GameDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameDetailView.xib; sourceTree = "<group>"; };
+		C2B37102257BB82400282E45 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
+		DEC5B6C2AAFD3DCD802ED4C8 /* Pods_TradeAndPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeAndPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF59365E54170DA8561DBB3F /* Pods-TradeAndPlayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlayTests.debug.xcconfig"; path = "Target Support Files/Pods-TradeAndPlayTests/Pods-TradeAndPlayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E2247FC0DF2B6DDE737359B3 /* Pods-TradeAndPlayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlayTests.release.xcconfig"; path = "Target Support Files/Pods-TradeAndPlayTests/Pods-TradeAndPlayTests.release.xcconfig"; sourceTree = "<group>"; };
+		F2884EE498A7D61D215C99BE /* Pods-TradeAndPlay-TradeAndPlayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlay-TradeAndPlayUITests.release.xcconfig"; path = "Target Support Files/Pods-TradeAndPlay-TradeAndPlayUITests/Pods-TradeAndPlay-TradeAndPlayUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F06DECCD567B9A85F3D920F /* Pods_TradeAndPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				663E5BE376DB64E29AC78E8F /* Pods_TradeAndPlayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +118,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FF610D2EC20F4D9E70D2EA /* Pods_TradeAndPlay_TradeAndPlayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		119041796A1F7A4DA847A6CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4598AA730AD7A85212564AB3 /* Pods-TradeAndPlay.debug.xcconfig */,
+				15DA03A70084F7ECF951DBEA /* Pods-TradeAndPlay.release.xcconfig */,
+				5CDA64841BD22AA02DAC53E5 /* Pods-TradeAndPlay-TradeAndPlayUITests.debug.xcconfig */,
+				F2884EE498A7D61D215C99BE /* Pods-TradeAndPlay-TradeAndPlayUITests.release.xcconfig */,
+				DF59365E54170DA8561DBB3F /* Pods-TradeAndPlayTests.debug.xcconfig */,
+				E2247FC0DF2B6DDE737359B3 /* Pods-TradeAndPlayTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		38441840FFDBAD4E5E38BB9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEC5B6C2AAFD3DCD802ED4C8 /* Pods_TradeAndPlay.framework */,
+				6DC5A15B6B467EA823357459 /* Pods_TradeAndPlay_TradeAndPlayUITests.framework */,
+				ABC033BE585C80F3C3B38EC4 /* Pods_TradeAndPlayTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C2B36FA62573C09D00282E45 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +155,8 @@
 				C2B36FCB2573C0A100282E45 /* TradeAndPlayTests */,
 				C2B36FD62573C0A100282E45 /* TradeAndPlayUITests */,
 				C2B36FB02573C09D00282E45 /* Products */,
+				119041796A1F7A4DA847A6CB /* Pods */,
+				38441840FFDBAD4E5E38BB9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +173,11 @@
 		C2B36FB12573C09D00282E45 /* TradeAndPlay */ = {
 			isa = PBXGroup;
 			children = (
-				C2B36FB22573C09D00282E45 /* AppDelegate.swift */,
-				C2B36FB42573C09D00282E45 /* SceneDelegate.swift */,
-				C2B36FB62573C09D00282E45 /* ViewController.swift */,
-				C2B36FB82573C09D00282E45 /* Main.storyboard */,
-				C2B36FBE2573C0A000282E45 /* Assets.xcassets */,
-				C2B36FC02573C0A000282E45 /* LaunchScreen.storyboard */,
 				C2B36FC32573C0A000282E45 /* Info.plist */,
-				C2B36FBB2573C09D00282E45 /* TradeAndPlay.xcdatamodeld */,
+				C2B36FEE2573C10200282E45 /* Supporting files */,
+				C2B36FEB2573C0E300282E45 /* Models */,
+				C2B36FED2573C0F900282E45 /* Controllers */,
+				C2B36FEC2573C0EC00282E45 /* View */,
 			);
 			path = TradeAndPlay;
 			sourceTree = "<group>";
@@ -131,6 +200,57 @@
 			path = TradeAndPlayUITests;
 			sourceTree = "<group>";
 		};
+		C2B36FEB2573C0E300282E45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36FBB2573C09D00282E45 /* TradeAndPlay.xcdatamodeld */,
+				C2B36FFD2574026900282E45 /* ApiKey.swift */,
+				C2B3701325764E2400282E45 /* ApiError.swift */,
+				C2B370DB257AACD300282E45 /* IgdbWrapperClient.swift */,
+				C2B3703F25768C4900282E45 /* IgdbService.swift */,
+				C2B370E3257B7F9300282E45 /* ClientProtocol.swift */,
+				C2B370F0257B953A00282E45 /* GameModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C2B36FEC2573C0EC00282E45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36FB82573C09D00282E45 /* Main.storyboard */,
+				C2B36FC02573C0A000282E45 /* LaunchScreen.storyboard */,
+				C2B370582576A68900282E45 /* GameTableViewCell.swift */,
+				C2B370F8257BB43300282E45 /* NibView.swift */,
+				C2B370FD257BB48200282E45 /* GameDetailView.xib */,
+				C2B37102257BB82400282E45 /* GameDetailView.swift */,
+				C2B370592576A68900282E45 /* GameTableViewCell.xib */,
+				C2B36FBE2573C0A000282E45 /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2B36FED2573C0F900282E45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36FF52573E12C00282E45 /* SearchViewController.swift */,
+				C2B3705325769D1100282E45 /* GamesViewController.swift */,
+				C2B370EB257B91BB00282E45 /* GameDetailViewController.swift */,
+				C2B370492576957600282E45 /* TabBarViewController.swift */,
+				C2B3704E2576997A00282E45 /* Extension+ViewController.swift */,
+				C2B370B92577C03700282E45 /* Extension+UIImageView.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C2B36FEE2573C10200282E45 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				C2B36FB22573C09D00282E45 /* AppDelegate.swift */,
+				C2B36FB42573C09D00282E45 /* SceneDelegate.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2B36FDC2573C0A100282E45 /* Build configuration list for PBXNativeTarget "TradeAndPlay" */;
 			buildPhases = (
+				3A3C893E83B14BAB0AC1745C /* [CP] Check Pods Manifest.lock */,
 				C2B36FAB2573C09D00282E45 /* Sources */,
 				C2B36FAC2573C09D00282E45 /* Frameworks */,
 				C2B36FAD2573C09D00282E45 /* Resources */,
+				E187FAE2F7BC0DB771BE5201 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +277,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2B36FDF2573C0A100282E45 /* Build configuration list for PBXNativeTarget "TradeAndPlayTests" */;
 			buildPhases = (
+				7335E10936CAAD03929F686D /* [CP] Check Pods Manifest.lock */,
 				C2B36FC42573C0A100282E45 /* Sources */,
 				C2B36FC52573C0A100282E45 /* Frameworks */,
 				C2B36FC62573C0A100282E45 /* Resources */,
@@ -173,9 +296,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2B36FE22573C0A100282E45 /* Build configuration list for PBXNativeTarget "TradeAndPlayUITests" */;
 			buildPhases = (
+				8969356F76E8633A1B57537E /* [CP] Check Pods Manifest.lock */,
 				C2B36FCF2573C0A100282E45 /* Sources */,
 				C2B36FD02573C0A100282E45 /* Frameworks */,
 				C2B36FD12573C0A100282E45 /* Resources */,
+				A61811B42331EEC61C8E8244 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,9 +359,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B370FE257BB48200282E45 /* GameDetailView.xib in Resources */,
 				C2B36FC22573C0A000282E45 /* LaunchScreen.storyboard in Resources */,
 				C2B36FBF2573C0A000282E45 /* Assets.xcassets in Resources */,
 				C2B36FBA2573C09D00282E45 /* Main.storyboard in Resources */,
+				C2B3705B2576A68900282E45 /* GameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,14 +383,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A3C893E83B14BAB0AC1745C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TradeAndPlay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7335E10936CAAD03929F686D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TradeAndPlayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8969356F76E8633A1B57537E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TradeAndPlay-TradeAndPlayUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A61811B42331EEC61C8E8244 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TradeAndPlay-TradeAndPlayUITests/Pods-TradeAndPlay-TradeAndPlayUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TradeAndPlay-TradeAndPlayUITests/Pods-TradeAndPlay-TradeAndPlayUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TradeAndPlay-TradeAndPlayUITests/Pods-TradeAndPlay-TradeAndPlayUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E187FAE2F7BC0DB771BE5201 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TradeAndPlay/Pods-TradeAndPlay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TradeAndPlay/Pods-TradeAndPlay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TradeAndPlay/Pods-TradeAndPlay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C2B36FAB2573C09D00282E45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2B36FB72573C09D00282E45 /* ViewController.swift in Sources */,
+				C2B3705A2576A68900282E45 /* GameTableViewCell.swift in Sources */,
+				C2B370EC257B91BB00282E45 /* GameDetailViewController.swift in Sources */,
+				C2B36FFE2574026900282E45 /* ApiKey.swift in Sources */,
 				C2B36FB32573C09D00282E45 /* AppDelegate.swift in Sources */,
+				C2B3705425769D1100282E45 /* GamesViewController.swift in Sources */,
+				C2B370F1257B953A00282E45 /* GameModel.swift in Sources */,
+				C2B370E4257B7F9300282E45 /* ClientProtocol.swift in Sources */,
+				C2B3704F2576997A00282E45 /* Extension+ViewController.swift in Sources */,
+				C2B3704025768C4900282E45 /* IgdbService.swift in Sources */,
+				C2B370BA2577C03700282E45 /* Extension+UIImageView.swift in Sources */,
 				C2B36FBD2573C09D00282E45 /* TradeAndPlay.xcdatamodeld in Sources */,
+				C2B3701425764E2400282E45 /* ApiError.swift in Sources */,
+				C2B370DC257AACD300282E45 /* IgdbWrapperClient.swift in Sources */,
+				C2B36FF62573E12C00282E45 /* SearchViewController.swift in Sources */,
+				C2B3704A2576957600282E45 /* TabBarViewController.swift in Sources */,
+				C2B37103257BB82400282E45 /* GameDetailView.swift in Sources */,
+				C2B370F9257BB43300282E45 /* NibView.swift in Sources */,
 				C2B36FB52573C09D00282E45 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,12 +681,14 @@
 		};
 		C2B36FDD2573C0A100282E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4598AA730AD7A85212564AB3 /* Pods-TradeAndPlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PTPRZC36QH;
 				INFOPLIST_FILE = TradeAndPlay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,12 +702,14 @@
 		};
 		C2B36FDE2573C0A100282E45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15DA03A70084F7ECF951DBEA /* Pods-TradeAndPlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PTPRZC36QH;
 				INFOPLIST_FILE = TradeAndPlay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,6 +723,7 @@
 		};
 		C2B36FE02573C0A100282E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF59365E54170DA8561DBB3F /* Pods-TradeAndPlayTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -497,6 +746,7 @@
 		};
 		C2B36FE12573C0A100282E45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2247FC0DF2B6DDE737359B3 /* Pods-TradeAndPlayTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -519,6 +769,7 @@
 		};
 		C2B36FE32573C0A100282E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CDA64841BD22AA02DAC53E5 /* Pods-TradeAndPlay-TradeAndPlayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,6 +790,7 @@
 		};
 		C2B36FE42573C0A100282E45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2884EE498A7D61D215C99BE /* Pods-TradeAndPlay-TradeAndPlayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

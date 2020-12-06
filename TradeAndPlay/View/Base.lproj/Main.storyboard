@@ -282,21 +282,52 @@
             </objects>
             <point key="canvasLocation" x="306" y="-263"/>
         </scene>
-        <!--View Controller-->
+        <!--User Profile View Controller-->
         <scene sceneID="CIZ-So-7DU">
             <objects>
-                <viewController id="Ju9-5S-RLt" sceneMemberID="viewController">
+                <viewController id="Ju9-5S-RLt" customClass="UserProfileViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6mn-Oi-yBM">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mps-ia-BFP">
+                                <rect key="frame" x="0.0" y="88" width="428" height="755"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHJ-fA-qpt" customClass="UserProfileView" customModule="TradeAndPlay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="420" height="755"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YHJ-fA-qpt" firstAttribute="trailing" secondItem="0TM-sU-GBR" secondAttribute="trailing" id="0wc-MI-hOJ"/>
+                                    <constraint firstItem="YHJ-fA-qpt" firstAttribute="top" secondItem="0TM-sU-GBR" secondAttribute="top" id="9mh-qL-a4h"/>
+                                    <constraint firstItem="YHJ-fA-qpt" firstAttribute="leading" secondItem="0TM-sU-GBR" secondAttribute="leading" id="ZtN-sS-JnE"/>
+                                    <constraint firstItem="YHJ-fA-qpt" firstAttribute="height" secondItem="gMc-0U-VA5" secondAttribute="height" placeholder="YES" id="h2d-tg-B0N"/>
+                                    <constraint firstItem="YHJ-fA-qpt" firstAttribute="width" secondItem="gMc-0U-VA5" secondAttribute="width" multiplier="0.981308" id="ynQ-vj-6VU"/>
+                                    <constraint firstItem="YHJ-fA-qpt" firstAttribute="bottom" secondItem="0TM-sU-GBR" secondAttribute="bottom" id="z2i-c3-AQd"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="0TM-sU-GBR"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="gMc-0U-VA5"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Gj2-a5-VUc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gj2-a5-VUc" firstAttribute="trailing" secondItem="mps-ia-BFP" secondAttribute="trailing" id="G1S-X7-vwE"/>
+                            <constraint firstItem="mps-ia-BFP" firstAttribute="leading" secondItem="Gj2-a5-VUc" secondAttribute="leading" id="HPg-5O-rqm"/>
+                            <constraint firstItem="Gj2-a5-VUc" firstAttribute="bottom" secondItem="mps-ia-BFP" secondAttribute="bottom" id="e2T-gU-If7"/>
+                            <constraint firstItem="mps-ia-BFP" firstAttribute="top" secondItem="Gj2-a5-VUc" secondAttribute="top" id="sNw-c5-bbA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JJ8-kQ-wdJ"/>
+                    <connections>
+                        <outlet property="userProfileCustomView" destination="YHJ-fA-qpt" id="vQE-mz-BxS"/>
+                        <outlet property="userProfileScrollView" destination="mps-ia-BFP" id="B7o-Wo-8sJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOF-8J-ndy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1129" y="-250"/>
+            <point key="canvasLocation" x="1127.1028037383178" y="-250.10799136069116"/>
         </scene>
     </scenes>
     <resources>

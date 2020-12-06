@@ -37,6 +37,9 @@
 		C2B37103257BB82400282E45 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B37102257BB82400282E45 /* GameDetailView.swift */; };
 		C2B37134257D072D00282E45 /* ScreenshotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B37132257D072D00282E45 /* ScreenshotCollectionViewCell.swift */; };
 		C2B37135257D072D00282E45 /* ScreenshotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B37133257D072D00282E45 /* ScreenshotCollectionViewCell.xib */; };
+		C2B37164257D52B500282E45 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B37163257D52B300282E45 /* UserProfileView.xib */; };
+		C2B37169257D57B100282E45 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B37168257D57B000282E45 /* UserProfileView.swift */; };
+		C2B37179257D5A3C00282E45 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B37178257D5A3C00282E45 /* UserProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,9 @@
 		C2B37102257BB82400282E45 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
 		C2B37132257D072D00282E45 /* ScreenshotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2B37133257D072D00282E45 /* ScreenshotCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScreenshotCollectionViewCell.xib; sourceTree = "<group>"; };
+		C2B37163257D52B300282E45 /* UserProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserProfileView.xib; path = TradeAndPlay/Controllers/UserProfileView.xib; sourceTree = SOURCE_ROOT; };
+		C2B37168257D57B000282E45 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		C2B37178257D5A3C00282E45 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		DEC5B6C2AAFD3DCD802ED4C8 /* Pods_TradeAndPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeAndPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF59365E54170DA8561DBB3F /* Pods-TradeAndPlayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlayTests.debug.xcconfig"; path = "Target Support Files/Pods-TradeAndPlayTests/Pods-TradeAndPlayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2247FC0DF2B6DDE737359B3 /* Pods-TradeAndPlayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlayTests.release.xcconfig"; path = "Target Support Files/Pods-TradeAndPlayTests/Pods-TradeAndPlayTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +242,7 @@
 				C2B36FF52573E12C00282E45 /* SearchViewController.swift */,
 				C2B3705325769D1100282E45 /* GamesViewController.swift */,
 				C2B370EB257B91BB00282E45 /* GameDetailViewController.swift */,
+				C2B37178257D5A3C00282E45 /* UserProfileViewController.swift */,
 				C2B370492576957600282E45 /* TabBarViewController.swift */,
 				C2B3713C257D20EE00282E45 /* Extensions */,
 			);
@@ -289,6 +296,7 @@
 		C2B37142257D213700282E45 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				C2B37163257D52B300282E45 /* UserProfileView.xib */,
 				C2B37133257D072D00282E45 /* ScreenshotCollectionViewCell.xib */,
 				C2B370FD257BB48200282E45 /* GameDetailView.xib */,
 				C2B370592576A68900282E45 /* GameTableViewCell.xib */,
@@ -300,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				C2B37102257BB82400282E45 /* GameDetailView.swift */,
+				C2B37168257D57B000282E45 /* UserProfileView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -421,6 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B37164257D52B500282E45 /* UserProfileView.xib in Resources */,
 				C2B370FE257BB48200282E45 /* GameDetailView.xib in Resources */,
 				C2B36FC22573C0A000282E45 /* LaunchScreen.storyboard in Resources */,
 				C2B37135257D072D00282E45 /* ScreenshotCollectionViewCell.xib in Resources */,
@@ -569,6 +579,8 @@
 				C2B3701425764E2400282E45 /* ApiError.swift in Sources */,
 				C2B370DC257AACD300282E45 /* IgdbWrapperClient.swift in Sources */,
 				C2B36FF62573E12C00282E45 /* SearchViewController.swift in Sources */,
+				C2B37169257D57B100282E45 /* UserProfileView.swift in Sources */,
+				C2B37179257D5A3C00282E45 /* UserProfileViewController.swift in Sources */,
 				C2B3704A2576957600282E45 /* TabBarViewController.swift in Sources */,
 				C2B37103257BB82400282E45 /* GameDetailView.swift in Sources */,
 				C2B370F9257BB43300282E45 /* NibView.swift in Sources */,

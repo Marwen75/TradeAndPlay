@@ -11,8 +11,6 @@ import IGDB_SWIFT_API
 class GameDetailViewController: UIViewController {
     
     var game: Proto_Game?
-    private var platforms: [Proto_Platform] = []
-    private var screenshots: [Proto_Screenshot] = []
     private let ratingStarsImages: [UIImage?] = [UIImage(named: "etoile1"), UIImage(named: "etoile2"), UIImage(named: "etoile3"), UIImage(named: "etoile4"), UIImage(named: "etoile5")]
     
     @IBOutlet weak var gameDetailView: GameDetailView!
@@ -26,11 +24,7 @@ class GameDetailViewController: UIViewController {
         gameDetailView.screenshotsCollectionView.delegate = self
         gameDetailView.screenshotsCollectionView.dataSource = self
         gameDetailView.platformsPickerView.setValue(UIColor.white, forKey: "textColor")
-        platforms += game!.platforms
-        screenshots += game!.screenshots
         configureCollectionView()
-        print(screenshots.count)
-        
     }
     
     private func configureCollectionView() {
@@ -88,12 +82,12 @@ extension GameDetailViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return platforms.count
+        return game?.platforms.count ?? 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return platforms[row].name
+        return game?.platforms[row].name
     }
 }
 
@@ -104,7 +98,7 @@ extension GameDetailViewController: UICollectionViewDelegate {
 extension GameDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        screenshots.count
+        game?.screenshots.count ?? 0
     }
     
     
@@ -115,7 +109,7 @@ extension GameDetailViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        let image_id = screenshots[indexPath.row].imageID
+        let image_id = game?.screenshots[indexPath.row].imageID ?? ""
         let imageURL = imageBuilder(imageID: image_id, size: .COVER_BIG, imageType: .PNG)
         
         cell.screenshotImageView.load(url: URL(string: imageURL)!)

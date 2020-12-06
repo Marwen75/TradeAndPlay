@@ -17,7 +17,7 @@ class IgdbService {
     }
     
     func getGames(withName name: String, completionHandler: @escaping (Result<Proto_GameResult, RequestException>) -> Void) {
-        client.request(withName: name, endpoint: Endpoint.GAMES.rawValue, query: "fields name, summary, rating, cover, platforms, platforms.name, first_release_date, genres, genres.name, cover.image_id; search \"\(name)\"; limit 200; where version_parent = null;", dataResponse: { bytes in
+        client.request(withName: name, endpoint: Endpoint.GAMES.rawValue, query: "fields name, summary, rating, cover, platforms, platforms.name, first_release_date, genres, genres.name, cover.image_id, screenshots, screenshots.url, screenshots.image_id; search \"\(name)\"; limit 200; where version_parent = null;", dataResponse: { bytes in
             guard let games = try? Proto_GameResult(serializedData: bytes) else {return}
             completionHandler(.success(games))
         }, errorResponse: { error in

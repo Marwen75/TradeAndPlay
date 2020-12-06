@@ -72,3 +72,9 @@ class SearchViewController: UIViewController {
         searchButton.isHidden = shown
     }
 }
+
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+}

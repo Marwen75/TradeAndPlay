@@ -17,8 +17,7 @@ class GameDetailView: NibView {
     @IBOutlet weak var storyLineLabel: UILabel!
     @IBOutlet weak var platformLabel: UILabel!
     @IBOutlet weak var platformsPickerView: UIPickerView!
-
     @IBOutlet weak var genreLabel: UILabel!
-    
-    
+    @IBOutlet weak var screenshotsCollectionView: UICollectionView!
+    @IBOutlet weak var ratingStarsImageView: UIImageView!
 }

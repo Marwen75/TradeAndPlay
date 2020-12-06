@@ -59,7 +59,20 @@ extension GamesViewController: UITableViewDataSource {
         
         cell.gameImageView.load(url: URL(string: imageURL)!)
         
-        cell.configure(name: (games[indexPath.row].name), summary: (games[indexPath.row].summary), rating: String(round(games[indexPath.row].rating)))
+        let date = Date(timeIntervalSince1970: TimeInterval(games[indexPath.row].firstReleaseDate.seconds))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let strDate = dateFormatter.string(from: date)
+        
+        var genreNames = [String]()
+        games[indexPath.row].genres.forEach { genreNames.append($0.name) }
+        
+        var platforms = [String]()
+        games[indexPath.row].platforms.forEach { platforms.append($0.name) }
+        
+        cell.configure(name: (games[indexPath.row].name), release: strDate, genres: genreNames.joined(separator: ", "), platform: platforms.joined(separator: ", "), rating: String(round(games[indexPath.row].rating)))
         
         return cell
     }

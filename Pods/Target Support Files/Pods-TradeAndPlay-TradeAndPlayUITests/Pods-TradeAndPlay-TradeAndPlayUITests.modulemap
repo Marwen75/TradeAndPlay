@@ -1,6 +1,0 @@
-framework module Pods_TradeAndPlay_TradeAndPlayUITests {
-  umbrella header "Pods-TradeAndPlay-TradeAndPlayUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

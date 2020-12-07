@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import IGDB_SWIFT_API
 
 class SearchViewController: UIViewController {
     
@@ -19,8 +18,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     
-    let igdbService = IgdbService(client: IgdbWrapperClient() as ClientProtocol)
-    var games: [Proto_Game] = []
+    let igdbService = IgdbService(session: URLSession(configuration: .default))
+    var games: [Game] = []
     
     
     override func viewDidLoad() {
@@ -48,21 +47,18 @@ class SearchViewController: UIViewController {
         gameLabel.text = ""
     }
     
-    
     private func searchGames() {
         guard let name = gameLabel.text else {return}
         toggleActivityIndicator(shown: true)
-        igdbService.getGames(withName: name, completionHandler: { result in
-            DispatchQueue.main.async { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.toggleActivityIndicator(shown: false)
-                switch result {
-                case .failure(let error):
-                    strongSelf.displayAlert(title: "Oups", message: error.localizedDescription)
-                case .success(let searchResult):
-                    strongSelf.games = searchResult.games
-                    strongSelf.performSegue(withIdentifier: SearchViewController.segueId, sender: nil)
-                }
+        igdbService.post(withName: name, completionHandler: { [weak self] result in
+            guard let strongSelf = self else { return }
+            strongSelf.toggleActivityIndicator(shown: false)
+            switch result {
+            case .failure(let error):
+                strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
+            case .success(let games):
+                strongSelf.games = games
+                strongSelf.performSegue(withIdentifier: SearchViewController.segueId, sender: nil)
             }
         })
     }

@@ -6,15 +6,15 @@
 //
 
 import UIKit
-import IGDB_SWIFT_API
 
 class GameDetailViewController: UIViewController {
     
-    var game: Proto_Game?
+    var game: Game?
     private let ratingStarsImages: [UIImage?] = [UIImage(named: "etoile1"), UIImage(named: "etoile2"), UIImage(named: "etoile3"), UIImage(named: "etoile4"), UIImage(named: "etoile5")]
     
     @IBOutlet weak var gameDetailView: GameDetailView!
     @IBOutlet weak var gameDetailScrollView: UIScrollView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,26 +45,26 @@ class GameDetailViewController: UIViewController {
         }
     }
     
-    private func configureDate() -> String {
+    /*private func configureDate() -> String {
         guard let game = game else {return "Oups"}
-        let date = Date(timeIntervalSince1970: TimeInterval(game.firstReleaseDate.seconds))
+        let date = Date(timeIntervalSince1970: TimeInterval(game.first_release_date))
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let strDate = dateFormatter.string(from: date)
         return strDate
-    }
+    }*/
     
     private func setGameDetails() {
         guard let game = game else {return}
-        let image_id = game.cover.imageID
-        let imageURL = imageBuilder(imageID: image_id, size: .COVER_BIG, imageType: .PNG)
+        let image_id = game.cover.image_id
+        let imageURL = "\(ApiKey.imageUrl)/\(image_id).png"
         gameDetailView.coverImageView.load(url: URL(string: imageURL)!)
         gameDetailView.nameLabel.text = game.name
         gameDetailView.storyLineLabel.text = game.summary
         gameDetailView.ratingsLabel.text = "Ratings: \(String(Int(round(game.rating))))/100"
-        gameDetailView.releaseLabel.text = "Firest release: \(configureDate())"
+        //gameDetailView.releaseLabel.text = "Firest release: \(configureDate())"
         var genreNames = [String]()
         game.genres.forEach { genreNames.append($0.name) }
         gameDetailView.genreLabel.text = "Genres: \(genreNames.joined(separator: ", "))"
@@ -109,8 +109,8 @@ extension GameDetailViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        let image_id = game?.screenshots[indexPath.row].imageID ?? ""
-        let imageURL = imageBuilder(imageID: image_id, size: .COVER_BIG, imageType: .PNG)
+        let imageId = game?.screenshots[indexPath.row].image_id ?? ""
+        let imageURL = "\(ApiKey.imageUrl)/\(imageId).png"
         
         cell.screenshotImageView.load(url: URL(string: imageURL)!)
         

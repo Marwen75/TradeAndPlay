@@ -6,13 +6,12 @@
 //
 
 import UIKit
-import IGDB_SWIFT_API
 
 class GamesViewController: UIViewController {
     
     static let segueId = "listToDetail"
-    var games: [Proto_Game] = []
-    private var game: Proto_Game?
+    var games: [Game] = []
+    private var game: Game?
     
     @IBOutlet weak var gamesTableView: UITableView!
     
@@ -54,17 +53,17 @@ extension GamesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let image_id = games[indexPath.row].cover.imageID
-        let imageURL = imageBuilder(imageID: image_id, size: .COVER_BIG, imageType: .PNG)
+        let imageId = games[indexPath.row].cover.image_id
+        let imageURL = "\(ApiKey.imageUrl)/\(imageId).png"
         
         cell.gameImageView.load(url: URL(string: imageURL)!)
         
-        let date = Date(timeIntervalSince1970: TimeInterval(games[indexPath.row].firstReleaseDate.seconds))
+        /*let date = Date(timeIntervalSince1970: TimeInterval(games[indexPath.row].first_release_date))
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let strDate = dateFormatter.string(from: date)
+        let strDate = dateFormatter.string(from: date)*/
         
         var genreNames = [String]()
         games[indexPath.row].genres.forEach { genreNames.append($0.name) }
@@ -72,7 +71,7 @@ extension GamesViewController: UITableViewDataSource {
         var platforms = [String]()
         games[indexPath.row].platforms.forEach { platforms.append($0.name) }
         
-        cell.configure(name: (games[indexPath.row].name), release: strDate, genres: genreNames.joined(separator: ", "), platform: platforms.joined(separator: ", "), rating: String(round(games[indexPath.row].rating)))
+        cell.configure(name: (games[indexPath.row].name), release: "", genres: genreNames.joined(separator: ", "), platform: platforms.joined(separator: ", "), rating: String(round(games[indexPath.row].rating)))
         
         return cell
     }

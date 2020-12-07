@@ -35,12 +35,12 @@ struct Platform: Decodable {
 
 struct Cover: Decodable {
     let id: Int
-    let url: String
     let image_id: String
+    let url: String
 }
 
 struct Screenshot: Decodable {
     let id: Int
-    let url: String
     let image_id: String
+    let url: String
 }

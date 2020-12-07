@@ -12,12 +12,11 @@ class IgdbService {
     var session: URLSession
     
     init(session: URLSession) {
-        //self.client = client
         self.session = session
     }
     
     func post(withName name: String, completionHandler: @escaping (Result<[Game], ApiError>) -> Void) {
-        guard let url = createTranslationRequest(name: name) else {return}
+        guard let url = createRequest(name: name) else {return}
         let task = session.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil,
@@ -41,7 +40,7 @@ class IgdbService {
         task.resume()
     }
     
-    private func createTranslationRequest(name: String) -> URLRequest? {
+    private func createRequest(name: String) -> URLRequest? {
         let url = URL(string: ApiKey.baseUrl)
         var request = URLRequest(url: url!)
         request.httpBody = "fields name, summary, first_release_date, rating, cover, cover.url, platforms, platforms.name, genres, genres.name, cover.image_id, screenshots, screenshots.url, screenshots.image_id; search \"\(name)\"; limit 200; where version_parent = null;".data(using: .utf8, allowLossyConversion: false)

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="360" id="KGk-i7-Jjw" customClass="SummaryTableViewCell" customModule="TradeAndPlay" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="360"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="360"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT6-Tf-ZIa" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
+                        <rect key="frame" x="26" y="51" width="268" height="289"/>
+                        <string key="text">fjnedfknskjbnfkjnskjefnkjsenfkjnsejkfnkjsenfkjsenjkfnsejknfjksnef,dn,fnjkenfjkenkjfnksenfjsnejkfnksejnfkjsenfkkfndfjdhsdffjdslfdjflkqdjfldshkjfhlfjldjhfkhdskghdsfg</string>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                        <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0V-tV-las" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
+                        <rect key="frame" x="40" y="5" width="240" height="20"/>
+                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                        <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstItem="u0V-tV-las" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="84s-oy-JMf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="hT6-Tf-ZIa" secondAttribute="trailing" constant="10" id="9DY-WV-5iF"/>
+                    <constraint firstItem="hT6-Tf-ZIa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="40" id="Cwf-b9-ZTM"/>
+                    <constraint firstItem="hT6-Tf-ZIa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="K1J-zk-03Z"/>
+                    <constraint firstItem="u0V-tV-las" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="Kx9-cL-t3p"/>
+                    <constraint firstItem="u0V-tV-las" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bRz-gf-Hyg"/>
+                    <constraint firstAttribute="trailing" secondItem="u0V-tV-las" secondAttribute="trailing" constant="40" id="laN-cb-GdU"/>
+                    <constraint firstAttribute="bottom" secondItem="hT6-Tf-ZIa" secondAttribute="bottom" constant="20" id="prM-uh-abv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="summaryLabel" destination="hT6-Tf-ZIa" id="X8X-uH-QyB"/>
+            </connections>
+            <point key="canvasLocation" x="-43.478260869565219" y="30.133928571428569"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="hT6-Tf-ZIa">
+            <size key="intrinsicContentSize" width="1011" height="23.5"/>
+        </designable>
+        <designable name="u0V-tV-las">
+            <size key="intrinsicContentSize" width="71" height="20"/>
+        </designable>
+    </designables>
+</document>

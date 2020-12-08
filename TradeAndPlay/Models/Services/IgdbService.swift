@@ -27,12 +27,11 @@ class IgdbService {
                 }
                 do {
                     let decoder = JSONDecoder()
-                    print("JSON String: \(String(describing: String(data: data, encoding: .utf8)))")
-                    let responseJSON = try decoder.decode(GameSearchResult.self, from: data)
-                    let games = responseJSON.games
-                    print(games)
+                    let responseJSON = try decoder.decode([Game].self, from: data)
+                    let games = responseJSON
                     completionHandler(.success(games))
-                } catch {
+                } catch let err {
+                    print(err)
                     completionHandler(.failure(.noData))
                 }
             }

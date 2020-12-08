@@ -13,14 +13,14 @@ struct GameSearchResult: Decodable {
 
 struct Game: Decodable {
     let id: Int
-    let cover: Cover
-    let first_release_date: Int64
-    let genres: [Genre]
+    let cover: Cover?
+    let first_release_date: Int64?
+    let genres: [Genre]?
     let name: String
-    let platforms: [Platform]
-    let rating: Double
-    let screenshots: [Screenshot]
-    let summary: String
+    let platforms: [Platform]?
+    let rating: Double?
+    let screenshots: [Screenshot]?
+    let summary: String?
 }
 
 struct Genre: Decodable {

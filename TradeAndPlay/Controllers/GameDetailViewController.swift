@@ -12,23 +12,26 @@ class GameDetailViewController: UIViewController {
     var game: Game?
     private let ratingStarsImages: [UIImage?] = [UIImage(named: "etoile1"), UIImage(named: "etoile2"), UIImage(named: "etoile3"), UIImage(named: "etoile4"), UIImage(named: "etoile5")]
     
-    @IBOutlet weak var gameDetailView: GameDetailView!
-    @IBOutlet weak var gameDetailScrollView: UIScrollView!
-    
+    @IBOutlet weak var gameDetailTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setGameDetails()
-        gameDetailView.platformsPickerView.delegate = self
-        gameDetailView.platformsPickerView.dataSource = self
-        gameDetailView.screenshotsCollectionView.delegate = self
-        gameDetailView.screenshotsCollectionView.dataSource = self
-        gameDetailView.platformsPickerView.setValue(UIColor.white, forKey: "textColor")
+        configureTableView()
         configureCollectionView()
     }
     
+    private func configureTableView() {
+        gameDetailTableView.estimatedRowHeight = 44.0
+        gameDetailTableView.rowHeight = UITableView.automaticDimension
+        gameDetailTableView.register(UINib(nibName: "GameDetailPresentationTableViewCell", bundle: nil), forCellReuseIdentifier: "GameDetailPresentationTableViewCell")
+        gameDetailTableView.register(UINib(nibName: "SummaryTableViewCell", bundle: nil), forCellReuseIdentifier: "SummaryTableViewCell")
+        gameDetailTableView.register(UINib(nibName: "ScreenShotsTableViewCell", bundle: nil), forCellReuseIdentifier: "ScreenShotsTableViewCell")
+        gameDetailTableView.register(UINib(nibName: "PlatformsTableViewCell", bundle: nil), forCellReuseIdentifier: "PlatformsTableViewCell")
+    }
+    
     private func configureCollectionView() {
-        gameDetailView.screenshotsCollectionView.register(UINib(nibName: "ScreenshotCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScreenshotCollectionViewCell")
+        //screenshotCollectionView.register(UINib(nibName: "ScreenshotCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScreenshotCollectionViewCell")
     }
     
     private func configureRatings(rating: Double) -> UIImage {
@@ -46,48 +49,83 @@ class GameDetailViewController: UIViewController {
     }
     
     /*private func configureDate() -> String {
-        guard let game = game else {return "Oups"}
-        let date = Date(timeIntervalSince1970: TimeInterval(game.first_release_date))
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let strDate = dateFormatter.string(from: date)
-        return strDate
-    }*/
+     guard let game = game else {return "Oups"}
+     let date = Date(timeIntervalSince1970: TimeInterval(game.first_release_date))
+     let dateFormatter = DateFormatter()
+     dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+     dateFormatter.locale = NSLocale.current
+     dateFormatter.dateFormat = "yyyy-MM-dd"
+     let strDate = dateFormatter.string(from: date)
+     return strDate
+     }*/
     
     private func setGameDetails() {
         guard let game = game else {return}
-        let image_id = game.cover.image_id
-        let imageURL = "\(ApiKey.imageUrl)/\(image_id).png"
-        gameDetailView.coverImageView.load(url: URL(string: imageURL)!)
-        gameDetailView.nameLabel.text = game.name
-        gameDetailView.storyLineLabel.text = game.summary
-        gameDetailView.ratingsLabel.text = "Ratings: \(String(Int(round(game.rating))))/100"
+        let image_id = game.cover?.image_id
+        let imageURL = "\(ApiKey.imageUrl)\(image_id ?? "coluje").png"
+        //coverImageView.load(url: URL(string: imageURL)!)
+        //gameDetailView.nameLabel.text = game.name
+        //summaryLabel.text = game.summary
+        //ratingsLabel.text = "Ratings: \(String(Int(round(game.rating ?? 0))))/100"
         //gameDetailView.releaseLabel.text = "Firest release: \(configureDate())"
-        var genreNames = [String]()
-        game.genres.forEach { genreNames.append($0.name) }
-        gameDetailView.genreLabel.text = "Genres: \(genreNames.joined(separator: ", "))"
-        gameDetailView.ratingStarsImageView.image = configureRatings(rating: game.rating)
+        //var genreNames = [String]()
+        // game.genres?.forEach { genreNames.append($0.name) }
+        // genreLabel.text = "Genres: \(genreNames.joined(separator: ", "))"
+        //ratingsImageView.image = configureRatings(rating: game.rating ?? 0)
     }
 }
 
-extension GameDetailViewController: UIPickerViewDelegate {
+extension GameDetailViewController: UITableViewDelegate {
     
+   
 }
 
-extension GameDetailViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+extension GameDetailViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return game?.platforms.count ?? 0
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return game?.platforms[row].name
+        if indexPath.section == 0 {
+            guard let presCell = tableView.dequeueReusableCell(withIdentifier: "GameDetailPresentationTableViewCell", for: indexPath) as? GameDetailPresentationTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            let imgId = game?.cover?.image_id
+            
+            presCell.coverImageView.load(url: URL(string: "\(ApiKey.imageUrl)\(imgId ?? "coluje").png")!)
+            
+            var genreNames = [String]()
+            game?.genres?.forEach { genreNames.append($0.name) }
+            presCell.configure(title: game?.name ?? "", genres: genreNames.joined(separator: ", "), release: "", ratings: String(game?.rating ?? 1))
+            return presCell
+        } else if indexPath.section == 1 {
+            guard let sumCell = tableView.dequeueReusableCell(withIdentifier: "SummaryTableViewCell", for: indexPath) as? SummaryTableViewCell else {
+                return UITableViewCell()
+            }
+            sumCell.configure(summary: game?.summary ?? "N/A")
+            return sumCell
+            
+        } else if indexPath.section == 2 {
+            guard let screenCell = tableView.dequeueReusableCell(withIdentifier: "ScreenShotsTableViewCell", for: indexPath) as? ScreenShotsTableViewCell else {
+                return UITableViewCell()
+            }
+            screenCell.screenShotCollectionView.delegate = self
+            screenCell.screenShotCollectionView.dataSource = self
+            screenCell.screenShotCollectionView.register(UINib(nibName: "ScreenshotCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScreenshotCollectionViewCell")
+            return screenCell
+        } else {
+            guard let platCell = tableView.dequeueReusableCell(withIdentifier: "PlatformsTableViewCell", for: indexPath) as? PlatformsTableViewCell else {
+                return UITableViewCell()
+            }
+            return platCell
+        }
     }
 }
 
@@ -98,10 +136,8 @@ extension GameDetailViewController: UICollectionViewDelegate {
 extension GameDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        game?.screenshots.count ?? 0
+        game?.screenshots?.count ?? 0
     }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScreenshotCollectionViewCell", for: indexPath) as? ScreenshotCollectionViewCell else {
@@ -109,8 +145,8 @@ extension GameDetailViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        let imageId = game?.screenshots[indexPath.row].image_id ?? ""
-        let imageURL = "\(ApiKey.imageUrl)/\(imageId).png"
+        let imageId = game?.screenshots?[indexPath.row].image_id ?? ""
+        let imageURL = "\(ApiKey.imageUrl)\(imageId).png"
         
         cell.screenshotImageView.load(url: URL(string: imageURL)!)
         

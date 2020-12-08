@@ -14,8 +14,6 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var platformLabel: UILabel!
     @IBOutlet weak var releaseLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
-    
-    
     @IBOutlet weak var ratingLabel: UILabel!
     
     
@@ -35,7 +33,6 @@ class GameTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

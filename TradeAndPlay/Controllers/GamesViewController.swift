@@ -30,7 +30,7 @@ class GamesViewController: UIViewController {
     
     // MARK: - Methods
     private func configureTableView() {
-        gamesTableView.rowHeight = 350
+        gamesTableView.rowHeight = 400
         gamesTableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameTableViewCell")
     }
 }
@@ -48,16 +48,17 @@ extension GamesViewController : UITableViewDelegate {
 
 // MARK: - Table view data source
 extension GamesViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as? GameTableViewCell else {
             return UITableViewCell()
         }
         
-        let imageId = games[indexPath.row].cover.image_id
-        let imageURL = "\(ApiKey.imageUrl)/\(imageId).png"
+        let imgId = games[indexPath.row].cover?.image_id
         
-        cell.gameImageView.load(url: URL(string: imageURL)!)
+        cell.gameImageView.load(url: URL(string: "\(ApiKey.imageUrl)\(imgId ?? "coluje").png")!)
         
+        // https://images.igdb.com/igdb/image/upload/t_cover_big/co1uje.png
         /*let date = Date(timeIntervalSince1970: TimeInterval(games[indexPath.row].first_release_date))
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
@@ -65,13 +66,16 @@ extension GamesViewController: UITableViewDataSource {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let strDate = dateFormatter.string(from: date)*/
         
+        cell.layer.borderWidth = 2.0
+        cell.layer.borderColor = UIColor(named: "TradeAndPlay")?.cgColor
+        
         var genreNames = [String]()
-        games[indexPath.row].genres.forEach { genreNames.append($0.name) }
+        games[indexPath.row].genres?.forEach { genreNames.append($0.name) }
         
         var platforms = [String]()
-        games[indexPath.row].platforms.forEach { platforms.append($0.name) }
+        games[indexPath.row].platforms?.forEach { platforms.append($0.name) }
         
-        cell.configure(name: (games[indexPath.row].name), release: "", genres: genreNames.joined(separator: ", "), platform: platforms.joined(separator: ", "), rating: String(round(games[indexPath.row].rating)))
+        cell.configure(name: (games[indexPath.row].name), release: "", genres: genreNames.joined(separator: ", "), platform: platforms.joined(separator: ", "), rating: String(round(games[indexPath.row].rating ?? 0)))
         
         return cell
     }

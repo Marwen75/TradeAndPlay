@@ -31,7 +31,7 @@ class GamesViewController: UIViewController {
     // MARK: - Methods
     private func configureTableView() {
         gamesTableView.rowHeight = 400
-        gamesTableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameTableViewCell")
+        gamesTableView.register(UINib(nibName: GameTableViewCell.id, bundle: nil), forCellReuseIdentifier: GameTableViewCell.id)
     }
 }
 
@@ -50,7 +50,7 @@ extension GamesViewController : UITableViewDelegate {
 extension GamesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as? GameTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: GameTableViewCell.id, for: indexPath) as? GameTableViewCell else {
             return UITableViewCell()
         }
         

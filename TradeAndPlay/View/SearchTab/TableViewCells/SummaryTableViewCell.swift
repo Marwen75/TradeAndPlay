@@ -9,6 +9,8 @@ import UIKit
 
 class SummaryTableViewCell: UITableViewCell {
     
+    static let id = "SummaryTableViewCell"
+    
     @IBOutlet weak var summaryLabel: RoundLabel!
     
     func configure(summary: String) {

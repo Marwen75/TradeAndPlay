@@ -8,6 +8,8 @@
 import UIKit
 
 class GameDetailPresentationTableViewCell: UITableViewCell {
+    
+    static let id = "GameDetailPresentationTableViewCell"
 
     @IBOutlet weak var titleLabel: RoundLabel!
     @IBOutlet weak var coverImageView: UIImageView!

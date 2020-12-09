@@ -9,7 +9,7 @@ import UIKit
 
 class ScreenshotCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "ScreenshotCollectionViewCell"
+    static let id = "ScreenshotCollectionViewCell"
     
     @IBOutlet weak var screenshotImageView: UIImageView!
     

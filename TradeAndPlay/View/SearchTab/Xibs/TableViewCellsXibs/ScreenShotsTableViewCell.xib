@@ -14,15 +14,15 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="303" id="KGk-i7-Jjw" customClass="ScreenShotsTableViewCell" customModule="TradeAndPlay" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="303"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="303"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="nGJ-RM-wlI">
-                        <rect key="frame" x="0.0" y="40" width="320" height="150"/>
+                        <rect key="frame" x="0.0" y="40" width="320" height="263"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="150" id="0zZ-h5-ANp"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="0zZ-h5-ANp"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ufc-AC-7gT">
                             <size key="itemSize" width="128" height="128"/>

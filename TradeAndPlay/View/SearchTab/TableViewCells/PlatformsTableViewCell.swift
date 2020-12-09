@@ -9,6 +9,10 @@ import UIKit
 
 class PlatformsTableViewCell: UITableViewCell {
 
+    static let id = "PlatformsTableViewCell"
+    
+    @IBOutlet weak var platformPickerView: UIPickerView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

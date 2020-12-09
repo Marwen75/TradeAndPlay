@@ -17,5 +17,17 @@ extension UIViewController {
         present(alertVC, animated: true, completion: nil)
     }
     
+    func configureDate(game: Game) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(game.first_release_date ?? 0))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let strDate = dateFormatter.string(from: date)
+        return "First released: \(strDate)"
+    }
     
+    func configureRatings(game: Game) -> String {
+        return "Ratings: \(String(Int(round(game.rating ?? 0))))/100"
+    }
 }

@@ -18,8 +18,7 @@ class GameDetailPresentationTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingsLabel: UILabel!
     @IBOutlet weak var ratingsImageView: UIImageView!
     
-    func configure(title: String, genres: String, release: String, ratings: String) {
-        titleLabel.text = title
+    func configure(genres: String, release: String, ratings: String) {
         genreLabel.text = genres
         releaseLabel.text = release
         ratingsLabel.text = ratings

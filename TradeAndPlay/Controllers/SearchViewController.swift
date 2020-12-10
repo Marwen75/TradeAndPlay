@@ -9,16 +9,21 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    static let segueId = "searchToGames"
-    
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var customTextField: CustomTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var researchSwitch: UISwitch!
+    @IBOutlet weak var switchLabel: UILabel!
+    @IBOutlet weak var lookingForLabel: UILabel!
     
     
-    let igdbService = IgdbService(session: URLSession(configuration: .default))
+    static let segueId = "searchToGames"
+    static let segueIdTwo = "searchToPlayers"
+    
+    var igdbService: IgdbService?
     var games: [Game] = []
-    
+    var users: [User] = []
+    var dataStorage: DataStorage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +38,28 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func searchButtonTaped(_ sender: Any) {
-        searchGames()
+        if researchSwitch.isOn {
+            searchPlayers()
+        } else {
+            searchGames()
+        }
     }
+    
+    @IBAction func switchTaped(_ sender: UISwitch) {
+        if sender.isOn {
+            lookingForLabel.text = "Looking for a player ?"
+            switchLabel.text = "Search by game name ?"
+        } else {
+            lookingForLabel.text = "Looking for a game ?"
+            switchLabel.text = "Search by player name ?"
+        }
+    }
+    
     
     private func searchGames() {
         guard let name = customTextField.gameTextField.text else {return}
         toggleActivityIndicator(shown: true)
-        igdbService.post(withName: name, completionHandler: { [weak self] result in
+        igdbService?.post(withName: name, completionHandler: { [weak self] result in
             guard let strongSelf = self else { return }
             strongSelf.toggleActivityIndicator(shown: false)
             switch result {
@@ -48,6 +68,21 @@ class SearchViewController: UIViewController {
             case .success(let games):
                 strongSelf.games = games
                 strongSelf.performSegue(withIdentifier: SearchViewController.segueId, sender: nil)
+            }
+        })
+    }
+    
+    private func searchPlayers() {
+        guard let name = customTextField.gameTextField.text else {return}
+        toggleActivityIndicator(shown: true)
+        dataStorage?.fetchUsers(named: name, completionHandler: { [weak self] result in
+            guard let strongSelf = self else { return }
+            strongSelf.toggleActivityIndicator(shown: false)
+            switch result {
+            case .failure(let error):
+                strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
+            case .success(let users):
+                strongSelf.users = users
             }
         })
     }

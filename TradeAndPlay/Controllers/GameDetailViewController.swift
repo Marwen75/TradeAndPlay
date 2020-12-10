@@ -20,6 +20,7 @@ class GameDetailViewController: UIViewController {
     }
     
     private func configureTableView() {
+        gameDetailTableView.sectionHeaderHeight = 70
         gameDetailTableView.estimatedRowHeight = 44.0
         gameDetailTableView.rowHeight = UITableView.automaticDimension
         gameDetailTableView.register(UINib(nibName: GameDetailPresentationTableViewCell.id, bundle: nil), forCellReuseIdentifier: GameDetailPresentationTableViewCell.id)
@@ -59,6 +60,29 @@ extension GameDetailViewController: UITableViewDataSource {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = HeaderView()
+        switch section {
+        case 0:
+            header.headerLabel.text = game?.name
+            return header
+        case 1:
+            header.headerLabel.text = "Screenshots"
+            return header
+        case 2:
+            header.headerLabel.text = "Summary"
+            return header
+        case 3:
+            header.headerLabel.text = "Select a platform"
+            return header
+        case 4:
+            header.headerLabel.text = "What to do next ?"
+            return header
+        default:
+            return header
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let game = game else {return UITableViewCell()}
@@ -69,10 +93,10 @@ extension GameDetailViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             let imgId = game.cover?.image_id
-            presCell.coverImageView.load(url: URL(string: "\(ApiKey.imageUrl)\(imgId ?? "coluje").png")!)
+            presCell.coverImageView.load(url: URL(string: "\(ApiConfig.imageUrl)\(imgId ?? "coluje").png")!)
             var genreNames = [String]()
             game.genres?.forEach { genreNames.append($0.name) }
-            presCell.configure(title: game.name, genres: genreNames.joined(separator: ", "), release: configureDate(game: game), ratings: configureRatings(game: game))
+            presCell.configure(genres: genreNames.joined(separator: ", "), release: configureDate(game: game), ratings: configureRatings(game: game))
             presCell.ratingsImageView.image = configureRatingsImage(rating: game.rating ?? 0)
             return presCell
             
@@ -83,6 +107,7 @@ extension GameDetailViewController: UITableViewDataSource {
             screenCell.screenShotCollectionView.delegate = self
             screenCell.screenShotCollectionView.dataSource = self
             screenCell.screenShotCollectionView.register(UINib(nibName: ScreenshotCollectionViewCell.id, bundle: nil), forCellWithReuseIdentifier: ScreenshotCollectionViewCell.id)
+            screenCell.screenShotCollectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
             return screenCell
             
         case 2:
@@ -124,11 +149,10 @@ extension GameDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScreenshotCollectionViewCell.id, for: indexPath) as? ScreenshotCollectionViewCell else {
-            print("ca passe pas")
             return UICollectionViewCell()
         }
         let imageId = game?.screenshots?[indexPath.row].image_id ?? ""
-        let imageURL = "\(ApiKey.imageUrl)\(imageId).png"
+        let imageURL = "\(ApiConfig.imageUrl)\(imageId).png"
         cell.screenshotImageView.load(url: URL(string: imageURL)!)
         return cell
     }

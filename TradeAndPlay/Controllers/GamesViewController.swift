@@ -30,6 +30,7 @@ class GamesViewController: UIViewController {
     
     // MARK: - Methods
     private func configureTableView() {
+        gamesTableView.sectionHeaderHeight = 60
         gamesTableView.rowHeight = 400
         gamesTableView.register(UINib(nibName: GameTableViewCell.id, bundle: nil), forCellReuseIdentifier: GameTableViewCell.id)
     }
@@ -39,7 +40,7 @@ class GamesViewController: UIViewController {
 // MARK: - Table view delegate
 extension GamesViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let gameToSend = games[indexPath.row]
+        let gameToSend = games[indexPath.section]
         self.game = gameToSend
         print(gameToSend.name)
         performSegue(withIdentifier: GamesViewController.segueId, sender: nil)
@@ -49,38 +50,37 @@ extension GamesViewController : UITableViewDelegate {
 // MARK: - Table view data source
 extension GamesViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        games.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = HeaderView()
+        header.headerLabel.text = games[section].name
+        return header
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GameTableViewCell.id, for: indexPath) as? GameTableViewCell else {
             return UITableViewCell()
         }
         
-        let imgId = games[indexPath.row].cover?.image_id
+        let imgId = games[indexPath.section].cover?.image_id
         
-        cell.gameImageView.load(url: URL(string: "\(ApiKey.imageUrl)\(imgId ?? "coluje").png")!)
-        
-        // https://images.igdb.com/igdb/image/upload/t_cover_big/co1uje.png
-        /*let date = Date(timeIntervalSince1970: TimeInterval(games[indexPath.row].first_release_date))
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let strDate = dateFormatter.string(from: date)*/
-        
-        cell.layer.borderWidth = 2.0
-        cell.layer.borderColor = UIColor(named: "TradeAndPlay")?.cgColor
+        cell.gameImageView.load(url: URL(string: "\(ApiConfig.imageUrl)\(imgId ?? "coluje").png")!)
         
         var genreNames = [String]()
         games[indexPath.row].genres?.forEach { genreNames.append($0.name) }
         
         var platforms = [String]()
-        games[indexPath.row].platforms?.forEach { platforms.append($0.name) }
+        games[indexPath.section].platforms?.forEach { platforms.append($0.name) }
         
-        cell.configure(name: (games[indexPath.row].name), release: "", genres: genreNames.joined(separator: ", "), platform: platforms.joined(separator: ", "), rating: String(round(games[indexPath.row].rating ?? 0)))
+        cell.configure(release: configureDate(game: games[indexPath.section]), genres: genreNames.joined(separator: ", "), platformCount: "\(platforms.count)", rating: String(round(games[indexPath.section].rating ?? 0)))
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return 1
     }
 }

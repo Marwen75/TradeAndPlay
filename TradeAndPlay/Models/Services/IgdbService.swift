@@ -40,7 +40,7 @@ class IgdbService {
     }
     
     private func createRequest(name: String) -> URLRequest? {
-        let url = URL(string: ApiKey.baseUrl)
+        let url = URL(string: ApiConfig.baseUrl)
         var request = URLRequest(url: url!)
         request.httpBody = "fields name, summary, first_release_date, rating, cover, cover.url, platforms, platforms.name, genres, genres.name, cover.image_id, screenshots, screenshots.url, screenshots.image_id; search \"\(name)\"; limit 200; where version_parent = null;".data(using: .utf8, allowLossyConversion: false)
         request.httpMethod = "POST"

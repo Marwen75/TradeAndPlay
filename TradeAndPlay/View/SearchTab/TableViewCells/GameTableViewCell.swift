@@ -12,7 +12,6 @@ class GameTableViewCell: UITableViewCell {
     static let id = "GameTableViewCell"
         
     @IBOutlet weak var gameImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var platformLabel: UILabel!
     @IBOutlet weak var releaseLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
@@ -25,12 +24,11 @@ class GameTableViewCell: UITableViewCell {
         gameImageView.backgroundColor = .black
     }
     // func that will alow us to configure the cell
-    func configure(name: String, release: String, genres: String, platform: String, rating: String) {
-        titleLabel.text = name
-        ratingLabel.text = rating == "0.0" ? "N/A" : "Rating: \(rating)/100"
-        releaseLabel.text = release == "" ? "N/A" : "First released \(release)"
+    func configure(release: String, genres: String, platformCount: String, rating: String) {
+        ratingLabel.text = "Rating: \(rating)/100"
+        releaseLabel.text = release
         genreLabel.text = "Genres: \(genres)"
-        platformLabel.text = "Platforms: \(platform)"
+        platformLabel.text = "Available on \(platformCount) platform(s)."
     }
     
     override func awakeFromNib() {
@@ -39,8 +37,6 @@ class GameTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
 }

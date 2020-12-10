@@ -17,23 +17,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="450" height="361"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a platform" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgj-Et-6uC" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                        <rect key="frame" x="40" y="31" width="370" height="20"/>
-                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                        <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </label>
                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2W5-GE-0mn">
                         <rect key="frame" x="20" y="11" width="410" height="339"/>
                     </pickerView>
@@ -41,20 +24,12 @@
                 <color key="backgroundColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
                     <constraint firstItem="2W5-GE-0mn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1RQ-cD-acN"/>
-                    <constraint firstItem="jgj-Et-6uC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="BJV-Oz-nqm"/>
                     <constraint firstAttribute="trailingMargin" secondItem="2W5-GE-0mn" secondAttribute="trailing" id="CYE-K8-9jT"/>
                     <constraint firstItem="2W5-GE-0mn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Q9Z-yF-t6P"/>
-                    <constraint firstItem="jgj-Et-6uC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="Xex-Dz-bsD"/>
                     <constraint firstItem="2W5-GE-0mn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="mu4-ar-dzd"/>
                     <constraint firstItem="2W5-GE-0mn" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="nPj-3q-XyP"/>
                     <constraint firstAttribute="bottomMargin" secondItem="2W5-GE-0mn" secondAttribute="bottom" id="ngc-Ma-art"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="jgj-Et-6uC" secondAttribute="trailing" constant="20" id="xV6-zh-sBR"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="subviews">
-                        <exclude reference="jgj-Et-6uC"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
@@ -63,9 +38,4 @@
             <point key="canvasLocation" x="-53.623188405797109" y="35.825892857142854"/>
         </tableViewCell>
     </objects>
-    <designables>
-        <designable name="jgj-Et-6uC">
-            <size key="intrinsicContentSize" width="121" height="20"/>
-        </designable>
-    </designables>
 </document>

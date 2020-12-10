@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT6-Tf-ZIa" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                        <rect key="frame" x="26" y="51" width="268" height="223"/>
+                        <rect key="frame" x="26" y="21" width="268" height="313"/>
                         <string key="text">fjnedfknskjbnfkjnskjefnkjsenfkjnsejkfnkjsenfkjsenjkfnsejknfjksnef,dn,fnjkenfjkenkjfnksenfjsnejkfnksejnfkjsenfkkfndfjdhsdffjdslfdjflkqdjfldshkjfhlfjldjhfkhdskghdsfg</string>
                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
                         <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -35,54 +35,13 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0V-tV-las" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                        <rect key="frame" x="40" y="5" width="240" height="20"/>
-                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                        <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a platform" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOe-iO-quF" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                        <rect key="frame" x="36" y="312" width="248" height="20"/>
-                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                        <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
-                    <constraint firstItem="u0V-tV-las" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="84s-oy-JMf"/>
                     <constraint firstAttribute="trailingMargin" secondItem="hT6-Tf-ZIa" secondAttribute="trailing" constant="10" id="9DY-WV-5iF"/>
-                    <constraint firstItem="MOe-iO-quF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="C3o-h2-wCV"/>
-                    <constraint firstItem="hT6-Tf-ZIa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="40" id="Cwf-b9-ZTM"/>
+                    <constraint firstItem="hT6-Tf-ZIa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="Cwf-b9-ZTM"/>
                     <constraint firstItem="hT6-Tf-ZIa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="K1J-zk-03Z"/>
-                    <constraint firstItem="u0V-tV-las" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="Kx9-cL-t3p"/>
-                    <constraint firstAttribute="bottom" secondItem="hT6-Tf-ZIa" secondAttribute="bottom" constant="70" id="PhJ-Km-0Xd"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="MOe-iO-quF" secondAttribute="bottom" constant="1" id="UrO-oP-76p"/>
-                    <constraint firstItem="u0V-tV-las" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bRz-gf-Hyg"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="MOe-iO-quF" secondAttribute="trailing" constant="20" id="ffr-Lt-DfM"/>
-                    <constraint firstAttribute="trailing" secondItem="u0V-tV-las" secondAttribute="trailing" constant="40" id="laN-cb-GdU"/>
+                    <constraint firstAttribute="bottom" secondItem="hT6-Tf-ZIa" secondAttribute="bottom" constant="10" id="PhJ-Km-0Xd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -93,14 +52,8 @@
         </tableViewCell>
     </objects>
     <designables>
-        <designable name="MOe-iO-quF">
-            <size key="intrinsicContentSize" width="121" height="20"/>
-        </designable>
         <designable name="hT6-Tf-ZIa">
             <size key="intrinsicContentSize" width="1011" height="23.5"/>
-        </designable>
-        <designable name="u0V-tV-las">
-            <size key="intrinsicContentSize" width="71" height="20"/>
         </designable>
     </designables>
 </document>

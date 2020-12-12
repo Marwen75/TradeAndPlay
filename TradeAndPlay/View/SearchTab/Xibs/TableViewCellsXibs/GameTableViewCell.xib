@@ -21,17 +21,17 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JTA-6U-gNl">
                         <rect key="frame" x="10" y="10" width="733" height="488"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D9z-hY-RDa">
-                                <rect key="frame" x="0.0" y="0.0" width="733" height="373.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D9z-hY-RDa">
+                                <rect key="frame" x="0.0" y="0.0" width="733" height="346.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4s-p5-l80">
-                                        <rect key="frame" x="0.0" y="0.0" width="681" height="373.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="678" height="346.5"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dEI-5o-024">
-                                        <rect key="frame" x="691" y="0.0" width="42" height="373.5"/>
+                                        <rect key="frame" x="688" y="0.0" width="45" height="346.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exB-39-cU5" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="42" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="51"/>
                                                 <color key="backgroundColor" name="DarkBlue"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
                                                 <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -49,7 +49,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-0I-5SX" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="75" width="42" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="61" width="45" height="51.5"/>
                                                 <color key="backgroundColor" name="DarkBlue"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
                                                 <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -67,7 +67,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platforms" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COL-nl-NVJ" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="149.5" width="42" height="130"/>
+                                                <rect key="frame" x="0.0" y="122.5" width="45" height="51"/>
                                                 <color key="backgroundColor" name="DarkBlue"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
                                                 <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -85,7 +85,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ratings:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSX-cx-bkD" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="289.5" width="42" height="84"/>
+                                                <rect key="frame" x="0.0" y="183.5" width="45" height="163"/>
                                                 <color key="backgroundColor" name="DarkBlue"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
                                                 <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -109,7 +109,7 @@
                                 <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click or swipe to see details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hB3-Mc-P9f" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="383.5" width="733" height="104.5"/>
+                                <rect key="frame" x="0.0" y="356.5" width="733" height="131.5"/>
                                 <color key="backgroundColor" name="DarkBlue"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -167,7 +167,7 @@
     </designables>
     <resources>
         <namedColor name="DarkBlue">
-            <color red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.14000000059604645" green="0.289000004529953" blue="0.36500000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

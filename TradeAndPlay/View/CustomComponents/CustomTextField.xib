@@ -23,7 +23,7 @@
                     <color key="backgroundColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                 </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

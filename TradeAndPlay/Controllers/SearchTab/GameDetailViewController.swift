@@ -9,25 +9,31 @@ import UIKit
 
 class GameDetailViewController: UIViewController {
     
-    var game: Game?
-    private let ratingStarsImages: [UIImage?] = [UIImage(named: "etoile1"), UIImage(named: "etoile2"), UIImage(named: "etoile3"), UIImage(named: "etoile4"), UIImage(named: "etoile5")]
-    
     @IBOutlet weak var gameDetailTableView: UITableView!
+    
+    var dataStorage: DataStorage?
+    var game: GameModel?
+    private var pickerIndex: Int?
+    private let ratingStarsImages: [UIImage?] = [UIImage(named: "etoile1"), UIImage(named: "etoile2"), UIImage(named: "etoile3"), UIImage(named: "etoile4"), UIImage(named: "etoile5")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
     private func configureTableView() {
         gameDetailTableView.sectionHeaderHeight = 70
         gameDetailTableView.estimatedRowHeight = 44.0
         gameDetailTableView.rowHeight = UITableView.automaticDimension
-        gameDetailTableView.register(UINib(nibName: GameDetailPresentationTableViewCell.id, bundle: nil), forCellReuseIdentifier: GameDetailPresentationTableViewCell.id)
-        gameDetailTableView.register(UINib(nibName: SummaryTableViewCell.id, bundle: nil), forCellReuseIdentifier: SummaryTableViewCell.id)
-        gameDetailTableView.register(UINib(nibName: ScreenShotsTableViewCell.id, bundle: nil), forCellReuseIdentifier: ScreenShotsTableViewCell.id)
-        gameDetailTableView.register(UINib(nibName: PlatformsTableViewCell.id, bundle: nil), forCellReuseIdentifier: PlatformsTableViewCell.id)
-        gameDetailTableView.register(UINib(nibName: AddGameTableViewCell.id, bundle: nil), forCellReuseIdentifier: AddGameTableViewCell.id)
+        gameDetailTableView.register(cellType: GameDetailPresentationTableViewCell.self)
+        gameDetailTableView.register(cellType: SummaryTableViewCell.self)
+        gameDetailTableView.register(cellType: ScreenShotsTableViewCell.self)
+        gameDetailTableView.register(cellType: PlatformsTableViewCell.self)
+        gameDetailTableView.register(cellType: AddGameTableViewCell.self)
     }
     
     private func configureRatingsImage(rating: Double) -> UIImage {
@@ -88,46 +94,44 @@ extension GameDetailViewController: UITableViewDataSource {
         guard let game = game else {return UITableViewCell()}
         switch indexPath.section {
         case 0:
-            
-            guard let presCell = tableView.dequeueReusableCell(withIdentifier: GameDetailPresentationTableViewCell.id, for: indexPath) as? GameDetailPresentationTableViewCell else {
-                return UITableViewCell()
-            }
-            let imgId = game.cover?.image_id
-            presCell.coverImageView.load(url: URL(string: "\(ApiConfig.imageUrl)\(imgId ?? "coluje").png")!)
-            var genreNames = [String]()
-            game.genres?.forEach { genreNames.append($0.name) }
-            presCell.configure(genres: genreNames.joined(separator: ", "), release: configureDate(game: game), ratings: configureRatings(game: game))
-            presCell.ratingsImageView.image = configureRatingsImage(rating: game.rating ?? 0)
+            let presCell: GameDetailPresentationTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            let imgId = game.cover
+            presCell.coverImageView.load(url: URL(string: "\(ApiConfig.imageUrl)\(imgId ).png")!)
+            presCell.configure(withModel: game)
+            presCell.ratingsImageView.image = configureRatingsImage(rating: game.rating )
             return presCell
             
         case 1:
-            guard let screenCell = tableView.dequeueReusableCell(withIdentifier: ScreenShotsTableViewCell.id, for: indexPath) as? ScreenShotsTableViewCell else {
-                return UITableViewCell()
-            }
+            let screenCell: ScreenShotsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             screenCell.screenShotCollectionView.delegate = self
             screenCell.screenShotCollectionView.dataSource = self
-            screenCell.screenShotCollectionView.register(UINib(nibName: ScreenshotCollectionViewCell.id, bundle: nil), forCellWithReuseIdentifier: ScreenshotCollectionViewCell.id)
+            screenCell.screenShotCollectionView.register(cellType: ScreenshotCollectionViewCell.self)
             screenCell.screenShotCollectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
             return screenCell
             
         case 2:
-            guard let sumCell = tableView.dequeueReusableCell(withIdentifier: SummaryTableViewCell.id, for: indexPath) as? SummaryTableViewCell else {
-                return UITableViewCell()
-            }
-            sumCell.configure(summary: game.summary ?? "N/A")
+            let sumCell: SummaryTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            sumCell.configure(withModel: game)
             return sumCell
             
         case 3:
-            guard let platCell = tableView.dequeueReusableCell(withIdentifier: PlatformsTableViewCell.id, for: indexPath) as? PlatformsTableViewCell else {
-                return UITableViewCell()
-            }
-            platCell.platformPickerView.delegate = self
-            platCell.platformPickerView.dataSource = self
+            let platCell: PlatformsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            platCell.platformsPickerView.delegate = self
+            platCell.platformsPickerView.dataSource = self
+            platCell.platformsPickerView.setValue(UIColor(named: "DarkBlue"), forKey: "textColor")
             return platCell
             
         case 4:
-            guard let addCell = tableView.dequeueReusableCell(withIdentifier: AddGameTableViewCell.id, for: indexPath) as? AddGameTableViewCell else {
-                return UITableViewCell()
+            let addCell: AddGameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            addCell.didTapAdd = { [weak self] in
+                guard let strongSelf = self else {return}
+                strongSelf.game?.isOwned = true
+                strongSelf.dataStorage?.addToLibrary(game: game, index: strongSelf.pickerIndex ?? 0, completionHandler: {
+                    strongSelf.displayAlert(title: "Done!", message: "This game has been added to your library.")
+                })
+            }
+            addCell.didTapSeeWho = {
+                
             }
             return addCell
         default:
@@ -148,24 +152,28 @@ extension GameDetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScreenshotCollectionViewCell.id, for: indexPath) as? ScreenshotCollectionViewCell else {
-            return UICollectionViewCell()
+        let cell: ScreenshotCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        if let gameModel = game {
+            let imageId = gameModel.screenshots?[indexPath.row] ?? ""
+            if let imageURL = URL(string: String("\(ApiConfig.imageUrl)\(imageId).png")) {
+                cell.screenshotImageView.load(url: imageURL)
+            }
         }
-        let imageId = game?.screenshots?[indexPath.row].image_id ?? ""
-        let imageURL = "\(ApiConfig.imageUrl)\(imageId).png"
-        cell.screenshotImageView.load(url: URL(string: imageURL)!)
         return cell
     }
 }
 
 extension GameDetailViewController: UIPickerViewDelegate {
-
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.pickerIndex = row
+    }
 }
 
 extension GameDetailViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return game?.platforms?[row].name
+        return game?.platforms?[row]
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

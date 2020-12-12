@@ -9,11 +9,8 @@ import UIKit
 
 class ScreenShotsTableViewCell: UITableViewCell {
     
-    static let id = "ScreenShotsTableViewCell"
-    
     @IBOutlet weak var screenShotCollectionView: UICollectionView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

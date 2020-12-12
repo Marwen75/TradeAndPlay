@@ -8,8 +8,6 @@
 import UIKit
 
 class GameDetailPresentationTableViewCell: UITableViewCell {
-    
-    static let id = "GameDetailPresentationTableViewCell"
 
     @IBOutlet weak var titleLabel: RoundLabel!
     @IBOutlet weak var coverImageView: UIImageView!
@@ -18,9 +16,10 @@ class GameDetailPresentationTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingsLabel: UILabel!
     @IBOutlet weak var ratingsImageView: UIImageView!
     
-    func configure(genres: String, release: String, ratings: String) {
-        genreLabel.text = genres
-        releaseLabel.text = release
-        ratingsLabel.text = ratings
+    func configure(withModel model: GameModel) {
+        genreLabel.text = model.genres.joined(separator: ", ")
+        releaseLabel.text = "First released: \(configureDate(model: model))"
+        let rating = Int(round(model.rating))
+        ratingsLabel.text = "Rated: \(rating)/100"
     }
 }

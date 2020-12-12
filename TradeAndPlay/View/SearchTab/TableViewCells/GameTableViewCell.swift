@@ -8,8 +8,6 @@
 import UIKit
 
 class GameTableViewCell: UITableViewCell {
-    
-    static let id = "GameTableViewCell"
         
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var platformLabel: UILabel!
@@ -24,11 +22,15 @@ class GameTableViewCell: UITableViewCell {
         gameImageView.backgroundColor = .black
     }
     // func that will alow us to configure the cell
-    func configure(release: String, genres: String, platformCount: String, rating: String) {
-        ratingLabel.text = "Rating: \(rating)/100"
-        releaseLabel.text = release
-        genreLabel.text = "Genres: \(genres)"
-        platformLabel.text = "Available on \(platformCount) platform(s)."
+    func configure(withModel model: GameModel) {
+        let imgId = model.cover
+        gameImageView.load(url: URL(string: "\(ApiConfig.imageUrl)\(imgId ).png")!)
+        let rating = Int(round(model.rating))
+        ratingLabel.text = "Rated: \(rating)/100"
+        releaseLabel.text = "First released: \(configureDate(model: model))"
+        genreLabel.text = "Genres: \(model.genres.joined(separator: ", "))"
+        guard let count = model.platforms?.count else {return}
+        platformLabel.text = "Available on \(count) platform(s)."
     }
     
     override func awakeFromNib() {
@@ -38,5 +40,4 @@ class GameTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
 }

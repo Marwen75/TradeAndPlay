@@ -8,12 +8,22 @@
 import UIKit
 
 class AddGameTableViewCell: UITableViewCell {
-    
-    static let id = "AddGameTableViewCell"
 
     @IBOutlet weak var seeWhoButton: RoundButton!
-    
     @IBOutlet weak var addToLibraryButton: RoundButton!
+
+    var didTapSeeWho: (() -> Void)?
+    var didTapAdd: (() -> Void)?
+    
+    @IBAction func seeWhoButtonTaped(_ sender: Any) {
+        didTapSeeWho?()
+    }
+    
+    @IBAction func addToLibraryButtonTaped(_ sender: Any) {
+        didTapAdd?()
+    }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -9,8 +9,6 @@ import UIKit
 
 class LibraryTableViewCell: UITableViewCell {
     
-    static let id = "LibraryTableViewCell"
-    
     @IBOutlet weak var libraryCollectionView: UICollectionView!
     
 

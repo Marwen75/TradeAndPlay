@@ -9,12 +9,10 @@ import UIKit
 
 class SummaryTableViewCell: UITableViewCell {
     
-    static let id = "SummaryTableViewCell"
-    
     @IBOutlet weak var summaryLabel: RoundLabel!
     
-    func configure(summary: String) {
-        summaryLabel.text = summary
+    func configure(withModel model: GameModel) {
+        summaryLabel.text = model.summary
     }
     
 }

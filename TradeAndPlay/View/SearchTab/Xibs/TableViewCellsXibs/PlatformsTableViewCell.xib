@@ -17,23 +17,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="450" height="361"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2W5-GE-0mn">
-                        <rect key="frame" x="20" y="11" width="410" height="339"/>
+                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2V-CF-jPu">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="361"/>
                     </pickerView>
                 </subviews>
                 <color key="backgroundColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
-                    <constraint firstItem="2W5-GE-0mn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1RQ-cD-acN"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="2W5-GE-0mn" secondAttribute="trailing" id="CYE-K8-9jT"/>
-                    <constraint firstItem="2W5-GE-0mn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Q9Z-yF-t6P"/>
-                    <constraint firstItem="2W5-GE-0mn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="mu4-ar-dzd"/>
-                    <constraint firstItem="2W5-GE-0mn" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="nPj-3q-XyP"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="2W5-GE-0mn" secondAttribute="bottom" id="ngc-Ma-art"/>
+                    <constraint firstItem="J2V-CF-jPu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1Iz-Jh-xum"/>
+                    <constraint firstItem="J2V-CF-jPu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XK7-Xc-6d8"/>
+                    <constraint firstAttribute="bottom" secondItem="J2V-CF-jPu" secondAttribute="bottom" id="Ze1-QN-Y6X"/>
+                    <constraint firstAttribute="trailing" secondItem="J2V-CF-jPu" secondAttribute="trailing" id="w9Y-5q-rOd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="platformPickerView" destination="2W5-GE-0mn" id="APA-g7-Qqb"/>
+                <outlet property="platformsPickerView" destination="J2V-CF-jPu" id="slL-ga-uJC"/>
             </connections>
             <point key="canvasLocation" x="-53.623188405797109" y="35.825892857142854"/>
         </tableViewCell>

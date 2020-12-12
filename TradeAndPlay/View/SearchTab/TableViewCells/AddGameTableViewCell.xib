@@ -42,6 +42,9 @@
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="seeWhoButtonTaped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pyn-Vb-Eir"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgk-EX-WYo" customClass="RoundButton" customModule="TradeAndPlay" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="70" width="280" height="50"/>
@@ -64,6 +67,9 @@
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addToLibraryButtonTaped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GfJ-bB-VuM"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>

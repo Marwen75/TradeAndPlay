@@ -8,22 +8,16 @@
 import Foundation
 
 struct GameModel {
-    let id: Int
-    let cover: CoverModel?
+    let cover: String 
     let name: String
-    let platforms: [PlatformModel]?
-    let isOwned: Bool = false
-    let isSearched: Bool = false
-    let isTraded: Bool = false
+    let platforms: [String]?
+    let genres: [String]
+    let firstReleaseDate: Int64
+    let summary: String
+    let rating: Double
+    let screenshots: [String]?
+    var isOwned = false
+    var isSearched = false
+    var isTraded = false
 }
 
-struct PlatformModel {
-    let id: Int
-    let name: String
-}
-
-struct CoverModel {
-    let id: Int
-    let image_id: String
-    let url: String
-}

@@ -9,8 +9,6 @@ import UIKit
 
 class ScreenshotCollectionViewCell: UICollectionViewCell {
     
-    static let id = "ScreenshotCollectionViewCell"
-    
     @IBOutlet weak var screenshotImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -23,9 +21,4 @@ class ScreenshotCollectionViewCell: UICollectionViewCell {
         screenshotImageView.image = nil
         screenshotImageView.backgroundColor = .black
     }
-    
-    func configure() {
-        
-    }
-
 }

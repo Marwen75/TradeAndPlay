@@ -21,19 +21,24 @@ class SearchViewController: UIViewController {
     static let segueIdTwo = "searchToPlayers"
     
     var igdbService: IgdbService?
-    var games: [Game] = []
-    var users: [User] = []
+    var games: [GameModel] = []
+    var players: [User] = []
     var dataStorage: DataStorage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
+        customTextField.gameTextField.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SearchViewController.segueId {
             let gamesVC = segue.destination as! GamesViewController
             gamesVC.games = games
+            gamesVC.dataStorage = dataStorage
+        } else if segue.identifier == SearchViewController.segueIdTwo {
+            let playerVC = segue.destination as! PlayerViewController
+            playerVC.players = players
         }
     }
     
@@ -81,8 +86,9 @@ class SearchViewController: UIViewController {
             switch result {
             case .failure(let error):
                 strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
-            case .success(let users):
-                strongSelf.users = users
+            case .success(let players):
+                strongSelf.players = players
+                strongSelf.performSegue(withIdentifier: SearchViewController.segueIdTwo, sender: nil)
             }
         })
     }

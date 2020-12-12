@@ -10,8 +10,9 @@ import UIKit
 class GamesViewController: UIViewController {
     
     static let segueId = "listToDetail"
-    var games: [Game] = []
-    private var game: Game?
+    var games: [GameModel] = []
+    private var game: GameModel?
+    var dataStorage: DataStorage?
     
     @IBOutlet weak var gamesTableView: UITableView!
     
@@ -24,25 +25,23 @@ class GamesViewController: UIViewController {
         if segue.identifier == GamesViewController.segueId {
             let gameDetailVC = segue.destination as! GameDetailViewController
             gameDetailVC.game = game
+            gameDetailVC.dataStorage = dataStorage
         }
     }
     
-    
     // MARK: - Methods
     private func configureTableView() {
-        gamesTableView.sectionHeaderHeight = 60
-        gamesTableView.rowHeight = 400
-        gamesTableView.register(UINib(nibName: GameTableViewCell.id, bundle: nil), forCellReuseIdentifier: GameTableViewCell.id)
+        gamesTableView.sectionHeaderHeight = 70
+        gamesTableView.rowHeight = 350
+        gamesTableView.register(cellType: GameTableViewCell.self)
     }
 }
-
 
 // MARK: - Table view delegate
 extension GamesViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let gameToSend = games[indexPath.section]
         self.game = gameToSend
-        print(gameToSend.name)
         performSegue(withIdentifier: GamesViewController.segueId, sender: nil)
     }
 }
@@ -61,22 +60,9 @@ extension GamesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: GameTableViewCell.id, for: indexPath) as? GameTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        let imgId = games[indexPath.section].cover?.image_id
-        
-        cell.gameImageView.load(url: URL(string: "\(ApiConfig.imageUrl)\(imgId ?? "coluje").png")!)
-        
-        var genreNames = [String]()
-        games[indexPath.row].genres?.forEach { genreNames.append($0.name) }
-        
-        var platforms = [String]()
-        games[indexPath.section].platforms?.forEach { platforms.append($0.name) }
-        
-        cell.configure(release: configureDate(game: games[indexPath.section]), genres: genreNames.joined(separator: ", "), platformCount: "\(platforms.count)", rating: String(round(games[indexPath.section].rating ?? 0)))
-        
+        let cell: GameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        let gameModel = games[indexPath.section]
+        cell.configure(withModel: gameModel)
         return cell
     }
     

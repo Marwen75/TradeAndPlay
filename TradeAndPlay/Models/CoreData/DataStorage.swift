@@ -22,22 +22,63 @@ class DataStorage {
     
     // MARK: - CRUD
     
+    func fetchGames(completionHandler: @escaping (Result<[StoredGame], DataStorageError>) -> Void) {
+        let request: NSFetchRequest<StoredGame> = StoredGame.fetchRequest()
+        guard let games = try? objectContext.fetch(request) else {
+            completionHandler(.failure(.noGameFound))
+            return
+        }
+        completionHandler(.success(games))
+    }
+    
     func fetchUsers(named name: String, completionHandler: @escaping (Result<[User], DataStorageError>) -> Void) {
         let request: NSFetchRequest<User> =
             User.fetchRequest()
         request.predicate = NSPredicate(format: "nickname == %@", name)
-        if let fetchResults = try? objectContext.fetch(request) {
-            completionHandler(.success(fetchResults))
+        guard let fetchResults = try? objectContext.fetch(request) else {
+            completionHandler(.failure(.noPlayerFound))
+            return
         }
-        completionHandler(.failure(.noPlayerFound))
+        completionHandler(.success(fetchResults))
     }
     
+    func addUser() {
+        let user = User(context: objectContext)
+        user.nickname = "Dodo"
+        user.city = "Boulogne"
+        user.rating = 100
+        coreDataStack.saveContext()
+    }
     
-    func addToLibrary(game: Game, index: Int, completionHandler: @escaping () -> Void) {
+    func deleteUser() {
+        let request: NSFetchRequest<User> =
+            User.fetchRequest()
+        request.predicate = NSPredicate(format: "nickname == %@", "Dodo")
+        do {
+            let fetchResults = try objectContext.fetch(request)
+            fetchResults.forEach { objectContext.delete($0) }
+        } catch let error as NSError {
+            print(error.userInfo)
+        }
+        coreDataStack.saveContext()
+    }
+    
+    func fetchUsersWhoHasGame(named name: String, completionHandler: @escaping (Result<[User], DataStorageError>) -> Void) {
+        let request: NSFetchRequest<User> =
+            User.fetchRequest()
+        request.predicate = NSPredicate(format: "StoredGame == %@", name)
+        guard let fetchResults = try? objectContext.fetch(request) else {
+            completionHandler(.failure(.noPlayerFound))
+            return
+        }
+        completionHandler(.success(fetchResults))
+    }
+    
+    func addToLibrary(game: GameModel, index: Int, completionHandler: @escaping () -> Void) {
         let gameToStore = StoredGame(context: objectContext)
         gameToStore.name = game.name
-        gameToStore.cover = game.cover?.image_id
-        gameToStore.platform = game.platforms?[index].name
+        gameToStore.cover = game.cover
+        gameToStore.platform = game.platforms?[index]
         coreDataStack.saveContext()
         completionHandler()
     }
@@ -56,7 +97,7 @@ class DataStorage {
         coreDataStack.saveContext()
     }
     
-    func checkForGameInLibrary(named name: String, completionHandler: @escaping (Result<StoredGame, DataStorageError>) -> Void) {
+    func checkInLibraryForGame(named name: String, completionHandler: @escaping (Result<StoredGame, DataStorageError>) -> Void) {
         let request: NSFetchRequest<StoredGame> =
             StoredGame.fetchRequest()
         request.predicate = NSPredicate(format: "name == %@", name)

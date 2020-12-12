@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZLe-p8-rkf">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,7 +40,7 @@
                         <color key="badgeColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="HZK-DG-CDQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -57,12 +58,12 @@
             <objects>
                 <viewController id="hxd-Rq-8ZI" customClass="LibraryViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gAR-Y4-6h4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zhN-jB-3Jg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
-                                <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
+                                <color key="backgroundColor" name="Sand"/>
                                 <connections>
                                     <outlet property="dataSource" destination="hxd-Rq-8ZI" id="hTO-ne-0sN"/>
                                     <outlet property="delegate" destination="hxd-Rq-8ZI" id="CLP-ob-Qui"/>
@@ -70,7 +71,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TLB-Na-Ynw"/>
-                        <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="TLB-Na-Ynw" firstAttribute="trailing" secondItem="zhN-jB-3Jg" secondAttribute="trailing" id="DQJ-Wn-off"/>
                             <constraint firstItem="zhN-jB-3Jg" firstAttribute="leading" secondItem="TLB-Na-Ynw" secondAttribute="leading" id="ien-yg-jUm"/>
@@ -81,11 +82,48 @@
                     <navigationItem key="navigationItem" id="FpI-3P-IeN"/>
                     <connections>
                         <outlet property="libraryTableView" destination="zhN-jB-3Jg" id="phV-HC-kqM"/>
+                        <segue destination="59d-qY-rI3" kind="show" identifier="libraryToPlayer" id="y2P-s5-Iqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Qc-t3-4g5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1142.5233644859813" y="-395.24838012958963"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="gQb-aM-qHG">
+            <objects>
+                <viewController id="59d-qY-rI3" customClass="PlayerViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R7m-8b-ahd">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2D8-o7-dhQ">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
+                                <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="59d-qY-rI3" id="bSe-am-bSC"/>
+                                    <outlet property="delegate" destination="59d-qY-rI3" id="RI3-FK-gV5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eBm-2W-GHk"/>
+                        <color key="backgroundColor" name="DarkBlue"/>
+                        <constraints>
+                            <constraint firstItem="2D8-o7-dhQ" firstAttribute="leading" secondItem="eBm-2W-GHk" secondAttribute="leading" id="6AT-6Q-s5i"/>
+                            <constraint firstItem="eBm-2W-GHk" firstAttribute="bottom" secondItem="2D8-o7-dhQ" secondAttribute="bottom" id="TAC-yn-FAf"/>
+                            <constraint firstItem="eBm-2W-GHk" firstAttribute="trailing" secondItem="2D8-o7-dhQ" secondAttribute="trailing" id="ene-Xg-uWI"/>
+                            <constraint firstItem="2D8-o7-dhQ" firstAttribute="top" secondItem="eBm-2W-GHk" secondAttribute="top" id="n6Z-89-7JF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vaa-8E-RbZ"/>
+                    <connections>
+                        <outlet property="playersTableView" destination="2D8-o7-dhQ" id="nhL-K0-M1C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dKg-pT-K81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2477" y="-388"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jhU-zf-gcW">
@@ -93,7 +131,7 @@
                 <navigationController id="YYe-wH-QVN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" selectedImage="games" systemItem="search" id="81s-Ij-0Cs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="LSz-aM-2Cv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
@@ -114,11 +152,11 @@
             <objects>
                 <viewController id="YD5-Zi-Xmp" customClass="SearchViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hod-P4-1Pn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6R-U6-hKJ" customClass="RoundButton" customModule="TradeAndPlay" customModuleProvider="target">
-                                <rect key="frame" x="36" y="494" width="303" height="50"/>
+                                <rect key="frame" x="40" y="675" width="348" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9Tw-cO-CDp"/>
@@ -143,33 +181,33 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking for a game ? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4I-he-GEO">
-                                <rect key="frame" x="89.5" y="20" width="196.5" height="31.5"/>
+                                <rect key="frame" x="115.66666666666667" y="20" width="196.66666666666663" height="31.666666666666671"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="23"/>
                                 <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="llI-vo-nP3">
-                                <rect key="frame" x="169" y="500.5" width="37" height="37"/>
+                                <rect key="frame" x="195.66666666666666" y="681.66666666666663" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CJ-WH-mHQ" customClass="CustomTextField" customModule="TradeAndPlay" customModuleProvider="target">
-                                <rect key="frame" x="40" y="81.5" width="295" height="100"/>
+                                <rect key="frame" x="40" y="81.666666666666657" width="348" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="rVV-qM-TOv"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bvu-x8-34F">
-                                <rect key="frame" x="100" y="211.5" width="175.5" height="61"/>
+                                <rect key="frame" x="126.33333333333333" y="211.66666666666669" width="175.33333333333337" height="61"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search by player name ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfg-on-z3o">
-                                        <rect key="frame" x="0.0" y="0.0" width="175.5" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="175.33333333333334" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ggY-i5-VXN">
-                                        <rect key="frame" x="63" y="30" width="51" height="31"/>
+                                        <rect key="frame" x="63.333333333333329" y="30" width="51" height="31"/>
                                         <color key="onTintColor" systemColor="systemGreenColor"/>
                                         <connections>
                                             <action selector="switchTaped:" destination="YD5-Zi-Xmp" eventType="valueChanged" id="UqJ-WG-oAg"/>
@@ -209,6 +247,7 @@
                         <outlet property="searchButton" destination="b6R-U6-hKJ" id="UkR-eT-5p6"/>
                         <outlet property="switchLabel" destination="hfg-on-z3o" id="eRJ-Rp-wkO"/>
                         <segue destination="oay-SO-oxz" kind="show" identifier="searchToGames" id="jng-nX-09y"/>
+                        <segue destination="59d-qY-rI3" kind="show" identifier="searchToPlayers" id="hLu-te-8xD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ko7-Ep-5bQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -220,11 +259,11 @@
             <objects>
                 <viewController id="oay-SO-oxz" customClass="GamesViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A0O-cr-nAK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KyH-n4-sZj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
                                 <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
@@ -262,11 +301,11 @@
             <objects>
                 <viewController id="aQp-ll-qTC" customClass="GameDetailViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aUu-H8-8g6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Il7-I4-k1A">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
                                 <color key="backgroundColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="dataSource" destination="aQp-ll-qTC" id="pY6-TB-DDI"/>
@@ -286,11 +325,12 @@
                     <navigationItem key="navigationItem" id="c5w-kU-3rW"/>
                     <connections>
                         <outlet property="gameDetailTableView" destination="Il7-I4-k1A" id="yuF-3w-Vmc"/>
+                        <segue destination="59d-qY-rI3" kind="show" identifier="gameToPlayer" id="wOY-6x-eZK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUr-Vp-hlH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2939.7196261682243" y="415.98272138228947"/>
+            <point key="canvasLocation" x="2964" y="416"/>
         </scene>
     </scenes>
     <designables>
@@ -298,9 +338,18 @@
             <size key="intrinsicContentSize" width="66" height="47"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="y2P-s5-Iqh"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="Library" width="35" height="31.5"/>
-        <image name="games" width="35" height="35"/>
+        <image name="Library" width="35" height="32"/>
+        <image name="games" width="31.666666030883789" height="31.666666030883789"/>
+        <namedColor name="DarkBlue">
+            <color red="0.14000000059604645" green="0.289000004529953" blue="0.36500000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Sand">
+            <color red="0.94499999284744263" green="0.91500002145767212" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

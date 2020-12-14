@@ -24,13 +24,15 @@ class PlayerViewController: UIViewController {
         playersTableView.estimatedRowHeight = 44.0
         playersTableView.rowHeight = UITableView.automaticDimension
     }
-    
 }
 
 extension PlayerViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? PlayerTableViewCell {
-            cell.bottomView.isHidden = !cell.bottomView.isHidden
+            UIView.animate(withDuration: 0.3) {
+                cell.bottomView.isHidden = !cell.bottomView.isHidden
+            }
         }
         tableView.beginUpdates()
         tableView.endUpdates()

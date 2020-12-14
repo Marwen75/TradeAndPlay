@@ -10,9 +10,10 @@ import Foundation
 enum DataStorageError: Error {
     
     case noPlayerFound
+    case noPlayerWithGameFound
     case noGameInLibrary
     case noGameFound
-    case noInternet
+    case alreadyInSearchList
 
     var errorDescription: String {
        return "Oups !"
@@ -20,13 +21,15 @@ enum DataStorageError: Error {
     var failureReason: String {
         switch self {
         case .noPlayerFound:
-            return "No trader with this name found."
+            return "No user with this name found."
+        case .noPlayerWithGameFound:
+            return "No user has this game to trade, add the game to your search list"
         case .noGameInLibrary:
             return "You don't have any games in your library yet"
         case .noGameFound:
             return "No game with this name to trade actually, add it to you search list"
-        case .noInternet:
-            return "Service unavailable. You don't seem to have an internet connexion."
+        case .alreadyInSearchList:
+            return "This game is already in your search list !"
         }
     }
 }

@@ -16,8 +16,6 @@ struct GameModel {
     let summary: String
     let rating: Double
     let screenshots: [String]?
-    var isOwned = false
-    var isSearched = false
     var isTraded = false
 }
 

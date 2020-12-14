@@ -194,9 +194,7 @@
 				C230D7F6257FF2A400ED28C2 /* PlatformsTableViewCell.swift */,
 				C230D7D0257FCB4C00ED28C2 /* GameDetailPresentationTableViewCell.swift */,
 				C230D8212581088600ED28C2 /* AddGameTableViewCell.swift */,
-				C230D8222581088600ED28C2 /* AddGameTableViewCell.xib */,
 				C230D8CE2584A69600ED28C2 /* PlayerTableViewCell.swift */,
-				C230D8CF2584A69600ED28C2 /* PlayerTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -216,6 +214,8 @@
 				C2B370592576A68900282E45 /* GameTableViewCell.xib */,
 				C230D7D8257FCF5E00ED28C2 /* SummaryTableViewCell.xib */,
 				C230D7F7257FF2A400ED28C2 /* PlatformsTableViewCell.xib */,
+				C230D8222581088600ED28C2 /* AddGameTableViewCell.xib */,
+				C230D8CF2584A69600ED28C2 /* PlayerTableViewCell.xib */,
 				C230D7D1257FCB4C00ED28C2 /* GameDetailPresentationTableViewCell.xib */,
 			);
 			path = TableViewCellsXibs;

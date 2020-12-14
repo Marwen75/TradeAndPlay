@@ -11,9 +11,11 @@ class AddGameTableViewCell: UITableViewCell {
 
     @IBOutlet weak var seeWhoButton: RoundButton!
     @IBOutlet weak var addToLibraryButton: RoundButton!
-
+    @IBOutlet weak var addToSearchListButton: RoundButton!
+    
     var didTapSeeWho: (() -> Void)?
     var didTapAdd: (() -> Void)?
+    var didTapAddToSearch: (() -> Void)?
     
     @IBAction func seeWhoButtonTaped(_ sender: Any) {
         didTapSeeWho?()
@@ -23,6 +25,9 @@ class AddGameTableViewCell: UITableViewCell {
         didTapAdd?()
     }
     
+    @IBAction func addToSearchButtonTaped(_ sender: Any) {
+        didTapAddToSearch?()
+    }
     
     
     override func awakeFromNib() {

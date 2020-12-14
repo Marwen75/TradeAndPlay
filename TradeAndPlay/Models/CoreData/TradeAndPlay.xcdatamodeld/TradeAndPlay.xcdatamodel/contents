@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="SearchedGame" representedClassName="SearchedGame" syncable="YES" codeGenerationType="class">
+        <attribute name="cover" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="platform" optional="YES" attributeType="String"/>
+        <relationship name="searchList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="searchedGames" inverseEntity="User"/>
+    </entity>
     <entity name="StoredGame" representedClassName="StoredGame" syncable="YES" codeGenerationType="class">
         <attribute name="cover" optional="YES" attributeType="String"/>
-        <attribute name="isOwned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="isSearched" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isTraded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="platform" optional="YES" attributeType="String"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="storedGames" inverseEntity="User"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="storedGames" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="city" optional="YES" attributeType="String"/>
         <attribute name="nickname" optional="YES" attributeType="String"/>
         <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="storedGames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StoredGame" inverseName="user" inverseEntity="StoredGame"/>
+        <relationship name="searchedGames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SearchedGame" inverseName="searchList" inverseEntity="SearchedGame"/>
+        <relationship name="storedGames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StoredGame" inverseName="owner" inverseEntity="StoredGame"/>
     </entity>
     <elements>
-        <element name="StoredGame" positionX="1189.6171875" positionY="-168.42578125" width="128" height="148"/>
-        <element name="User" positionX="938.890625" positionY="-168.0078125" width="128" height="103"/>
+        <element name="StoredGame" positionX="1189.6171875" positionY="-168.42578125" width="128" height="118"/>
+        <element name="User" positionX="938.890625" positionY="-168.0078125" width="128" height="118"/>
+        <element name="SearchedGame" positionX="1103.99609375" positionY="-2.91015625" width="128" height="103"/>
     </elements>
 </model>

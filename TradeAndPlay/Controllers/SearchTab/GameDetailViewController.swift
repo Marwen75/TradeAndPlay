@@ -11,8 +11,10 @@ class GameDetailViewController: UIViewController {
     
     @IBOutlet weak var gameDetailTableView: UITableView!
     
+    static let segueId = "gameToPlayer"
     var dataStorage: DataStorage?
     var game: GameModel?
+    var players: [User]?
     private var pickerIndex: Int?
     private let ratingStarsImages: [UIImage?] = [UIImage(named: "etoile1"), UIImage(named: "etoile2"), UIImage(named: "etoile3"), UIImage(named: "etoile4"), UIImage(named: "etoile5")]
     
@@ -22,7 +24,10 @@ class GameDetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == GameDetailViewController.segueId {
+            let playerVC = segue.destination as! PlayerViewController
+            playerVC.players = players
+        }
     }
     
     private func configureTableView() {
@@ -52,7 +57,6 @@ class GameDetailViewController: UIViewController {
 }
 
 extension GameDetailViewController: UITableViewDelegate {
-    
     
 }
 
@@ -90,7 +94,6 @@ extension GameDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let game = game else {return UITableViewCell()}
         switch indexPath.section {
         case 0:
@@ -103,7 +106,6 @@ extension GameDetailViewController: UITableViewDataSource {
             
         case 1:
             let screenCell: ScreenShotsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            screenCell.screenShotCollectionView.delegate = self
             screenCell.screenShotCollectionView.dataSource = self
             screenCell.screenShotCollectionView.register(cellType: ScreenshotCollectionViewCell.self)
             screenCell.screenShotCollectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -125,23 +127,43 @@ extension GameDetailViewController: UITableViewDataSource {
             let addCell: AddGameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             addCell.didTapAdd = { [weak self] in
                 guard let strongSelf = self else {return}
-                strongSelf.game?.isOwned = true
-                strongSelf.dataStorage?.addToLibrary(game: game, index: strongSelf.pickerIndex ?? 0, completionHandler: {
-                    strongSelf.displayAlert(title: "Done!", message: "This game has been added to your library.")
+                strongSelf.dataStorage?.addToLibrary(game: game, platformIndex: strongSelf.pickerIndex ?? 0, completionHandler: { result in
+                    switch result {
+                    case .failure(let error):
+                        strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
+                    case .success(let name):
+                        strongSelf.displayAlert(title: "Done!", message: "\(name) has been added to your library.")
+                    }
                 })
             }
-            addCell.didTapSeeWho = {
-                
+            addCell.didTapSeeWho = { [weak self] in
+                guard let strongSelf = self else {return}
+                strongSelf.dataStorage?.fetchUsersWhoHasGame(named: game.name, completionHandler: { result in
+                    switch result {
+                    case .failure(let error):
+                        strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
+                    case .success(let users):
+                        strongSelf.players = users
+                        strongSelf.performSegue(withIdentifier: GameDetailViewController.segueId, sender: nil)
+                    }
+                })
+            }
+            addCell.didTapAddToSearch = { [weak self] in
+                guard let strongSelf = self else {return}
+                strongSelf.dataStorage?.addToSearchList(game: game, platformIndex: strongSelf.pickerIndex ?? 0, completionHandler: { result in
+                    switch result {
+                    case .failure(let error):
+                        strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
+                    case .success(let gameName):
+                        strongSelf.displayAlert(title: "Done!", message: "\(gameName) has been added to your Search list.")
+                    }
+                })
             }
             return addCell
         default:
             return UITableViewCell()
         }
     }
-}
-
-extension GameDetailViewController: UICollectionViewDelegate {
-    
 }
 
 extension GameDetailViewController: UICollectionViewDataSource {

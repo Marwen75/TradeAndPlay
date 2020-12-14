@@ -79,7 +79,7 @@
                             <constraint firstItem="zhN-jB-3Jg" firstAttribute="top" secondItem="TLB-Na-Ynw" secondAttribute="top" id="x83-1E-95p"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FpI-3P-IeN"/>
+                    <navigationItem key="navigationItem" id="Kr1-F7-Mn6"/>
                     <connections>
                         <outlet property="libraryTableView" destination="zhN-jB-3Jg" id="phV-HC-kqM"/>
                         <segue destination="59d-qY-rI3" kind="show" identifier="libraryToPlayer" id="y2P-s5-Iqh"/>

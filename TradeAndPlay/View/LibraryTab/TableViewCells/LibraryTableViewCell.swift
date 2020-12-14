@@ -9,6 +9,13 @@ import UIKit
 
 class LibraryTableViewCell: UITableViewCell {
     
+    
+    @IBOutlet weak var bottomView: UIView! {
+        didSet {
+            bottomView.isHidden = true
+        }
+    }
+    
     @IBOutlet weak var libraryCollectionView: UICollectionView!
     
 

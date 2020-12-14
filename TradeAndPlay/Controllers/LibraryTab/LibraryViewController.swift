@@ -10,6 +10,7 @@ import UIKit
 class LibraryViewController: UIViewController {
     
     private var storedGames: [StoredGame]?
+    private var searchedGames: [SearchedGame]?
     var dataStorage: DataStorage?
     
     @IBOutlet weak var libraryTableView: UITableView!
@@ -22,26 +23,49 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        dataStorage?.fetchGames(completionHandler: { result in
+        dataStorage?.fetchStoredGames(completionHandler: { [weak self] result in
+            guard let strongSelf = self else {return}
             switch result {
             case .failure(let error):
-                self.displayAlert(title: error.errorDescription, message: error.failureReason)
+                strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
             case .success(let games):
-                self.storedGames = games
+                strongSelf.storedGames = games
+                print(games)
+            }
+        })
+        dataStorage?.fetchSearchedGames(completionHandler: {  [weak self] result in
+            guard let strongSelf = self else {return}
+            switch result {
+            case .failure(let error):
+                strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
+            case .success(let games):
+                strongSelf.searchedGames = games
+                print(games)
             }
         })
     }
     
     private func configureTableView() {
-        libraryTableView.rowHeight = 570
+        //libraryTableView.rowHeight = 570
+        libraryTableView.estimatedRowHeight = 44.0
+        libraryTableView.rowHeight = UITableView.automaticDimension
         libraryTableView.sectionHeaderHeight = 60
         libraryTableView.register(cellType: LibraryTableViewCell.self)
     }
-    
 }
 
 extension LibraryViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? LibraryTableViewCell {
+            UIView.animate(withDuration: 0.3) {
+                cell.bottomView.isHidden = !cell.bottomView.isHidden
+            }
+        }
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension LibraryViewController: UITableViewDataSource {
@@ -79,8 +103,6 @@ extension LibraryViewController: UITableViewDataSource {
         cell.libraryCollectionView.register(cellType: LibraryCollectionViewCell.self)
         return cell
     }
-    
-    
 }
 
 extension LibraryViewController: UICollectionViewDelegate {
@@ -90,21 +112,20 @@ extension LibraryViewController: UICollectionViewDelegate {
 extension LibraryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return storedGames?.count ?? 25
+        return storedGames?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: LibraryCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        if let storedGames = storedGames{
+        if let storedGames = storedGames {
             cell.configure(whitStoredGame: storedGames[indexPath.row])
         }
         return cell
     }
-        
 }
 
 extension LibraryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 250, height: 250)
+        return CGSize(width: 200, height: 200)
     }
 }

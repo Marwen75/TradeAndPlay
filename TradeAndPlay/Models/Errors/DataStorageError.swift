@@ -14,6 +14,8 @@ enum DataStorageError: Error {
     case noGameInLibrary
     case noGameFound
     case alreadyInSearchList
+    case noCurrentTrade
+    case noDiscussion
 
     var errorDescription: String {
        return "Oups !"
@@ -30,6 +32,10 @@ enum DataStorageError: Error {
             return "No game with this name to trade actually, add it to you search list"
         case .alreadyInSearchList:
             return "This game is already in your search list !"
+        case .noCurrentTrade:
+            return "You don't have any current or passed trade yet"
+        case .noDiscussion:
+            return "You don't have any messages yet"
         }
     }
 }

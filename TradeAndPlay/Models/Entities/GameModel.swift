@@ -10,7 +10,7 @@ import Foundation
 struct GameModel {
     let cover: String 
     let name: String
-    let platforms: [String]?
+    var platform: String
     let genres: [String]
     let firstReleaseDate: Int64
     let summary: String
@@ -18,4 +18,3 @@ struct GameModel {
     let screenshots: [String]?
     var isTraded = false
 }
-

@@ -9,9 +9,9 @@ import UIKit
 
 class AddGameTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var seeWhoButton: RoundButton!
-    @IBOutlet weak var addToLibraryButton: RoundButton!
-    @IBOutlet weak var addToSearchListButton: RoundButton!
+    @IBOutlet weak var seeWhoButton: UIButton!
+    @IBOutlet weak var addToLibraryButton: UIButton!
+    @IBOutlet weak var addToSearchListButton: UIButton!
     
     var didTapSeeWho: (() -> Void)?
     var didTapAdd: (() -> Void)?
@@ -32,7 +32,7 @@ class AddGameTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

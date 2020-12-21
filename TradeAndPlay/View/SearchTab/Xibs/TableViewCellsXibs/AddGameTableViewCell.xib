@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,17 +18,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="226"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YQC-P0-q7G">
-                        <rect key="frame" x="20" y="20" width="280" height="190"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YQC-P0-q7G">
+                        <rect key="frame" x="20" y="20" width="280" height="196"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIy-e9-Oik" customClass="RoundButton" customModule="TradeAndPlay" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIy-e9-Oik">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="196"/>
+                                <color key="backgroundColor" red="0.6000829339" green="0.82166296240000003" blue="0.61566299199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="cds-Cn-wRJ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="cds-Cn-wRJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
-                                <state key="normal" title="See who has it">
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="15"/>
+                                <state key="normal" title="who has it?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -41,16 +41,28 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="seeWhoButtonTaped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pyn-Vb-Eir"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meg-BC-g2z" customClass="RoundButton" customModule="TradeAndPlay" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="70" width="280" height="50"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
-                                <state key="normal" title="Add to your search list">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meg-BC-g2z">
+                                <rect key="frame" x="100" y="0.0" width="80" height="196"/>
+                                <color key="backgroundColor" red="0.89674144980000003" green="0.54882335660000003" blue="0.58431613449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="15"/>
+                                <state key="normal" title="Add to search list">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -68,14 +80,11 @@
                                     <action selector="addToSearchButtonTaped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NGj-w3-Yam"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgk-EX-WYo" customClass="RoundButton" customModule="TradeAndPlay" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="140" width="280" height="50"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="MkB-eU-hf5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
-                                <state key="normal" title="Add to your library">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgk-EX-WYo">
+                                <rect key="frame" x="200" y="0.0" width="80" height="196"/>
+                                <color key="backgroundColor" red="0.40306270119999998" green="0.55350995059999997" blue="0.76473730799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="15"/>
+                                <state key="normal" title="Add to owned list">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -88,6 +97,18 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addToLibraryButtonTaped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GfJ-bB-VuM"/>
@@ -96,15 +117,16 @@
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" name="Sand"/>
                 <constraints>
                     <constraint firstItem="YQC-P0-q7G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="2mO-5A-JZf"/>
                     <constraint firstAttribute="trailing" secondItem="YQC-P0-q7G" secondAttribute="trailing" constant="20" id="680-VA-sfX"/>
                     <constraint firstItem="YQC-P0-q7G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="l4Y-M3-YRY"/>
-                    <constraint firstAttribute="bottom" secondItem="YQC-P0-q7G" secondAttribute="bottom" constant="20" id="z8d-KD-BtY"/>
+                    <constraint firstAttribute="bottom" secondItem="YQC-P0-q7G" secondAttribute="bottom" constant="10" id="z8d-KD-BtY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" name="DarkBlue"/>
             <connections>
                 <outlet property="addToLibraryButton" destination="Bgk-EX-WYo" id="WPq-qe-MIs"/>
                 <outlet property="addToSearchListButton" destination="meg-BC-g2z" id="pG7-To-u8X"/>
@@ -113,26 +135,12 @@
             <point key="canvasLocation" x="-71.014492753623188" y="64.285714285714278"/>
         </tableViewCell>
     </objects>
-    <designables>
-        <designable name="Bgk-EX-WYo">
-            <size key="intrinsicContentSize" width="152" height="40"/>
-        </designable>
-        <designable name="gIy-e9-Oik">
-            <size key="intrinsicContentSize" width="115" height="40"/>
-        </designable>
-        <designable name="meg-BC-g2z">
-            <size key="intrinsicContentSize" width="179" height="40"/>
-        </designable>
-    </designables>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="DarkBlue">
+            <color red="0.14000000059604645" green="0.289000004529953" blue="0.36500000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Sand">
+            <color red="0.94499999284744263" green="0.91500002145767212" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

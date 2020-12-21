@@ -22,15 +22,14 @@ class GameTableViewCell: UITableViewCell {
         gameImageView.backgroundColor = .black
     }
     // func that will alow us to configure the cell
-    func configure(withModel model: GameModel) {
+    func configure(withModel model: GameModel, platform: String) {
         let imgId = model.cover
         gameImageView.load(url: URL(string: "\(ApiConfig.imageUrl)\(imgId ).png")!)
         let rating = Int(round(model.rating))
         ratingLabel.text = "Rated: \(rating)/100"
         releaseLabel.text = "First released: \(configureDate(model: model))"
         genreLabel.text = "Genres: \(model.genres.joined(separator: ", "))"
-        guard let count = model.platforms?.count else {return}
-        platformLabel.text = "Available on \(count) platform(s)."
+        platformLabel.text = platform
     }
     
     override func awakeFromNib() {

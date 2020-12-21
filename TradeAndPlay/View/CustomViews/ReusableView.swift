@@ -10,12 +10,12 @@ import UIKit
 
 protocol ReusableView {
     
-    static var reuseIdentifier: String { get }
+    static var defaultReuseIdentifier: String { get }
 }
 
 extension ReusableView {
     
-    static var reuseIdentifier: String {
+    static var defaultReuseIdentifier: String {
         return String(describing: self)
     }
 }

@@ -11,8 +11,10 @@ class GamesViewController: UIViewController {
     
     static let segueId = "listToDetail"
     var games: [GameModel] = []
+    var platform: String?
     private var game: GameModel?
-    var dataStorage: DataStorage?
+    var gameStorage: GameStorage?
+    var dummyUserStorage: UserStorage?
     
     @IBOutlet weak var gamesTableView: UITableView!
     
@@ -24,15 +26,17 @@ class GamesViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == GamesViewController.segueId {
             let gameDetailVC = segue.destination as! GameDetailViewController
+            game?.platform = platform ?? ""
             gameDetailVC.game = game
-            gameDetailVC.dataStorage = dataStorage
+            gameDetailVC.gameStorage = gameStorage
+            gameDetailVC.dummyUserStorage = dummyUserStorage
         }
     }
     
     // MARK: - Methods
     private func configureTableView() {
         gamesTableView.sectionHeaderHeight = 70
-        gamesTableView.rowHeight = 350
+        gamesTableView.rowHeight = 300
         gamesTableView.register(cellType: GameTableViewCell.self)
     }
     
@@ -68,7 +72,7 @@ extension GamesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: GameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let gameModel = games[indexPath.section]
-        cell.configure(withModel: gameModel)
+        cell.configure(withModel: gameModel, platform: platform ?? "")
         return cell
     }
     

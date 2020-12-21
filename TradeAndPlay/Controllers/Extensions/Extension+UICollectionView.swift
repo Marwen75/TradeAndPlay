@@ -9,20 +9,21 @@ import Foundation
 import UIKit
 
 extension UICollectionView {
+    
     func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
-        guard let cell = dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
+        guard let cell = dequeueReusableCell(withReuseIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {
             fatalError("Problem for dequeuing")
         }
         return cell
     }
     
     func register<T: UICollectionViewCell>(cellType: T.Type) {
-        let className = cellType.reuseIdentifier
+        let className = cellType.defaultReuseIdentifier
         let nib = UINib(nibName: className, bundle: nil)
         register(nib, forCellWithReuseIdentifier: className)
     }
-
-     func register<T: UICollectionViewCell>(cellTypes: [T.Type]) {
+    
+    func register<T: UICollectionViewCell>(cellTypes: [T.Type]) {
         cellTypes.forEach { register(cellType: $0) }
     }
 }

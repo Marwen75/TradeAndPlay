@@ -1,28 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Message" representedClassName="Message" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isReceiving" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="senderName" optional="YES" attributeType="String"/>
+        <relationship name="messages" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="messages" inverseEntity="User"/>
+    </entity>
+    <entity name="OwnedGame" representedClassName="OwnedGame" syncable="YES" codeGenerationType="class">
+        <attribute name="cover" optional="YES" attributeType="String"/>
+        <attribute name="isTraded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="platform" optional="YES" attributeType="String"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="ownedGames" inverseEntity="User"/>
+    </entity>
     <entity name="SearchedGame" representedClassName="SearchedGame" syncable="YES" codeGenerationType="class">
         <attribute name="cover" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="platform" optional="YES" attributeType="String"/>
         <relationship name="searchList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="searchedGames" inverseEntity="User"/>
     </entity>
-    <entity name="StoredGame" representedClassName="StoredGame" syncable="YES" codeGenerationType="class">
-        <attribute name="cover" optional="YES" attributeType="String"/>
-        <attribute name="isTraded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="platform" optional="YES" attributeType="String"/>
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="storedGames" inverseEntity="User"/>
+    <entity name="Trade" representedClassName="Trade" syncable="YES" codeGenerationType="class">
+        <attribute name="beginAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="endAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="trades" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="city" optional="YES" attributeType="String"/>
         <attribute name="nickname" optional="YES" attributeType="String"/>
         <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Message" inverseName="messages" inverseEntity="Message"/>
+        <relationship name="ownedGames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OwnedGame" inverseName="owner" inverseEntity="OwnedGame"/>
         <relationship name="searchedGames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SearchedGame" inverseName="searchList" inverseEntity="SearchedGame"/>
-        <relationship name="storedGames" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StoredGame" inverseName="owner" inverseEntity="StoredGame"/>
+        <relationship name="trades" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Trade" inverseName="user" inverseEntity="Trade"/>
     </entity>
     <elements>
-        <element name="StoredGame" positionX="1189.6171875" positionY="-168.42578125" width="128" height="118"/>
-        <element name="User" positionX="938.890625" positionY="-168.0078125" width="128" height="118"/>
-        <element name="SearchedGame" positionX="1103.99609375" positionY="-2.91015625" width="128" height="103"/>
+        <element name="Message" positionX="759.2734375" positionY="-380.40234375" width="128" height="118"/>
+        <element name="OwnedGame" positionX="774.75" positionY="-122.23828125" width="128" height="118"/>
+        <element name="SearchedGame" positionX="378.43359375" positionY="-288.83984375" width="128" height="103"/>
+        <element name="Trade" positionX="489.1484375" positionY="7.4921875" width="128" height="118"/>
+        <element name="User" positionX="579.88671875" positionY="-250.63671875" width="128" height="148"/>
     </elements>
 </model>

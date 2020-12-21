@@ -11,4 +11,5 @@ class ApiConfig {
     static let baseUrl = "https://api.igdb.com/v4/games"
     static let imageUrl = "https://images.igdb.com/igdb/image/upload/t_cover_big/"
     static let imageSmallUrl = "https://images.igdb.com/igdb/image/upload/t_cover_small/"
+    
 }

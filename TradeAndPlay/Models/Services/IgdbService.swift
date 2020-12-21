@@ -8,15 +8,15 @@
 import Foundation
 
 class IgdbService {
-   
+    
     var session: URLSession
     
     init(session: URLSession) {
         self.session = session
     }
     
-    func post(withName name: String, completionHandler: @escaping (Result<[GameModel], ApiError>) -> Void) {
-        guard let url = createRequest(name: name) else {return}
+    func post(withName name: String, platform: String, completionHandler: @escaping (Result<[GameModel], ApiError>) -> Void) {
+        guard let url = createRequest(name: name, platform: platform) else {return}
         let task = session.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async { [self] in
                 guard let data = data, error == nil,
@@ -39,10 +39,10 @@ class IgdbService {
         task.resume()
     }
     
-    private func createRequest(name: String) -> URLRequest? {
+    private func createRequest(name: String, platform: String) -> URLRequest? {
         let url = URL(string: ApiConfig.baseUrl)
         var request = URLRequest(url: url!)
-        request.httpBody = "fields name, summary, first_release_date, rating, cover, platforms, platforms.name, genres, genres.name, cover.image_id, screenshots, screenshots.image_id; search \"\(name)\"; limit 200; where version_parent = null;".data(using: .utf8, allowLossyConversion: false)
+        request.httpBody = "fields name, summary, first_release_date, rating, cover, platforms, platforms.name, genres, genres.name, cover.image_id, screenshots, screenshots.image_id; search \"\(name)\"; limit 200; where version_parent = null; where platforms.name = \"\(platform)\";".data(using: .utf8, allowLossyConversion: false)
         request.httpMethod = "POST"
         request.setValue(ApiKey.id, forHTTPHeaderField: "Client-ID")
         request.setValue(ApiKey.auth, forHTTPHeaderField: "Authorization")
@@ -52,16 +52,20 @@ class IgdbService {
     
     private func createGameModels(response: [Game]) -> [GameModel] {
         var gameModels: [GameModel] = []
-        response.forEach { gameModels.append(GameModel(cover: $0.cover?.image_id ?? "", name: $0.name, platforms: sortGameData(i: 1, game: $0), genres: sortGameData(i: 3, game: $0), firstReleaseDate: $0.first_release_date ?? 0, summary: $0.summary ?? "N/A", rating: $0.rating ?? 0, screenshots: sortGameData(i: 2, game: $0))) }
-       return gameModels
+        response.forEach { game in
+            gameModels.append(GameModel(cover: game.cover?.image_id ?? "",
+                                        name: game.name, platform: "",
+                                        genres: sortGameData(i: 1, game: game),
+                                        firstReleaseDate: game.first_release_date ?? 0,
+                                        summary: game.summary ?? "N/A",
+                                        rating: game.rating ?? 0,
+                                        screenshots: sortGameData(i: 0, game: game))) }
+        return gameModels
     }
     
     private func sortGameData(i: Int, game: Game) -> [String] {
         var dataArray: [String] = []
-        if i == 1 {
-            game.platforms?.forEach {dataArray.append($0.name)}
-            return dataArray
-        } else if i == 2 {
+        if i == 0 {
             game.screenshots?.forEach {dataArray.append($0.image_id)}
             return dataArray
         } else {

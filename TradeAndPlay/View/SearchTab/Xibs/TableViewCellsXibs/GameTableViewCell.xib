@@ -24,20 +24,47 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D9z-hY-RDa">
                                 <rect key="frame" x="0.0" y="0.0" width="733" height="373.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4s-p5-l80">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="373.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="Yxl-7C-64j"/>
-                                        </constraints>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dEI-5o-024">
-                                        <rect key="frame" x="310" y="0.0" width="423" height="373.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWr-58-FEb">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="373.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exB-39-cU5" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="423" height="65"/>
-                                                <color key="backgroundColor" name="DarkBlue"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4s-p5-l80">
+                                                <rect key="frame" x="3" y="3" width="194" height="367.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="Yxl-7C-64j"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="DarkBlue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="P4s-p5-l80" secondAttribute="bottom" constant="3" id="3Ce-Hd-Sri"/>
+                                            <constraint firstItem="P4s-p5-l80" firstAttribute="leading" secondItem="WWr-58-FEb" secondAttribute="leading" constant="3" id="IDx-RF-AaV"/>
+                                            <constraint firstItem="P4s-p5-l80" firstAttribute="top" secondItem="WWr-58-FEb" secondAttribute="top" constant="3" id="PDN-GO-kJU"/>
+                                            <constraint firstAttribute="width" constant="200" id="TKY-k5-sb6"/>
+                                            <constraint firstAttribute="trailing" secondItem="P4s-p5-l80" secondAttribute="trailing" constant="3" id="f3A-z3-2WR"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="2" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dEI-5o-024">
+                                        <rect key="frame" x="210" y="0.0" width="523" height="373.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exB-39-cU5">
+                                                <rect key="frame" x="0.0" y="0.0" width="523" height="65"/>
+                                                <color key="backgroundColor" name="Sand"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
-                                                <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" name="DarkBlue"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -51,11 +78,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-0I-5SX" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="75" width="423" height="64.5"/>
-                                                <color key="backgroundColor" name="DarkBlue"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-0I-5SX">
+                                                <rect key="frame" x="0.0" y="75" width="523" height="64.5"/>
+                                                <color key="backgroundColor" name="Sand"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
-                                                <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" name="DarkBlue"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -69,11 +96,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platforms" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COL-nl-NVJ" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="149.5" width="423" height="65"/>
-                                                <color key="backgroundColor" name="DarkBlue"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platforms" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COL-nl-NVJ">
+                                                <rect key="frame" x="0.0" y="149.5" width="523" height="65"/>
+                                                <color key="backgroundColor" name="Sand"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
-                                                <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -87,11 +114,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ratings:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSX-cx-bkD" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="224.5" width="423" height="149"/>
-                                                <color key="backgroundColor" name="DarkBlue"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ratings:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSX-cx-bkD">
+                                                <rect key="frame" x="0.0" y="224.5" width="523" height="149"/>
+                                                <color key="backgroundColor" name="Sand"/>
                                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
-                                                <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" name="DarkBlue"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -106,20 +133,20 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="Sand"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="Sand"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to see details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hB3-Mc-P9f" customClass="RoundLabel" customModule="TradeAndPlay" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to see details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hB3-Mc-P9f">
                                 <rect key="frame" x="0.0" y="383.5" width="733" height="104.5"/>
-                                <color key="backgroundColor" name="DarkBlue"/>
+                                <color key="backgroundColor" name="Sand"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                                <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -132,7 +159,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <color key="backgroundColor" name="Sand"/>
                 <constraints>
                     <constraint firstItem="JTA-6U-gNl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="maE-dY-wyu"/>
                     <constraint firstItem="JTA-6U-gNl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="nya-U9-0mf"/>
@@ -141,6 +168,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="Sand"/>
             <connections>
                 <outlet property="gameImageView" destination="P4s-p5-l80" id="rFh-Ke-sz9"/>
                 <outlet property="genreLabel" destination="exB-39-cU5" id="HkL-P6-3fk"/>
@@ -151,26 +179,12 @@
             <point key="canvasLocation" x="-138" y="111"/>
         </tableViewCell>
     </objects>
-    <designables>
-        <designable name="COL-nl-NVJ">
-            <size key="intrinsicContentSize" width="51" height="17"/>
-        </designable>
-        <designable name="CSX-cx-bkD">
-            <size key="intrinsicContentSize" width="43" height="17"/>
-        </designable>
-        <designable name="exB-39-cU5">
-            <size key="intrinsicContentSize" width="37.5" height="17"/>
-        </designable>
-        <designable name="hB3-Mc-P9f">
-            <size key="intrinsicContentSize" width="122" height="20"/>
-        </designable>
-        <designable name="pBF-0I-5SX">
-            <size key="intrinsicContentSize" width="42" height="17"/>
-        </designable>
-    </designables>
     <resources>
         <namedColor name="DarkBlue">
             <color red="0.14000000059604645" green="0.289000004529953" blue="0.36500000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Sand">
+            <color red="0.94499999284744263" green="0.91500002145767212" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

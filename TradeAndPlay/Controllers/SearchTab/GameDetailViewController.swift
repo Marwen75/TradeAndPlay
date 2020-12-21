@@ -12,15 +12,18 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var gameDetailTableView: UITableView!
     
     static let segueId = "gameToPlayer"
-    var dataStorage: DataStorage?
+    var gameStorage: GameStorage?
+    var dummyUserStorage: UserStorage?
     var game: GameModel?
     var players: [User]?
-    private var pickerIndex: Int?
     private let ratingStarsImages: [UIImage?] = [UIImage(named: "etoile1"), UIImage(named: "etoile2"), UIImage(named: "etoile3"), UIImage(named: "etoile4"), UIImage(named: "etoile5")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        print(game?.cover)
+        print(game?.name)
+        print(game?.platform)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,7 +40,6 @@ class GameDetailViewController: UIViewController {
         gameDetailTableView.register(cellType: GameDetailPresentationTableViewCell.self)
         gameDetailTableView.register(cellType: SummaryTableViewCell.self)
         gameDetailTableView.register(cellType: ScreenShotsTableViewCell.self)
-        gameDetailTableView.register(cellType: PlatformsTableViewCell.self)
         gameDetailTableView.register(cellType: AddGameTableViewCell.self)
     }
     
@@ -63,7 +65,7 @@ extension GameDetailViewController: UITableViewDelegate {
 extension GameDetailViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,9 +85,6 @@ extension GameDetailViewController: UITableViewDataSource {
             header.headerLabel.text = "Summary"
             return header
         case 3:
-            header.headerLabel.text = "Select a platform"
-            return header
-        case 4:
             header.headerLabel.text = "What to do next ?"
             return header
         default:
@@ -117,28 +116,21 @@ extension GameDetailViewController: UITableViewDataSource {
             return sumCell
             
         case 3:
-            let platCell: PlatformsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            platCell.platformsPickerView.delegate = self
-            platCell.platformsPickerView.dataSource = self
-            platCell.platformsPickerView.setValue(UIColor(named: "DarkBlue"), forKey: "textColor")
-            return platCell
-            
-        case 4:
             let addCell: AddGameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             addCell.didTapAdd = { [weak self] in
                 guard let strongSelf = self else {return}
-                strongSelf.dataStorage?.addToLibrary(game: game, platformIndex: strongSelf.pickerIndex ?? 0, completionHandler: { result in
+                strongSelf.gameStorage?.addToOwnedList(game: game, platform: game.platform, completionHandler: { result in
                     switch result {
                     case .failure(let error):
                         strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
                     case .success(let name):
-                        strongSelf.displayAlert(title: "Done!", message: "\(name) has been added to your library.")
+                        strongSelf.displayAlert(title: "Done!", message: "\(name) has been added to your Owned list.")
                     }
                 })
             }
             addCell.didTapSeeWho = { [weak self] in
                 guard let strongSelf = self else {return}
-                strongSelf.dataStorage?.fetchUsersWhoHasGame(named: game.name, completionHandler: { result in
+                strongSelf.dummyUserStorage?.fetchUsersWhoHasGame(named: game.name, completionHandler: { result in
                     switch result {
                     case .failure(let error):
                         strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
@@ -150,7 +142,7 @@ extension GameDetailViewController: UITableViewDataSource {
             }
             addCell.didTapAddToSearch = { [weak self] in
                 guard let strongSelf = self else {return}
-                strongSelf.dataStorage?.addToSearchList(game: game, platformIndex: strongSelf.pickerIndex ?? 0, completionHandler: { result in
+                strongSelf.gameStorage?.addToSearchList(game: game, platform: game.platform, completionHandler: { result in
                     switch result {
                     case .failure(let error):
                         strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
@@ -182,26 +174,5 @@ extension GameDetailViewController: UICollectionViewDataSource {
             }
         }
         return cell
-    }
-}
-
-extension GameDetailViewController: UIPickerViewDelegate {
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.pickerIndex = row
-    }
-}
-
-extension GameDetailViewController: UIPickerViewDataSource {
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return game?.platforms?[row]
-    }
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return game?.platforms?.count ?? 0
     }
 }

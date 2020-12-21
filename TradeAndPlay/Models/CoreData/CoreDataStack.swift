@@ -33,9 +33,8 @@ class CoreDataStack {
     }()
     
     // MARK: - Core Data Saving support
-    func saveContext () {
+    func saveContext() {
         guard viewContext.hasChanges else { return }
-        
         do {
             try viewContext.save()
         } catch let nserror as NSError {

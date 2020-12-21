@@ -9,7 +9,7 @@ import UIKit
 
 class GameDetailPresentationTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: RoundLabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var releaseLabel: UILabel!

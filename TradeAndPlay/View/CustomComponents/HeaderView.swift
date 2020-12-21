@@ -9,6 +9,6 @@ import UIKit
 
 class HeaderView: NibView {
 
-    @IBOutlet weak var headerLabel: RoundLabel!
+    @IBOutlet weak var headerLabel: UILabel!
     
 }

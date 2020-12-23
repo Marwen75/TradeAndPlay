@@ -12,16 +12,8 @@ class PlayerTableViewCell: UITableViewCell {
     @IBOutlet weak var playerImageView: UIImageView!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var bottomView: UIView! {
-        didSet {
-            bottomView.isHidden = true
-        }
-    }
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var tradeLabel: UILabel!
-    @IBOutlet weak var rankLabel: UILabel!
-    @IBOutlet weak var ratingImageView: UIImageView!
     
+    var didTapContact: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,14 +25,12 @@ class PlayerTableViewCell: UITableViewCell {
     }
 
     @IBAction func contactButtonTaped(_ sender: Any) {
+        didTapContact?()
     }
     
-    @IBAction func libraryButtonTaped(_ sender: Any) {
-    }
     
-    func configure(withUser user: User) {
-        nickNameLabel.text = user.nickname
-        cityLabel.text = "City: \(String(user.city ?? "N/A"))"
-        ratingLabel.text = "Rated \(String(user.rating))/100 by other traders."
+    func configure(withUser user: FakeUser) {
+        nickNameLabel.text = user.nickName
+        cityLabel.text = "City: \(String(user.city))"
     }
 }

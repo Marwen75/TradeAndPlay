@@ -11,7 +11,7 @@ class CustomPicker: NibView {
     
     @IBOutlet weak var platformPicker: UIPickerView! {
         didSet {
-            platformPicker.setValue(UIColor(named: "DarkBlue"), forKey: "textColor")
+                platformPicker.setValue(UIColor(named: "DarkBlue"), forKey: "textColor")
         }
     }
     

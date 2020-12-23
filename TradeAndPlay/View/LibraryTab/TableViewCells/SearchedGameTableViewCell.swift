@@ -10,14 +10,12 @@ import UIKit
 class SearchedGameTableViewCell: UITableViewCell {
     
     @IBOutlet weak var gameImageView: UIImageView!
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var platformLabel: UILabel!
-    
     @IBOutlet weak var whoHasItButton: UIButton!
-    
     @IBOutlet weak var noUserFoundLabel: UILabel!
+    
+    var didTapWho: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +29,7 @@ class SearchedGameTableViewCell: UITableViewCell {
     }
     
     @IBAction func whoHasItButtonTaped(_ sender: Any) {
+        didTapWho?()
     }
     
     func configure(withSearchedGame game: SearchedGame) {

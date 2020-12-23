@@ -17,13 +17,10 @@ class SearchViewController: UIViewController {
     
     
     static let segueId = "searchToGames"
-    static let segueIdTwo = "searchToPlayers"
     
     var igdbService: IgdbService?
     var games: [GameModel] = []
-    var players: [User] = []
-    var dummyUserStorage: UserStorage?
-    var userStorage: UserStorage?
+    var messageStorage: MessageStorage?
     var gameStorage: GameStorage?
     var platform = "PlayStation"
     let platforms: [String] = ["PlayStation",
@@ -52,10 +49,7 @@ class SearchViewController: UIViewController {
             gamesVC.platform = platform
             gamesVC.games = games
             gamesVC.gameStorage = gameStorage
-            gamesVC.dummyUserStorage = dummyUserStorage
-        } else if segue.identifier == SearchViewController.segueIdTwo {
-            let playerVC = segue.destination as! PlayerViewController
-            playerVC.players = players
+            gamesVC.messageStorage = messageStorage
         }
     }
     
@@ -75,22 +69,6 @@ class SearchViewController: UIViewController {
             case .success(let games):
                 strongSelf.games = games
                 strongSelf.performSegue(withIdentifier: SearchViewController.segueId, sender: nil)
-            }
-        })
-    }
-    
-    private func searchPlayers() {
-        guard let name = customTextField.gameTextField.text else {return}
-        toggleActivityIndicator(shown: true)
-        dummyUserStorage?.fetchUsers(named: name, completionHandler: { [weak self] result in
-            guard let strongSelf = self else { return }
-            strongSelf.toggleActivityIndicator(shown: false)
-            switch result {
-            case .failure(let error):
-                strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
-            case .success(let players):
-                strongSelf.players = players
-                strongSelf.performSegue(withIdentifier: SearchViewController.segueIdTwo, sender: nil)
             }
         })
     }

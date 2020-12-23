@@ -18,20 +18,15 @@ class TabBarViewController: UITabBarController {
         let coreDataStack = appDelegate.coreDataStack
         libraryVc!.gameStorage = GameStorage(coreDataStack: coreDataStack)
         libraryVc!.userStorage = UserStorage(coreDataStack: coreDataStack)
+        libraryVc?.messageStorage = MessageStorage(coreDataStack: coreDataStack)
+        libraryVc?.messageStorage?.deleteFakeDiscussions()
+        libraryVc?.messageStorage?.addFakeDiscussion(fakeUser: FakeUserData.fakeUsers[0])
+        libraryVc?.messageStorage?.addFakeDiscussion(fakeUser: FakeUserData.fakeUsers[1])
+        libraryVc?.messageStorage?.addFakeDiscussion(fakeUser: FakeUserData.fakeUsers[2])
+        libraryVc?.messageStorage?.addFakeDiscussion(fakeUser: FakeUserData.fakeUsers[3])
         searchVc!.gameStorage = GameStorage(coreDataStack: coreDataStack)
-        searchVc!.dummyUserStorage = UserStorage(coreDataStack: coreDataStack)
-        searchVc!.userStorage = UserStorage(coreDataStack: coreDataStack)
+        searchVc!.messageStorage = MessageStorage(coreDataStack: coreDataStack)
         searchVc!.igdbService = IgdbService(session: session)
-        searchVc?.dummyUserStorage?.deleteFakeUsers()
-        
-        
-        
-        //searchVc?.userStorage?.deleteGame()
-        //searchVc?.userStorage?.addFakeUser(name: "Toto", city: "Paris", rating: 97)
-       // searchVc?.dataStorage?.addFakeUser(name: "Max", city: "Melun", rating: 100)
-       // searchVc?.dataStorage?.addFakeUser(name: "Eve", city: "Boulogne", rating: 82)
-       // searchVc?.dataStorage?.addFakeUser(name: "Frea", city: "Creteil", rating: 17)
-       // searchVc?.dataStorage?.addFakeUser(name: "Jim", city: "Alfortville", rating: 46)
     }
 }
 

@@ -91,6 +91,7 @@
             <connections>
                 <outlet property="dateLabel" destination="pm6-HM-RVt" id="TZH-yx-JJR"/>
                 <outlet property="messageLabel" destination="XAD-DV-Umd" id="2wd-u9-YMP"/>
+                <outlet property="messageView" destination="wgp-4t-10a" id="NJT-Pi-4GS"/>
                 <outlet property="nickNameLabel" destination="cLd-tz-vX4" id="e3R-Yy-TXy"/>
                 <outlet property="profileImageView" destination="1Bc-n7-umA" id="Oxf-av-nX8"/>
             </connections>

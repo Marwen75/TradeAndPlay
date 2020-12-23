@@ -22,7 +22,7 @@ class GameStorage {
     
     // MARK: - CRUD
     
-    func fetchStoredGames(completionHandler: @escaping (Result<[OwnedGame], DataStorageError>) -> Void) {
+    func fetchOwnedGames(completionHandler: @escaping (Result<[OwnedGame], DataStorageError>) -> Void) {
         let request: NSFetchRequest<OwnedGame> = OwnedGame.fetchRequest()
         do {
             let fetchResults = try objectContext.fetch(request)
@@ -53,7 +53,7 @@ class GameStorage {
     func addToOwnedList(game: GameModel, platform: String, completionHandler: @escaping (Result<String, DataStorageError>) -> Void) {
         checkInLibraryForOwnedGame(game: game, completionHandler: { result in
             guard result == false else {
-                completionHandler(.failure(.alreadyInSearchList))
+                completionHandler(.failure(.alreadyInOwnedList))
                 return
             }
             let gameToAddInLibrary = OwnedGame(context: self.objectContext)
@@ -124,8 +124,7 @@ class GameStorage {
     }
     
     func checkInLibraryForOwnedGame(game: GameModel, completionHandler: @escaping (Bool) -> Void) {
-        let request: NSFetchRequest<OwnedGame> =
-            OwnedGame.fetchRequest()
+        let request: NSFetchRequest<OwnedGame> = OwnedGame.fetchRequest()
         let predicate1 = NSPredicate(format: "name == %@", game.name)
         let predicate2 = NSPredicate(format: "platform == %@", game.platform)
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
@@ -133,7 +132,7 @@ class GameStorage {
             let fetchResults = try objectContext.fetch(request)
             guard fetchResults.count == 0 else {
                 completionHandler(true)
-                print("doit sortir")
+                print(fetchResults)
                 return
             }
             completionHandler(false)
@@ -144,8 +143,7 @@ class GameStorage {
     }
     
     func checkInLibraryForSearchedGame(game: GameModel, completionHandler: @escaping (Bool) -> Void) {
-        let request: NSFetchRequest<SearchedGame> =
-            SearchedGame.fetchRequest()
+        let request: NSFetchRequest<SearchedGame> = SearchedGame.fetchRequest()
         let predicate1 = NSPredicate(format: "name == %@", game.name)
         let predicate2 = NSPredicate(format: "platform == %@", game.platform)
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])

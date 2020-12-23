@@ -15,12 +15,11 @@ class LibraryViewController: UIViewController {
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var messageButton: UIBarButtonItem!
     
-    
     var gameStorage: GameStorage?
     var userStorage: UserStorage?
+    var messageStorage: MessageStorage?
     var searchedGames: [SearchedGame] = []
     var ownedGames: [OwnedGame] = []
-    var conversations: [[Message]] = [[]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +28,12 @@ class LibraryViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toOwned" {
+        switch segue.identifier {
+        case "toOwned":
             if let ownedVC = segue.destination as? OwnedGamesViewController {
                 ownedVC.fetchOwnedGames = { [weak self] in
                     guard let strongSelf = self else {return}
-                    strongSelf.gameStorage?.fetchStoredGames(completionHandler: { result in
+                    strongSelf.gameStorage?.fetchOwnedGames(completionHandler: { result in
                         switch result {
                         case .failure(let error):
                             print(error)
@@ -44,8 +44,7 @@ class LibraryViewController: UIViewController {
                 }
                 ownedVC.gameStorage = self.gameStorage
             }
-            
-        } else if segue.identifier == "toSearch" {
+        case "toSearch":
             if let searchVC = segue.destination as? SearchedGamesViewController {
                 searchVC.fetchSearchedGames = { [weak self] in
                     guard let strongSelf = self else {return}
@@ -55,14 +54,21 @@ class LibraryViewController: UIViewController {
                             print(error)
                         case .success(let searchedGames):
                             searchVC.searchedGames = searchedGames
+                            searchVC.messageStorage = strongSelf.messageStorage
                         }
                     })
                 }
                 searchVC.gameStorage = self.gameStorage
                 searchVC.userStorage = self.userStorage
             }
-        } else {
-            
+        case "toTrade":
+            print("totrade")
+        case "toMessage":
+            if let conversationsVC = segue.destination as? ConversationsViewController {
+                conversationsVC.messageStorage = self.messageStorage
+            }
+        default:
+            print("def")
         }
     }
     

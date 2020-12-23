@@ -9,11 +9,11 @@ import UIKit
 
 class OwnedGamesViewController: UIViewController {
     
-    
     @IBOutlet weak var ownedGamesTableView: UITableView!
     
     var ownedGames: [OwnedGame] = []
     var gameStorage: GameStorage?
+    var messageStorage: MessageStorage?
     var fetchOwnedGames: (() -> Void)?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,6 +26,13 @@ class OwnedGamesViewController: UIViewController {
         super.viewDidLoad()
         fetchOwnedGames?()
         configureTableView()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTradeForm" {
+            let chatVC = segue.destination as! ChatViewController
+            //chatVC.messages = messages
+        }
     }
     
     private func configureTableView() {

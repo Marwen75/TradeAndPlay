@@ -14,7 +14,7 @@ class GamesViewController: UIViewController {
     var platform: String?
     private var game: GameModel?
     var gameStorage: GameStorage?
-    var dummyUserStorage: UserStorage?
+    var messageStorage: MessageStorage?
     
     @IBOutlet weak var gamesTableView: UITableView!
     
@@ -29,7 +29,7 @@ class GamesViewController: UIViewController {
             game?.platform = platform ?? ""
             gameDetailVC.game = game
             gameDetailVC.gameStorage = gameStorage
-            gameDetailVC.dummyUserStorage = dummyUserStorage
+            gameDetailVC.messageStorage = messageStorage
         }
     }
     

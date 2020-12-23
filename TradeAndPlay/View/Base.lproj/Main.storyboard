@@ -30,7 +30,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1P-LY-Cri" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-608" y="122"/>
+            <point key="canvasLocation" x="-763" y="-354"/>
         </scene>
         <!--Library-->
         <scene sceneID="3Ci-xg-wa2">
@@ -141,11 +141,11 @@
             <objects>
                 <viewController id="59d-qY-rI3" customClass="PlayerViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7m-8b-ahd">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="670"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2D8-o7-dhQ">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="670"/>
                                 <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
@@ -166,11 +166,12 @@
                     <navigationItem key="navigationItem" id="Vaa-8E-RbZ"/>
                     <connections>
                         <outlet property="playersTableView" destination="2D8-o7-dhQ" id="nhL-K0-M1C"/>
+                        <segue destination="XT0-7F-oQK" kind="show" identifier="playerToChat" id="THe-wc-GuZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKg-pT-K81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3806" y="-354"/>
+            <point key="canvasLocation" x="4165" y="-421"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jhU-zf-gcW">
@@ -235,33 +236,40 @@
             <objects>
                 <viewController id="XT0-7F-oQK" customClass="ChatViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Xt-be-4ON">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="670"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="KLR-Zm-Y8y">
-                                <rect key="frame" x="0.0" y="695" width="428" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLR-Zm-Y8y">
+                                <rect key="frame" x="0.0" y="610" width="428" height="60"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Test message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F27-PF-ApP">
-                                        <rect key="frame" x="0.0" y="0.0" width="213.66666666666666" height="60"/>
-                                        <color key="backgroundColor" name="DarkBlue"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F27-PF-ApP">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
+                                        <color key="backgroundColor" name="Sand"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="aon-aG-Jvp"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" name="Sand"/>
+                                                <color key="value" name="DarkBlue"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-3h-yoR">
-                                        <rect key="frame" x="214.66666666666663" y="0.0" width="213.33333333333337" height="60"/>
+                                        <rect key="frame" x="300" y="0.0" width="128" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="oHn-nv-BwS"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="oHn-nv-BwS"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="false-2061131_1280"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Send">
+                                            <color key="titleColor" red="0.40306270119999998" green="0.55350995059999997" blue="0.76473730799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
                                         <connections>
                                             <action selector="sendButtonTaped:" destination="XT0-7F-oQK" eventType="touchUpInside" id="pOw-zt-SAO"/>
                                         </connections>
@@ -272,7 +280,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WF7-wU-f9K">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="695"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="610"/>
                                 <color key="backgroundColor" name="Sand"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XT0-7F-oQK" id="viS-sS-5Xi"/>
@@ -281,13 +289,13 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YUB-BU-hOk"/>
-                        <color key="backgroundColor" name="DarkBlue"/>
+                        <color key="backgroundColor" name="Sand"/>
                         <constraints>
                             <constraint firstItem="WF7-wU-f9K" firstAttribute="leading" secondItem="YUB-BU-hOk" secondAttribute="leading" id="0jP-Qi-IbP"/>
                             <constraint firstItem="KLR-Zm-Y8y" firstAttribute="leading" secondItem="YUB-BU-hOk" secondAttribute="leading" id="9nk-9b-MsW"/>
                             <constraint firstItem="YUB-BU-hOk" firstAttribute="trailing" secondItem="KLR-Zm-Y8y" secondAttribute="trailing" id="SdO-Ec-ti3"/>
-                            <constraint firstAttribute="bottom" secondItem="KLR-Zm-Y8y" secondAttribute="bottom" id="X3I-7W-abY"/>
                             <constraint firstItem="WF7-wU-f9K" firstAttribute="top" secondItem="YUB-BU-hOk" secondAttribute="top" id="ZzG-yN-8YQ"/>
+                            <constraint firstItem="KLR-Zm-Y8y" firstAttribute="bottom" secondItem="YUB-BU-hOk" secondAttribute="bottom" id="iNO-JG-IQU"/>
                             <constraint firstItem="YUB-BU-hOk" firstAttribute="trailing" secondItem="WF7-wU-f9K" secondAttribute="trailing" id="jT4-fg-bt7"/>
                             <constraint firstItem="KLR-Zm-Y8y" firstAttribute="top" secondItem="WF7-wU-f9K" secondAttribute="bottom" id="xkO-w0-OCB"/>
                         </constraints>
@@ -487,7 +495,7 @@
                     <navigationItem key="navigationItem" id="c5w-kU-3rW"/>
                     <connections>
                         <outlet property="gameDetailTableView" destination="Il7-I4-k1A" id="yuF-3w-Vmc"/>
-                        <segue destination="59d-qY-rI3" kind="presentation" identifier="gameToPlayer" id="wOY-6x-eZK"/>
+                        <segue destination="59d-qY-rI3" kind="show" identifier="gameToPlayer" id="wOY-6x-eZK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUr-Vp-hlH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -557,6 +565,7 @@
                     </view>
                     <connections>
                         <outlet property="searchedGamesTableView" destination="seG-Rf-yFt" id="FUZ-SV-Scd"/>
+                        <segue destination="59d-qY-rI3" kind="show" identifier="searchedToPlayer" id="ZYv-TV-H8x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1G-m2-coV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -598,9 +607,12 @@
             <point key="canvasLocation" x="2141" y="-1335"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="THe-wc-GuZ"/>
+        <segue reference="ZYv-TV-H8x"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Library" width="35" height="32"/>
-        <image name="false-2061131_1280" width="25" height="25"/>
         <image name="games" width="31.666666030883789" height="31.666666030883789"/>
         <image name="message" width="25" height="25"/>
         <namedColor name="DarkBlue">

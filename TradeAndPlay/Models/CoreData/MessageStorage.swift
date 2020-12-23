@@ -20,42 +20,77 @@ class MessageStorage {
         self.objectContext = coreDataStack.viewContext
     }
     
-    func addMessage(content: String, date: Date, completionHandler: (() -> Void)) {
+    func addFakeDiscussion(fakeUser: FakeUser) {
+        let discussion = Discussion(context: objectContext)
         let message = Message(context: objectContext)
-        message.content = content
-        message.date = date
+        message.content = fakeUser.messages.last?.content
         message.isReceiving = true
-        completionHandler()
+        message.date = fakeUser.messages.last?.date
+        discussion.recipient = fakeUser.nickName
+        discussion.date = fakeUser.messages.last?.date
+        discussion.addToMessages(message)
         coreDataStack.saveContext()
     }
     
-    func fetchSenders(completionHandler: @escaping (Result<[String], DataStorageError>) -> Void) {
-        let request: NSFetchRequest<Message> = Message.fetchRequest()
+    func deleteFakeDiscussions() {
+        let request: NSFetchRequest<Discussion> = Discussion.fetchRequest()
         do {
             let fetchResults = try objectContext.fetch(request)
+            fetchResults.forEach { objectContext.delete($0) }
+        } catch let error as NSError {
+            print(error.userInfo)
+        }
+        coreDataStack.saveContext()
+    }
+    
+    func addFakeMessage(fakeMessage: FakeMessage) -> Message {
+        let message = Message(context: objectContext)
+        message.content = fakeMessage.content
+        message.date = fakeMessage.date
+        message.isReceiving = true
+        message.isRead = false
+        return message
+    }
+    
+    func addMessageToDiscussion(discussion: Discussion, content: String, completionHandler: @escaping (() -> Void)) {
+        let message = Message(context: objectContext)
+        message.content = content
+        message.isReceiving = false
+        message.isRead = true
+        message.date = Date()
+        discussion.date = message.date
+        discussion.addToMessages(message)
+        coreDataStack.saveContext()
+    }
+    
+    func fetchDiscussions(completionHandler: @escaping (Result<[Discussion], DataStorageError>) -> Void) {
+        let request: NSFetchRequest<Discussion> = Discussion.fetchRequest()
+        do {
+            var fetchResults = try objectContext.fetch(request)
             guard fetchResults.count > 0 else {
                 completionHandler(.failure(.noDiscussion))
                 return
             }
-            var senderNames: [String] = []
-            fetchResults.forEach({senderNames.append($0.senderName ?? "Raté")})
-            completionHandler(.success(senderNames))
+            fetchResults.sort(by: {$0.date! < $1.date!})
+            completionHandler(.success(fetchResults))
         } catch let error {
             print(error)
         }
     }
     
-    func fetchDiscussion(senderName: String, completionHandler: @escaping (Result<[String], DataStorageError>) -> Void) {
-        let request: NSFetchRequest<Message> = Message.fetchRequest()
-        request.predicate = NSPredicate(format: "senderName == %@", senderName)
+    func fetchMessagesFromDiscussion(recipient: String, completionHandler: @escaping (Result<[Message], DataStorageError>) -> Void) {
+        let request: NSFetchRequest<Discussion> = Discussion.fetchRequest()
+        request.predicate = NSPredicate(format: "recipient == %@", recipient)
         do {
             let fetchResults = try objectContext.fetch(request)
             guard fetchResults.count > 0 else {
                 completionHandler(.failure(.noDiscussion))
                 return
             }
-            var messages: [String] = []
-            fetchResults.forEach({messages.append($0.content ?? "Raté")})
+            let discussion = fetchResults.first
+            let msgArray = discussion?.messages
+            var messages: [Message] = msgArray?.compactMap {$0} as! [Message]
+            messages.sort(by: {$0.date! < $1.date!})
             completionHandler(.success(messages))
         } catch let error {
             print(error)

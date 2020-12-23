@@ -13,23 +13,20 @@ class GameDetailViewController: UIViewController {
     
     static let segueId = "gameToPlayer"
     var gameStorage: GameStorage?
-    var dummyUserStorage: UserStorage?
+    var messageStorage: MessageStorage?
     var game: GameModel?
-    var players: [User]?
+    var fakeUsers: [FakeUser] = FakeUserData.fakeUsers
     private let ratingStarsImages: [UIImage?] = [UIImage(named: "etoile1"), UIImage(named: "etoile2"), UIImage(named: "etoile3"), UIImage(named: "etoile4"), UIImage(named: "etoile5")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        print(game?.cover)
-        print(game?.name)
-        print(game?.platform)
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == GameDetailViewController.segueId {
             let playerVC = segue.destination as! PlayerViewController
-            playerVC.players = players
+            playerVC.fakeUsers = fakeUsers
+            playerVC.messageStorage = messageStorage
         }
     }
     
@@ -130,15 +127,20 @@ extension GameDetailViewController: UITableViewDataSource {
             }
             addCell.didTapSeeWho = { [weak self] in
                 guard let strongSelf = self else {return}
-                strongSelf.dummyUserStorage?.fetchUsersWhoHasGame(named: game.name, completionHandler: { result in
-                    switch result {
-                    case .failure(let error):
-                        strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
-                    case .success(let users):
-                        strongSelf.players = users
-                        strongSelf.performSegue(withIdentifier: GameDetailViewController.segueId, sender: nil)
+                let gameName = game.name
+                var gameOwner = [FakeUser]()
+                for user in strongSelf.fakeUsers {
+                    for game in user.ownedGamesList {
+                        if game.name == gameName {
+                            gameOwner.append(user)
+                            strongSelf.fakeUsers = gameOwner
+                            strongSelf.performSegue(withIdentifier: GameDetailViewController.segueId, sender: nil)
+                        }
                     }
-                })
+                }
+                if gameOwner.count == 0 {
+                    strongSelf.displayAlert(title: "Oups", message: "Nobody Owns this game yet")
+                }
             }
             addCell.didTapAddToSearch = { [weak self] in
                 guard let strongSelf = self else {return}

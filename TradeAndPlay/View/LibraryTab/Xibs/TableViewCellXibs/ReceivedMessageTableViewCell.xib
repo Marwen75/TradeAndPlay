@@ -18,34 +18,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-wz-CqT">
+                        <rect key="frame" x="235.5" y="84" width="30" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="T8l-wI-8ph"/>
+                            <constraint firstAttribute="height" constant="20" id="lSi-aL-uEm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-PQ-iif">
-                        <rect key="frame" x="41" y="5" width="274" height="99"/>
+                        <rect key="frame" x="267.5" y="5" width="47.5" height="99"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVR-NG-00C">
-                                <rect key="frame" x="7" y="5" width="260" height="67"/>
-                                <string key="text">DJqzdjqjndjqnzjd dqzjndjqzd qzdnqj ndjnqjz nqznd qjzndj qznd qjznjqn dnqz jdqzhdqzhdqhzdjqbzhdbqzbdhbqzhbdhqzbdjhbjzqhbdjhqbzjhdbhjqz</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DJqz" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVR-NG-00C">
+                                <rect key="frame" x="7" y="5" width="33.5" height="79"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-wz-CqT">
-                                <rect key="frame" x="262" y="87" width="10" height="10"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="T8l-wI-8ph"/>
-                                    <constraint firstAttribute="height" constant="10" id="lSi-aL-uEm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="DarkBlue"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="OvQ-wz-CqT" secondAttribute="trailing" constant="2" id="8Gg-vw-CvE"/>
+                            <constraint firstAttribute="bottom" secondItem="CVR-NG-00C" secondAttribute="bottom" constant="15" id="Hxg-dj-QK9"/>
                             <constraint firstItem="CVR-NG-00C" firstAttribute="leading" secondItem="L4j-PQ-iif" secondAttribute="leading" constant="7" id="RnS-Kx-SJZ"/>
                             <constraint firstAttribute="trailing" secondItem="CVR-NG-00C" secondAttribute="trailing" constant="7" id="Up0-QJ-LLr"/>
-                            <constraint firstItem="OvQ-wz-CqT" firstAttribute="top" secondItem="CVR-NG-00C" secondAttribute="bottom" constant="15" id="ZYW-nI-JNK"/>
-                            <constraint firstAttribute="bottom" secondItem="OvQ-wz-CqT" secondAttribute="bottom" constant="2" id="egX-9W-Reb"/>
                             <constraint firstItem="CVR-NG-00C" firstAttribute="top" secondItem="L4j-PQ-iif" secondAttribute="top" constant="5" id="f0K-sc-wBG"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -57,10 +54,12 @@
                 </subviews>
                 <color key="backgroundColor" name="Sand"/>
                 <constraints>
+                    <constraint firstItem="OvQ-wz-CqT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1zu-b4-Sw0"/>
                     <constraint firstItem="L4j-PQ-iif" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Bgg-wH-WG2"/>
                     <constraint firstAttribute="trailing" secondItem="L4j-PQ-iif" secondAttribute="trailing" constant="5" id="HJH-Ot-heX"/>
                     <constraint firstAttribute="bottom" secondItem="L4j-PQ-iif" secondAttribute="bottom" constant="5" id="MdD-fb-4i3"/>
-                    <constraint firstItem="L4j-PQ-iif" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="Rd4-eX-L7A"/>
+                    <constraint firstItem="L4j-PQ-iif" firstAttribute="bottom" secondItem="OvQ-wz-CqT" secondAttribute="bottom" id="QkG-2q-QY2"/>
+                    <constraint firstItem="L4j-PQ-iif" firstAttribute="leading" secondItem="OvQ-wz-CqT" secondAttribute="trailing" constant="2" id="hkY-gc-kyI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

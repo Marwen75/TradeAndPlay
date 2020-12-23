@@ -25,7 +25,7 @@ class UserStorage {
     func fetchUsers(named name: String, completionHandler: @escaping (Result<[User], DataStorageError>) -> Void) {
         let request: NSFetchRequest<User> =
             User.fetchRequest()
-        request.predicate = NSPredicate(format: "nickname == %@", name)
+        request.predicate = NSPredicate(format: "nickName == %@", name)
         guard let fetchResults = try? objectContext.fetch(request), fetchResults.count > 0 else {
             completionHandler(.failure(.noPlayerFound))
             return
@@ -35,9 +35,17 @@ class UserStorage {
     
     func addFakeUser(name: String, city: String, rating: Int64) -> User {
         let user = User(context: objectContext)
-        user.nickname = name
+        let discussion = Discussion(context: objectContext)
+        let message = Message(context: objectContext)
+        message.content = "Hello"
+        message.date = Date()
+        message.isReceiving = true
+        discussion.addToMessages(message)
+        discussion.recipient = "Marwen"
+        user.nickName = name
         user.city = city
         user.rating = rating
+        user.addToDiscussions(discussion)
         coreDataStack.saveContext()
         return user
     }
@@ -58,17 +66,10 @@ class UserStorage {
         return game
     }
     
-    func addFakeConv() -> [Message] {
-        let message = Message(context: objectContext)
-        message.content = "Hey"
-        message.date = Date()
-        return [message]
-    }
-    
     func deleteFakeUsers() {
         let request: NSFetchRequest<User> =
             User.fetchRequest()
-        //request.predicate = NSPredicate(format: "nickname == %@", "Toto", "Max", "Eve" , "Frea", "Jim")
+        request.predicate = NSPredicate(format: "nickName != %@", "Marv")
         do {
             let fetchResults = try objectContext.fetch(request)
             fetchResults.forEach { objectContext.delete($0) }
@@ -78,7 +79,7 @@ class UserStorage {
         coreDataStack.saveContext()
     }
     
-    func fetchUsersWhoHasGame(named name: String, completionHandler: @escaping (Result<[User], DataStorageError>) -> Void) {
+   /* func fetchUsersWhoHasGame(named name: String, completionHandler: @escaping (Result<[User], DataStorageError>) -> Void) {
         let request: NSFetchRequest<User> =
             User.fetchRequest()
         request.predicate = NSPredicate(format: "ANY ownedGames.name == %@", name)
@@ -87,7 +88,7 @@ class UserStorage {
             return
         }
         completionHandler(.success(fetchResults))
-    }
+    } */
 }
 
 

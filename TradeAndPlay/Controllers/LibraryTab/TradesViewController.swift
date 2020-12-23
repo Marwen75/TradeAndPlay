@@ -20,7 +20,6 @@ class TradesViewController: UIViewController {
     private func configureTableView() {
         
     }
-
 }
 
 extension TradesViewController: UITableViewDelegate {

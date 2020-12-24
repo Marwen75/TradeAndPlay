@@ -44,7 +44,6 @@
 		C230D8D02584A69600ED28C2 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C230D8CE2584A69600ED28C2 /* PlayerTableViewCell.swift */; };
 		C230D8D12584A69600ED28C2 /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C230D8CF2584A69600ED28C2 /* PlayerTableViewCell.xib */; };
 		C230D8EC2588904500ED28C2 /* GameStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C230D8EB2588904500ED28C2 /* GameStorage.swift */; };
-		C230D8F1258890E900ED28C2 /* TradeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C230D8F0258890E900ED28C2 /* TradeStorage.swift */; };
 		C28F820E258A2EBF00480290 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28F820D258A2EBF00480290 /* LibraryViewController.swift */; };
 		C28F8213258A2ED200480290 /* OwnedGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28F8212258A2ED200480290 /* OwnedGamesViewController.swift */; };
 		C28F8218258A2EE400480290 /* SearchedGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28F8217258A2EE300480290 /* SearchedGamesViewController.swift */; };
@@ -81,6 +80,7 @@
 		C2B370F9257BB43300282E45 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B370F8257BB43300282E45 /* NibView.swift */; };
 		C2B37134257D072D00282E45 /* ScreenshotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B37132257D072D00282E45 /* ScreenshotCollectionViewCell.swift */; };
 		C2B37135257D072D00282E45 /* ScreenshotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B37133257D072D00282E45 /* ScreenshotCollectionViewCell.xib */; };
+		C2B621EA25947397003E87CD /* TradeFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B621E925947397003E87CD /* TradeFormViewController.swift */; };
 		E409C74CAD7510D681025C9F /* Pods_TradeAndPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F62D07B27974B77ADBAE91 /* Pods_TradeAndPlay.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,7 +144,6 @@
 		C230D8CE2584A69600ED28C2 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		C230D8CF2584A69600ED28C2 /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
 		C230D8EB2588904500ED28C2 /* GameStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStorage.swift; sourceTree = "<group>"; };
-		C230D8F0258890E900ED28C2 /* TradeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeStorage.swift; sourceTree = "<group>"; };
 		C28F820D258A2EBF00480290 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		C28F8212258A2ED200480290 /* OwnedGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedGamesViewController.swift; sourceTree = "<group>"; };
 		C28F8217258A2EE300480290 /* SearchedGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedGamesViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +186,7 @@
 		C2B370F8257BB43300282E45 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		C2B37132257D072D00282E45 /* ScreenshotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2B37133257D072D00282E45 /* ScreenshotCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScreenshotCollectionViewCell.xib; sourceTree = "<group>"; };
+		C2B621E925947397003E87CD /* TradeFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeFormViewController.swift; sourceTree = "<group>"; };
 		CA799B7A08DD21B5A5F0CE6B /* Pods-TradeAndPlay-TradeAndPlayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlay-TradeAndPlayUITests.debug.xcconfig"; path = "Target Support Files/Pods-TradeAndPlay-TradeAndPlayUITests/Pods-TradeAndPlay-TradeAndPlayUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D0E4F0DA6F5C2893737F3CF4 /* Pods-TradeAndPlayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlayTests.debug.xcconfig"; path = "Target Support Files/Pods-TradeAndPlayTests/Pods-TradeAndPlayTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -374,6 +374,7 @@
 				C28F8212258A2ED200480290 /* OwnedGamesViewController.swift */,
 				C28F8217258A2EE300480290 /* SearchedGamesViewController.swift */,
 				C28F8297258BCAD800480290 /* TradesViewController.swift */,
+				C2B621E925947397003E87CD /* TradeFormViewController.swift */,
 			);
 			path = LibraryTab;
 			sourceTree = "<group>";
@@ -515,7 +516,6 @@
 				C230D83B2581168800ED28C2 /* CoreDataStack.swift */,
 				C229E68B258F479A00717707 /* UserStorage.swift */,
 				C230D8EB2588904500ED28C2 /* GameStorage.swift */,
-				C230D8F0258890E900ED28C2 /* TradeStorage.swift */,
 				C229E665258DDDD800717707 /* MessageStorage.swift */,
 			);
 			path = CoreData;
@@ -817,6 +817,7 @@
 				C229E686258E06E200717707 /* SendingMessageTableViewCell.swift in Sources */,
 				C2050C72258FA3AE003C2522 /* FakeUserData.swift in Sources */,
 				C2B3705A2576A68900282E45 /* GameTableViewCell.swift in Sources */,
+				C2B621EA25947397003E87CD /* TradeFormViewController.swift in Sources */,
 				C230D89C258362D400ED28C2 /* ReusableView.swift in Sources */,
 				C2B370EC257B91BB00282E45 /* GameDetailViewController.swift in Sources */,
 				C28F829E258BCD4700480290 /* TradeTableViewCell.swift in Sources */,
@@ -841,7 +842,6 @@
 				C2B3704F2576997A00282E45 /* Extension+ViewController.swift in Sources */,
 				C2B3704025768C4900282E45 /* IgdbService.swift in Sources */,
 				C2B370BA2577C03700282E45 /* Extension+UIImageView.swift in Sources */,
-				C230D8F1258890E900ED28C2 /* TradeStorage.swift in Sources */,
 				C28F82AB258C88A800480290 /* Extension+UIView.swift in Sources */,
 				C2B36FBD2573C09D00282E45 /* TradeAndPlay.xcdatamodeld in Sources */,
 				C230D8A62583C68300ED28C2 /* Extension+UICollectionView.swift in Sources */,

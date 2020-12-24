@@ -19,6 +19,15 @@ class ChatViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        messageStorage?.fetchMessagesFromDiscussion(recipient: (discussion?.recipient)!, completionHandler: {[weak self] result in
+            guard let strongSelf = self else {return}
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let messages):
+                strongSelf.messages = messages
+            }
+        })
         messagesTableView.reloadData()
     }
     
@@ -79,7 +88,6 @@ extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sendMsgCell: SendingMessageTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let receivedMsgCell: ReceivedMessageTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        
         if messages[indexPath.row].isReceiving == true {
             let dummyMsg = messages[indexPath.row]
             dummyMsg.isRead = true

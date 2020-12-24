@@ -81,6 +81,18 @@ struct FakeUserData {
                                      messages: [FakeMessage(content: "You here?",
                                                             sender: "Flop",
                                                             date: Date())]),
+                            FakeUser(nickName: "Zari",
+                                     city: "Arcueil",
+                                     rating: 100,
+                                     ownedGamesList: [FakeOwnedGame(name: "Hagane: The Final Conflict",
+                                                                    cover: "co2gu4",
+                                                                    platform: "Super Nintendo Entertainment System (SNES)")],
+                                     searchGamesList: [FakeSearchedGame(name: "",
+                                                                        cover: "",
+                                                                        platform: "")],
+                                     messages: [FakeMessage(content: "",
+                                                            sender: "",
+                                                            date: Date())])
     ]
 }
 

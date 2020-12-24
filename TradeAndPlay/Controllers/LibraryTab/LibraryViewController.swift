@@ -62,7 +62,20 @@ class LibraryViewController: UIViewController {
                 searchVC.userStorage = self.userStorage
             }
         case "toTrade":
-            print("totrade")
+            if let tradeVC = segue.destination as? TradesViewController {
+                tradeVC.fetchTrades = { [weak self] in
+                    guard let strongSelf = self else {return}
+                    strongSelf.gameStorage?.fetchTrades(completionHandler: { result in
+                        switch result {
+                        case .failure(let error):
+                            print(error)
+                        case .success(let ownedGames):
+                            tradeVC.ownedGamesTraded = ownedGames
+                        }
+                    })
+                }
+                tradeVC.gameStorage = self.gameStorage
+            }
         case "toMessage":
             if let conversationsVC = segue.destination as? ConversationsViewController {
                 conversationsVC.messageStorage = self.messageStorage

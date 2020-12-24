@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZLe-p8-rkf">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -40,7 +40,7 @@
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jHI-Lu-hla">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="DarkBlue"/>
                         <textAttributes key="titleTextAttributes">
@@ -61,23 +61,23 @@
             <objects>
                 <viewController id="pde-gx-Cve" customClass="LibraryViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MPC-Kd-TE6">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFz-a5-t1o">
-                                <rect key="frame" x="0.0" y="31" width="428" height="724"/>
+                                <rect key="frame" x="0.0" y="31" width="320" height="444"/>
                                 <connections>
                                     <segue destination="XKL-fW-g3b" kind="embed" identifier="toOwned" id="efZ-qG-l3m"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bak-IZ-csf">
-                                <rect key="frame" x="0.0" y="31" width="428" height="724"/>
+                                <rect key="frame" x="0.0" y="31" width="320" height="444"/>
                                 <connections>
                                     <segue destination="bGQ-6r-8X1" kind="embed" identifier="toSearch" id="3Rj-sC-jh8"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hDo-0E-igt">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="32"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="32"/>
                                 <segments>
                                     <segment title="Your games"/>
                                     <segment title="Your research"/>
@@ -89,7 +89,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3z-IT-62O">
-                                <rect key="frame" x="0.0" y="31" width="428" height="724"/>
+                                <rect key="frame" x="0.0" y="31" width="320" height="444"/>
                                 <connections>
                                     <segue destination="1lQ-Y1-qfw" kind="embed" identifier="toTrade" id="yvM-mG-f8U"/>
                                 </connections>
@@ -141,11 +141,11 @@
             <objects>
                 <viewController id="59d-qY-rI3" customClass="PlayerViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7m-8b-ahd">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="670"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2D8-o7-dhQ">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="670"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                                 <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
@@ -179,7 +179,7 @@
                 <navigationController id="YYe-wH-QVN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" selectedImage="games" systemItem="search" id="81s-Ij-0Cs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="LSz-aM-2Cv">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
@@ -200,11 +200,11 @@
             <objects>
                 <viewController id="8rX-Lh-ddB" customClass="ConversationsViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3HV-SF-wtq">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qL1-bB-vP0">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                 <color key="backgroundColor" name="DarkBlue"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8rX-Lh-ddB" id="Uea-oY-KMq"/>
@@ -236,17 +236,17 @@
             <objects>
                 <viewController id="XT0-7F-oQK" customClass="ChatViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Xt-be-4ON">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="670"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLR-Zm-Y8y">
-                                <rect key="frame" x="0.0" y="610" width="428" height="60"/>
+                                <rect key="frame" x="0.0" y="384" width="320" height="60"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F27-PF-ApP">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
                                         <color key="backgroundColor" name="Sand"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="aon-aG-Jvp"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="aon-aG-Jvp"/>
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -261,7 +261,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-3h-yoR">
-                                        <rect key="frame" x="300" y="0.0" width="128" height="60"/>
+                                        <rect key="frame" x="200" y="0.0" width="120" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="oHn-nv-BwS"/>
@@ -280,7 +280,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WF7-wU-f9K">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="610"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="384"/>
                                 <color key="backgroundColor" name="Sand"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XT0-7F-oQK" id="viS-sS-5Xi"/>
@@ -316,11 +316,11 @@
             <objects>
                 <viewController id="YD5-Zi-Xmp" customClass="SearchViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hod-P4-1Pn">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6R-U6-hKJ">
-                                <rect key="frame" x="40" y="675" width="348" height="50"/>
+                                <rect key="frame" x="36" y="395" width="248" height="50"/>
                                 <color key="backgroundColor" red="0.6000829339" green="0.82166296240000003" blue="0.61566299199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9Tw-cO-CDp"/>
@@ -357,29 +357,32 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking for a game ? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4I-he-GEO">
-                                <rect key="frame" x="115.66666666666669" y="20" width="197" height="31.666666666666671"/>
+                                <rect key="frame" x="61.5" y="20" width="197" height="31.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="23"/>
                                 <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="llI-vo-nP3">
-                                <rect key="frame" x="195.66666666666666" y="681.66666666666663" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="401.5" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CJ-WH-mHQ" customClass="CustomTextField" customModule="TradeAndPlay" customModuleProvider="target">
-                                <rect key="frame" x="40" y="81.666666666666657" width="348" height="100"/>
+                                <rect key="frame" x="40" y="81.5" width="240" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="rVV-qM-TOv"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JQ-qB-mPC" customClass="CustomPicker" customModule="TradeAndPlay" customModuleProvider="target">
-                                <rect key="frame" x="10" y="243.66666666666671" width="408" height="401.33333333333326"/>
+                                <rect key="frame" x="10" y="236.5" width="300" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="MBN-xf-wFx"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a platform" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bs-tT-9Ki">
-                                <rect key="frame" x="136" y="201.66666666666669" width="156" height="32"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="23"/>
+                                <rect key="frame" x="99.5" y="201.5" width="121.5" height="25"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="18"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -397,7 +400,7 @@
                             <constraint firstItem="S4I-he-GEO" firstAttribute="centerX" secondItem="hod-P4-1Pn" secondAttribute="centerX" id="a1l-MT-iYQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b6R-U6-hKJ" secondAttribute="trailing" constant="20" id="fgk-2w-Xp6"/>
                             <constraint firstItem="7bs-tT-9Ki" firstAttribute="top" secondItem="8CJ-WH-mHQ" secondAttribute="bottom" constant="20" id="fsJ-y8-hkJ"/>
-                            <constraint firstItem="b6R-U6-hKJ" firstAttribute="top" secondItem="2JQ-qB-mPC" secondAttribute="bottom" constant="30" id="iVz-nn-GW0"/>
+                            <constraint firstItem="b6R-U6-hKJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2JQ-qB-mPC" secondAttribute="bottom" constant="20" id="iVz-nn-GW0"/>
                             <constraint firstItem="S4I-he-GEO" firstAttribute="top" secondItem="hR4-ZW-t0N" secondAttribute="top" constant="20" id="kea-Nc-4J9"/>
                             <constraint firstItem="8CJ-WH-mHQ" firstAttribute="centerX" secondItem="hod-P4-1Pn" secondAttribute="centerX" id="mbG-Wr-8r8"/>
                             <constraint firstItem="7bs-tT-9Ki" firstAttribute="centerX" secondItem="hod-P4-1Pn" secondAttribute="centerX" id="qLi-C6-Ouj"/>
@@ -429,11 +432,11 @@
             <objects>
                 <viewController id="oay-SO-oxz" customClass="GamesViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A0O-cr-nAK">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KyH-n4-sZj">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                 <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
@@ -471,11 +474,11 @@
             <objects>
                 <viewController id="aQp-ll-qTC" customClass="GameDetailViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aUu-H8-8g6">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Il7-I4-k1A">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="755"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                 <color key="backgroundColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="dataSource" destination="aQp-ll-qTC" id="pY6-TB-DDI"/>
@@ -502,16 +505,107 @@
             </objects>
             <point key="canvasLocation" x="3020" y="122"/>
         </scene>
+        <!--Trade Form View Controller-->
+        <scene sceneID="p3B-7g-a33">
+            <objects>
+                <viewController id="lrv-Oe-cdP" customClass="TradeFormViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IEv-QI-meM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pGJ-4J-eXG">
+                                <rect key="frame" x="20" y="20" width="280" height="151.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the name of the user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2la-8H-9yf">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="23"/>
+                                        <color key="textColor" name="DarkBlue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvA-Rp-fmd" customClass="CustomTextField" customModule="TradeAndPlay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="51.5" width="280" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="rik-55-cmd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnY-Ea-mCQ">
+                                <rect key="frame" x="20" y="374" width="280" height="50"/>
+                                <color key="backgroundColor" red="0.89674144980000003" green="0.54882335660000003" blue="0.58431613449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Igi-7A-M9q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="25"/>
+                                <state key="normal" title="Confirm Trade">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.40306270119999998" green="0.55350995059999997" blue="0.76473730799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="DarkBlue"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="confirmTradeButtonTaped:" destination="lrv-Oe-cdP" eventType="touchUpInside" id="NEj-nI-bLE"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hBf-Kv-zZ2">
+                                <rect key="frame" x="141.5" y="380.5" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TPZ-Tp-WyW"/>
+                        <color key="backgroundColor" name="Sand"/>
+                        <constraints>
+                            <constraint firstItem="hBf-Kv-zZ2" firstAttribute="centerX" secondItem="IEv-QI-meM" secondAttribute="centerX" id="59W-iW-yG8"/>
+                            <constraint firstItem="pGJ-4J-eXG" firstAttribute="top" secondItem="TPZ-Tp-WyW" secondAttribute="top" constant="20" id="EJa-Pa-BAj"/>
+                            <constraint firstItem="pGJ-4J-eXG" firstAttribute="leading" secondItem="TPZ-Tp-WyW" secondAttribute="leading" constant="20" id="IfP-fd-xif"/>
+                            <constraint firstItem="hBf-Kv-zZ2" firstAttribute="centerY" secondItem="PnY-Ea-mCQ" secondAttribute="centerY" id="NU1-kp-HC1"/>
+                            <constraint firstItem="PnY-Ea-mCQ" firstAttribute="leading" secondItem="TPZ-Tp-WyW" secondAttribute="leading" constant="20" id="Vdf-wv-sIR"/>
+                            <constraint firstItem="TPZ-Tp-WyW" firstAttribute="bottom" secondItem="PnY-Ea-mCQ" secondAttribute="bottom" constant="20" id="Vge-hu-0n3"/>
+                            <constraint firstItem="TPZ-Tp-WyW" firstAttribute="trailing" secondItem="PnY-Ea-mCQ" secondAttribute="trailing" constant="20" id="W9u-A8-FKI"/>
+                            <constraint firstItem="TPZ-Tp-WyW" firstAttribute="trailing" secondItem="pGJ-4J-eXG" secondAttribute="trailing" constant="20" id="ktI-Co-c51"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hBf-Kv-zZ2" id="nFg-Xw-z5i"/>
+                        <outlet property="confirmTradeButton" destination="PnY-Ea-mCQ" id="rlF-yH-XWU"/>
+                        <outlet property="customTextField" destination="DvA-Rp-fmd" id="MYt-gm-Po1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfP-ss-d2V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="-1936"/>
+        </scene>
         <!--Owned Games View Controller-->
         <scene sceneID="xSD-Zt-sN2">
             <objects>
                 <viewController id="XKL-fW-g3b" customClass="OwnedGamesViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wxr-Kx-Mt2">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hnH-BM-wdV">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                                 <color key="backgroundColor" name="Sand"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XKL-fW-g3b" id="6yz-Qk-Bpj"/>
@@ -530,6 +624,7 @@
                     </view>
                     <connections>
                         <outlet property="ownedGamesTableView" destination="hnH-BM-wdV" id="10p-sX-rN6"/>
+                        <segue destination="lrv-Oe-cdP" kind="presentation" identifier="ownedToForm" id="5h1-lh-i6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRk-NF-3YN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -541,11 +636,11 @@
             <objects>
                 <viewController id="bGQ-6r-8X1" customClass="SearchedGamesViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yZA-JU-hRB">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="seG-Rf-yFt">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                                 <color key="backgroundColor" name="Sand"/>
                                 <color key="sectionIndexBackgroundColor" name="Sand"/>
                                 <connections>
@@ -577,14 +672,14 @@
             <objects>
                 <viewController id="1lQ-Y1-qfw" customClass="TradesViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Enh-Cr-ft0">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CHc-zf-MpS">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="724"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
+                                <color key="backgroundColor" name="Sand"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="1lQ-Y1-qfw" id="RdY-w3-htJ"/>
+                                    <outlet property="dataSource" destination="1lQ-Y1-qfw" id="6Ig-lG-okX"/>
                                     <outlet property="delegate" destination="1lQ-Y1-qfw" id="HDB-kI-gfA"/>
                                 </connections>
                             </tableView>
@@ -612,8 +707,8 @@
         <segue reference="ZYv-TV-H8x"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Library" width="35" height="32"/>
-        <image name="games" width="31.666666030883789" height="31.666666030883789"/>
+        <image name="Library" width="35" height="31.5"/>
+        <image name="games" width="35" height="35"/>
         <image name="message" width="25" height="25"/>
         <namedColor name="DarkBlue">
             <color red="0.14000000059604645" green="0.289000004529953" blue="0.36500000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

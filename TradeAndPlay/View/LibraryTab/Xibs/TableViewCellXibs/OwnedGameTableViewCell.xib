@@ -19,15 +19,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPV-UV-wyO">
-                        <rect key="frame" x="10" y="10" width="150" height="156"/>
+                        <rect key="frame" x="10" y="10" width="150" height="150"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D0b-hm-5EU">
-                                <rect key="frame" x="3" y="3" width="144" height="150"/>
+                                <rect key="frame" x="3" y="3" width="144" height="144"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="DarkBlue"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="15O-Lz-use"/>
+                            <constraint firstAttribute="height" constant="150" id="15O-Lz-use"/>
                             <constraint firstItem="D0b-hm-5EU" firstAttribute="top" secondItem="VPV-UV-wyO" secondAttribute="top" constant="3" id="DbS-qo-oqs"/>
                             <constraint firstItem="D0b-hm-5EU" firstAttribute="leading" secondItem="VPV-UV-wyO" secondAttribute="leading" constant="3" id="HZU-gF-pXb"/>
                             <constraint firstAttribute="width" constant="150" id="MTw-aX-gMY"/>
@@ -56,10 +56,10 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-PF-Dfn">
-                        <rect key="frame" x="180" y="58" width="159" height="60"/>
+                        <rect key="frame" x="180" y="21" width="159" height="139"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfB-xm-ApW">
-                                <rect key="frame" x="0.0" y="0.0" width="159" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="159" height="24"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ega-AD-N7X">
-                                <rect key="frame" x="0.0" y="40" width="159" height="20"/>
+                                <rect key="frame" x="0.0" y="44" width="159" height="24"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
@@ -110,14 +110,54 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENTLY TRADED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbD-Du-ju7">
+                                <rect key="frame" x="0.0" y="78" width="159" height="0.0"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="20"/>
+                                <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTn-As-3v1">
+                                <rect key="frame" x="0.0" y="88" width="159" height="51"/>
+                                <color key="backgroundColor" red="0.89674144980000003" green="0.54882335660000003" blue="0.58431613449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
+                                <state key="normal" title="Declare a Trade!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.40306270119999998" green="0.55350995059999997" blue="0.76473730799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="DarkBlue"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tradeButtonTaped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0cZ-WG-ukz"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Bgv-PF-Dfn" firstAttribute="bottom" secondItem="VPV-UV-wyO" secondAttribute="bottom" id="MCI-TT-rWn"/>
                     <constraint firstItem="VPV-UV-wyO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="OPP-pt-fh3"/>
-                    <constraint firstItem="Bgv-PF-Dfn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Pgb-tl-HDJ"/>
                     <constraint firstItem="VPV-UV-wyO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="PjA-Ph-s0f"/>
-                    <constraint firstAttribute="bottom" secondItem="VPV-UV-wyO" secondAttribute="bottom" constant="10" id="cYh-IV-rHE"/>
+                    <constraint firstItem="Bgv-PF-Dfn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="UGd-Df-AaI"/>
                     <constraint firstItem="Bgv-PF-Dfn" firstAttribute="leading" secondItem="VPV-UV-wyO" secondAttribute="trailing" constant="20" id="i37-WR-qg3"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Bgv-PF-Dfn" secondAttribute="trailing" constant="10" id="ziu-Pu-U54"/>
                 </constraints>
@@ -128,6 +168,8 @@
                 <outlet property="gameImageView" destination="D0b-hm-5EU" id="NKw-KI-ZJg"/>
                 <outlet property="nameLabel" destination="gfB-xm-ApW" id="lmd-zI-fjh"/>
                 <outlet property="platformLabel" destination="ega-AD-N7X" id="g04-60-SUd"/>
+                <outlet property="tradeButton" destination="aTn-As-3v1" id="9UF-Ec-dWL"/>
+                <outlet property="tradeLabel" destination="XbD-Du-ju7" id="cLk-9Z-bVd"/>
             </connections>
             <point key="canvasLocation" x="-7.9710144927536239" y="71.651785714285708"/>
         </tableViewCell>

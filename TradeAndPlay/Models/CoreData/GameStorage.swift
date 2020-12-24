@@ -60,7 +60,7 @@ class GameStorage {
             gameToAddInLibrary.name = game.name
             gameToAddInLibrary.cover = game.cover
             gameToAddInLibrary.platform = game.platform
-            gameToAddInLibrary.isTraded = game.isTraded
+            gameToAddInLibrary.isTraded = false
             completionHandler(.success(game.name))
         })
         coreDataStack.saveContext()
@@ -78,20 +78,6 @@ class GameStorage {
             gameToAddInLibrary.platform = game.platform
             completionHandler(.success(game.name))
         })
-        coreDataStack.saveContext()
-    }
-    
-    func deleteGame() {
-        let request: NSFetchRequest<OwnedGame> =
-            OwnedGame.fetchRequest()
-        //request.predicate = NSPredicate(format: "name == %@", name)
-        do {
-            let fetchResults = try objectContext.fetch(request)
-            fetchResults.forEach { objectContext.delete($0) }
-            //completionHandler()
-        } catch let error as NSError {
-            print(error.userInfo)
-        }
         coreDataStack.saveContext()
     }
     
@@ -132,7 +118,6 @@ class GameStorage {
             let fetchResults = try objectContext.fetch(request)
             guard fetchResults.count == 0 else {
                 completionHandler(true)
-                print(fetchResults)
                 return
             }
             completionHandler(false)
@@ -151,7 +136,6 @@ class GameStorage {
             let fetchResults = try objectContext.fetch(request)
             guard fetchResults.count == 0 else {
                 completionHandler(true)
-                print("doit sortir")
                 return
             }
             completionHandler(false)
@@ -160,4 +144,31 @@ class GameStorage {
             print(error)
         }
     }
+    
+    func fetchTrades(completionHandler: @escaping (Result<[OwnedGame], DataStorageError>) -> Void) {
+        let request: NSFetchRequest<OwnedGame> = OwnedGame.fetchRequest()
+        request.predicate = NSPredicate(format: "isTraded == %@" ,NSNumber(booleanLiteral: true))
+        guard let trades = try? objectContext.fetch(request) else {
+            completionHandler(.failure(.noCurrentTrade))
+            return
+        }
+        completionHandler(.success(trades))
+    }
+    
+    func addTrade(game: OwnedGame, recipient: FakeUser) {
+        let trade = Trade(context: objectContext)
+        trade.beginAt = Date()
+        trade.recipient = recipient.nickName
+        game.trade = trade
+        game.isTraded = true
+        coreDataStack.saveContext()
+    }
+    
+    func deleteTrades() {
+        let request: NSFetchRequest<OwnedGame> = OwnedGame.fetchRequest()
+        guard let trades = try? objectContext.fetch(request) else {return}
+        trades.forEach { objectContext.delete($0) }
+        coreDataStack.saveContext()
+    }
+    
 }

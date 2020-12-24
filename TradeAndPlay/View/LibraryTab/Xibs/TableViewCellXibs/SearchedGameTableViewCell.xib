@@ -56,10 +56,10 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uRo-kq-Aos">
-                        <rect key="frame" x="180" y="10" width="226" height="111"/>
+                        <rect key="frame" x="180" y="10" width="226" height="150"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qc-AM-uh4">
-                                <rect key="frame" x="0.0" y="0.0" width="226" height="17.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="226" height="23.5"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLf-pE-qVz">
-                                <rect key="frame" x="0.0" y="37.5" width="226" height="17.5"/>
+                                <rect key="frame" x="0.0" y="43.5" width="226" height="36.5"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
@@ -111,13 +111,13 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No user found with this game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auy-Jv-ara">
-                                <rect key="frame" x="0.0" y="65" width="226" height="0.0"/>
+                                <rect key="frame" x="0.0" y="90" width="226" height="0.0"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="12"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKe-dl-V3j">
-                                <rect key="frame" x="0.0" y="75" width="226" height="36"/>
+                                <rect key="frame" x="0.0" y="100" width="226" height="50"/>
                                 <color key="backgroundColor" red="0.6000829339" green="0.82166296240000003" blue="0.61566299199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="OHR-pW-nuY"/>
@@ -157,11 +157,11 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uRo-kq-Aos" secondAttribute="bottom" constant="10" id="C7A-sD-Pkk"/>
+                    <constraint firstItem="uRo-kq-Aos" firstAttribute="bottom" secondItem="Nif-VA-Zhf" secondAttribute="bottom" id="3QU-JG-Q7t"/>
                     <constraint firstItem="Nif-VA-Zhf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Fh7-ND-3QT"/>
                     <constraint firstAttribute="trailing" secondItem="uRo-kq-Aos" secondAttribute="trailing" constant="10" id="IEe-H0-5L7"/>
-                    <constraint firstItem="uRo-kq-Aos" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="LKu-6N-AWc"/>
                     <constraint firstItem="uRo-kq-Aos" firstAttribute="leading" secondItem="Nif-VA-Zhf" secondAttribute="trailing" constant="20" id="Sbd-a0-qwu"/>
+                    <constraint firstItem="uRo-kq-Aos" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="skR-bm-Twk"/>
                     <constraint firstItem="Nif-VA-Zhf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="wq4-dC-Dfc"/>
                 </constraints>
             </tableViewCellContentView>
@@ -174,7 +174,7 @@
                 <outlet property="platformLabel" destination="SLf-pE-qVz" id="AXv-BV-VkN"/>
                 <outlet property="whoHasItButton" destination="RKe-dl-V3j" id="Zgh-RI-Gak"/>
             </connections>
-            <point key="canvasLocation" x="155.07246376811597" y="17.745535714285712"/>
+            <point key="canvasLocation" x="-28" y="26"/>
         </tableViewCell>
     </objects>
     <resources>

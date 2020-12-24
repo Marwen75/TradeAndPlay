@@ -13,8 +13,8 @@ class PlayerViewController: UIViewController {
     
     static let segueId = "playerToChat"
     var fakeUsers: [FakeUser]?
-    var messages: [Message]?
     var messageStorage: MessageStorage?
+    var discussions: [Discussion]?
     var discussion: Discussion?
     
     override func viewDidLoad() {
@@ -25,8 +25,8 @@ class PlayerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == PlayerViewController.segueId {
             let chatVC = segue.destination as! ChatViewController
-            chatVC.messages = messages!
             chatVC.messageStorage = messageStorage
+            chatVC.discussion = discussion
         }
     }
     
@@ -55,13 +55,14 @@ extension PlayerViewController: UITableViewDataSource {
             cell.configure(withUser: fakeUser)
         }
         cell.didTapContact = { [weak self] in
-            guard let strongSelf = self else {return}
-            strongSelf.messageStorage?.fetchMessagesFromDiscussion(recipient: (strongSelf.fakeUsers?[indexPath.row].nickName)!, completionHandler: { result in
+            guard let strongSelf = self, let fakeUser = strongSelf.fakeUsers?[indexPath.row] else {return}
+            strongSelf.messageStorage?.fetchDiscussionByUser(named: (fakeUser.nickName), completionHandler: { result in
                 switch result {
                 case .failure(let error):
                     print(error)
-                case .success(let messages):
-                    strongSelf.messages = messages
+                    strongSelf.messageStorage?.addNewDiscussion(recipient: fakeUser)
+                case .success(let discussion):
+                    strongSelf.discussion = discussion
                     strongSelf.performSegue(withIdentifier: PlayerViewController.segueId, sender: nil)
                 }
             })

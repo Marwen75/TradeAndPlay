@@ -11,7 +11,9 @@ class OwnedGamesViewController: UIViewController {
     
     @IBOutlet weak var ownedGamesTableView: UITableView!
     
+    static let segueId = "ownedToForm"
     var ownedGames: [OwnedGame] = []
+    var ownedGame: OwnedGame?
     var gameStorage: GameStorage?
     var messageStorage: MessageStorage?
     var fetchOwnedGames: (() -> Void)?
@@ -29,9 +31,10 @@ class OwnedGamesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toTradeForm" {
-            let chatVC = segue.destination as! ChatViewController
-            //chatVC.messages = messages
+        if segue.identifier == OwnedGamesViewController.segueId {
+            let formVC = segue.destination as! TradeFormViewController
+            formVC.ownedGame = ownedGame
+            formVC.gameStorage = gameStorage
         }
     }
     
@@ -45,17 +48,18 @@ extension OwnedGamesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let gameName = ownedGames[indexPath.row].name else { return }
-        if editingStyle == .delete {
-            gameStorage?.deleteFromOwnedList(gameNamed: gameName, completionHandler: {
-            [weak self] in
-            guard let strongSelf = self else {return}
-                print(gameName)
-            strongSelf.displayAlert(title: "Done", message: "\(gameName) has been deleted")
-            })
-            fetchOwnedGames?()
-            tableView.deleteRows(at: [indexPath], with: .middle)
+        if ownedGames[indexPath.row].isTraded == false {
+            if editingStyle == .delete {
+                gameStorage?.deleteFromOwnedList(gameNamed: gameName, completionHandler: {
+                    [weak self] in
+                    guard let strongSelf = self else {return}
+                    strongSelf.displayAlert(title: "Done", message: "\(gameName) has been deleted")
+                })
+                fetchOwnedGames?()
+                tableView.deleteRows(at: [indexPath], with: .middle)
+            }
+            tableView.reloadData()
         }
-        tableView.reloadData()
     }
 }
 
@@ -69,6 +73,17 @@ extension OwnedGamesViewController: UITableViewDataSource {
         let cell: OwnedGameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         ownedGames = ownedGames.sorted(by: {$0.platform ?? "" > $1.platform ?? ""})
         cell.configure(withOwnedGame: ownedGames[indexPath.row])
+        if ownedGames[indexPath.row].isTraded == true {
+            cell.tradeButton.isHidden = true
+            cell.tradeLabel.isHidden = false
+            cell.backgroundColor = .gray
+            return cell
+        }
+        cell.didTapTrade = {[weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.ownedGame = strongSelf.ownedGames[indexPath.row]
+            strongSelf.performSegue(withIdentifier: OwnedGamesViewController.segueId, sender: nil)
+        }
         return cell
     }
     

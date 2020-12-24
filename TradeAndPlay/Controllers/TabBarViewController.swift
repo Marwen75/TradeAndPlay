@@ -19,6 +19,7 @@ class TabBarViewController: UITabBarController {
         libraryVc!.gameStorage = GameStorage(coreDataStack: coreDataStack)
         libraryVc!.userStorage = UserStorage(coreDataStack: coreDataStack)
         libraryVc?.messageStorage = MessageStorage(coreDataStack: coreDataStack)
+        libraryVc?.gameStorage?.deleteTrades()
         libraryVc?.messageStorage?.deleteFakeDiscussions()
         libraryVc?.messageStorage?.addFakeDiscussion(fakeUser: FakeUserData.fakeUsers[0])
         libraryVc?.messageStorage?.addFakeDiscussion(fakeUser: FakeUserData.fakeUsers[1])

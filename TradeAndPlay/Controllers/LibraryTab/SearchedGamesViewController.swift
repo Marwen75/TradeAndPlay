@@ -42,7 +42,7 @@ class SearchedGamesViewController: UIViewController {
     }
     
     private func configureTableView() {
-        searchedGamesTableView.rowHeight = 180
+        searchedGamesTableView.rowHeight = 170
         searchedGamesTableView.register(cellType: SearchedGameTableViewCell.self)
     }
 }

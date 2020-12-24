@@ -32,6 +32,13 @@ class MessageStorage {
         coreDataStack.saveContext()
     }
     
+    func addNewDiscussion(recipient: FakeUser) {
+        let discussion = Discussion(context: objectContext)
+        discussion.recipient = recipient.nickName
+        discussion.date = Date()
+        coreDataStack.saveContext()
+    }
+    
     func deleteFakeDiscussions() {
         let request: NSFetchRequest<Discussion> = Discussion.fetchRequest()
         do {
@@ -73,6 +80,24 @@ class MessageStorage {
             }
             fetchResults.sort(by: {$0.date! < $1.date!})
             completionHandler(.success(fetchResults))
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func fetchDiscussionByUser(named name: String, completionHandler: @escaping (Result<Discussion, DataStorageError>) -> Void) {
+        let request: NSFetchRequest<Discussion> = Discussion.fetchRequest()
+        request.predicate = NSPredicate(format: "recipient == %@", name)
+        do {
+            var fetchResults = try objectContext.fetch(request)
+            guard fetchResults.count > 0 else {
+                completionHandler(.failure(.noDiscussion))
+                return
+            }
+            fetchResults.sort(by: {$0.date! < $1.date!})
+            if let disccusion = fetchResults.first {
+            completionHandler(.success(disccusion))
+            }
         } catch let error {
             print(error)
         }

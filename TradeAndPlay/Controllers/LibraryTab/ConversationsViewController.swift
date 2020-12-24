@@ -55,7 +55,8 @@ class ConversationsViewController: UIViewController {
 extension ConversationsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        messageStorage?.fetchMessagesFromDiscussion(recipient: discussions[indexPath.row].recipient ?? "",completionHandler: { [weak self] result in
+        guard let recipient = discussions[indexPath.row].recipient else {return}
+        messageStorage?.fetchMessagesFromDiscussion(recipient: recipient, completionHandler: { [weak self] result in
             guard let strongSelf = self else {return}
             switch result {
             case .failure(let error):

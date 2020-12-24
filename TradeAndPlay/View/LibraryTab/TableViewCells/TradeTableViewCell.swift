@@ -12,18 +12,9 @@ class TradeTableViewCell: UITableViewCell {
     @IBOutlet weak var gameOwnedImageView: UIImageView!
     @IBOutlet weak var gameOwnedLabel: UILabel!
     @IBOutlet weak var gameOwnedPlatform: UILabel!
-    @IBOutlet weak var gameReceivedImageView: UIImageView!
-    @IBOutlet weak var gameReceivedLabel: UILabel!
-    @IBOutlet weak var gameReceivedPlatform: UILabel!
-    @IBOutlet weak var bottomView: UIView! {
-        didSet {
-            bottomView.isHidden = true
-        }
-    }
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet weak var tradeDateLabel: UILabel!
-    @IBOutlet weak var tradeEndDateLabel: UILabel!
     @IBOutlet weak var tradeOverButton: UIButton!
     
     override func awakeFromNib() {
@@ -37,8 +28,16 @@ class TradeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(gamOwned: OwnedGame, gameReceived: OwnedGame) {
-        
+    func configure(game: OwnedGame, recipient: String) {
+        gameOwnedLabel.text = game.name
+        gameOwnedPlatform.text = game.platform
+        userLabel.text = recipient
+        let imgId = game.cover
+        let stringUrl = "\(ApiConfig.imageUrl)\(imgId ?? "").png"
+        gameOwnedImageView.load(url: URL(string: stringUrl)!)
+        print(game)
+        print(recipient)
+
     }
     
 }

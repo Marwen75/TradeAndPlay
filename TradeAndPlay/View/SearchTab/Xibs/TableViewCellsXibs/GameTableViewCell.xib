@@ -22,16 +22,13 @@
                         <rect key="frame" x="10" y="10" width="733" height="488"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D9z-hY-RDa">
-                                <rect key="frame" x="0.0" y="0.0" width="733" height="373.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="733" height="366"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWr-58-FEb">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="373.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="366"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4s-p5-l80">
-                                                <rect key="frame" x="3" y="3" width="194" height="367.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="Yxl-7C-64j"/>
-                                                </constraints>
+                                                <rect key="frame" x="3" y="3" width="194" height="360"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" name="DarkBlue"/>
@@ -58,12 +55,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dEI-5o-024">
-                                        <rect key="frame" x="210" y="0.0" width="523" height="373.5"/>
+                                        <rect key="frame" x="210" y="0.0" width="523" height="366"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exB-39-cU5">
-                                                <rect key="frame" x="0.0" y="0.0" width="523" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="523" height="61"/>
                                                 <color key="backgroundColor" name="Sand"/>
-                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="15"/>
                                                 <color key="textColor" name="DarkBlue"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -79,9 +76,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-0I-5SX">
-                                                <rect key="frame" x="0.0" y="75" width="523" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="71" width="523" height="61"/>
                                                 <color key="backgroundColor" name="Sand"/>
-                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="15"/>
                                                 <color key="textColor" name="DarkBlue"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -97,9 +94,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platforms" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COL-nl-NVJ">
-                                                <rect key="frame" x="0.0" y="149.5" width="523" height="65"/>
+                                                <rect key="frame" x="0.0" y="142" width="523" height="61"/>
                                                 <color key="backgroundColor" name="Sand"/>
-                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="15"/>
                                                 <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -115,9 +112,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ratings:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSX-cx-bkD">
-                                                <rect key="frame" x="0.0" y="224.5" width="523" height="149"/>
+                                                <rect key="frame" x="0.0" y="213" width="523" height="153"/>
                                                 <color key="backgroundColor" name="Sand"/>
-                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="15"/>
                                                 <color key="textColor" name="DarkBlue"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -139,7 +136,7 @@
                                 <color key="backgroundColor" name="Sand"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to see details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hB3-Mc-P9f">
-                                <rect key="frame" x="0.0" y="383.5" width="733" height="104.5"/>
+                                <rect key="frame" x="0.0" y="376" width="733" height="112"/>
                                 <color key="backgroundColor" name="Sand"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <color key="textColor" name="DarkBlue"/>

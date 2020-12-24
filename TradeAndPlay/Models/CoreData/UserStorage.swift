@@ -32,63 +32,6 @@ class UserStorage {
         }
         completionHandler(.success(fetchResults))
     }
-    
-    func addFakeUser(name: String, city: String, rating: Int64) -> User {
-        let user = User(context: objectContext)
-        let discussion = Discussion(context: objectContext)
-        let message = Message(context: objectContext)
-        message.content = "Hello"
-        message.date = Date()
-        message.isReceiving = true
-        discussion.addToMessages(message)
-        discussion.recipient = "Marwen"
-        user.nickName = name
-        user.city = city
-        user.rating = rating
-        user.addToDiscussions(discussion)
-        coreDataStack.saveContext()
-        return user
-    }
-    
-    func addGame(name: String, cover: String, platform: String) -> OwnedGame {
-        let game = OwnedGame(context: objectContext)
-        game.name = name
-        game.cover = cover
-        game.platform = cover
-        return game
-    }
-    
-    func addSearchGame(name: String, cover: String, platform: String) -> SearchedGame {
-        let game = SearchedGame(context: objectContext)
-        game.platform = platform
-        game.cover = cover
-        game.name = name
-        return game
-    }
-    
-    func deleteFakeUsers() {
-        let request: NSFetchRequest<User> =
-            User.fetchRequest()
-        request.predicate = NSPredicate(format: "nickName != %@", "Marv")
-        do {
-            let fetchResults = try objectContext.fetch(request)
-            fetchResults.forEach { objectContext.delete($0) }
-        } catch let error as NSError {
-            print(error.userInfo)
-        }
-        coreDataStack.saveContext()
-    }
-    
-   /* func fetchUsersWhoHasGame(named name: String, completionHandler: @escaping (Result<[User], DataStorageError>) -> Void) {
-        let request: NSFetchRequest<User> =
-            User.fetchRequest()
-        request.predicate = NSPredicate(format: "ANY ownedGames.name == %@", name)
-        guard let fetchResults = try? objectContext.fetch(request), fetchResults.count > 0 else {
-            completionHandler(.failure(.noPlayerWithGameFound))
-            return
-        }
-        completionHandler(.success(fetchResults))
-    } */
 }
 
 

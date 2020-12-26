@@ -20,34 +20,30 @@ class TradeFormViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func confirmTradeButtonTaped(_ sender: Any) {
-        do {
-            try checkIfUserExists(users: fakeUsers)
-        } catch let error as DataStorageError {
-            displayAlert(title: error.errorDescription, message: error.failureReason)
-        } catch {
-            print("pblm")
+        if checkIfUserExists(users: fakeUsers) == true {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.displayAlert(title: "Oups!", message: "No user found with this Name")
         }
     }
     
-    private func checkIfUserExists(users: [FakeUser]) throws {
+    private func checkIfUserExists(users: [FakeUser]) -> Bool {
+        toggleActivityIndicator(shown: true)
         let userNickName = customTextField.gameTextField.text
-        guard let ownedGame = ownedGame else {
-            throw DataStorageError.noGameFound
-        }
-        for fakeUser in fakeUsers {
+        guard let ownedGame = ownedGame else {return false}
+        for fakeUser in users {
             if fakeUser.nickName == userNickName {
+                toggleActivityIndicator(shown: false)
                 self.fakeUser = fakeUser
                 self.gameStorage?.addTrade(game: ownedGame, recipient: fakeUser)
-                displayAlert(title: "Done !", message: "You traded \(ownedGame.name) with \(fakeUser)")
-                break
-                } else {
-                throw DataStorageError.noPlayerFound
+                return true
             }
         }
+        toggleActivityIndicator(shown: false)
+        return false
     }
     
     private func toggleActivityIndicator(shown: Bool) {

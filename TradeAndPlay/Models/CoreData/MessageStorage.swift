@@ -32,10 +32,11 @@ class MessageStorage {
         coreDataStack.saveContext()
     }
     
-    func addNewDiscussion(recipient: FakeUser) {
+    func addNewDiscussion(recipient: FakeUser, completionHandler: ((Discussion) -> Void)) {
         let discussion = Discussion(context: objectContext)
         discussion.recipient = recipient.nickName
-        discussion.date = Date()
+        discussion.date = Date.init()
+        completionHandler(discussion)
         coreDataStack.saveContext()
     }
     
@@ -50,21 +51,12 @@ class MessageStorage {
         coreDataStack.saveContext()
     }
     
-    func addFakeMessage(fakeMessage: FakeMessage) -> Message {
-        let message = Message(context: objectContext)
-        message.content = fakeMessage.content
-        message.date = fakeMessage.date
-        message.isReceiving = true
-        message.isRead = false
-        return message
-    }
-    
     func addMessageToDiscussion(discussion: Discussion, content: String, completionHandler: @escaping (() -> Void)) {
         let message = Message(context: objectContext)
         message.content = content
         message.isReceiving = false
         message.isRead = true
-        message.date = Date()
+        message.date = Date.init()
         discussion.date = message.date
         discussion.addToMessages(message)
         coreDataStack.saveContext()
@@ -78,7 +70,7 @@ class MessageStorage {
                 completionHandler(.failure(.noDiscussion))
                 return
             }
-            fetchResults.sort(by: {$0.date! < $1.date!})
+            fetchResults.sort(by: {$0.date! > $1.date!})
             completionHandler(.success(fetchResults))
         } catch let error {
             print(error)

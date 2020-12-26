@@ -7,7 +7,6 @@
 
 import UIKit
 
-@IBDesignable
 class CustomTextField: NibView {
     
     @IBOutlet weak var gameTextField: UITextField! {

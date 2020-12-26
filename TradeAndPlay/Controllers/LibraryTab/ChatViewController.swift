@@ -12,6 +12,7 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var userTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
+    private var placeholderLabel: UILabel!
     
     var messages: [Message] = []
     var messageStorage: MessageStorage?
@@ -19,7 +20,8 @@ class ChatViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        messageStorage?.fetchMessagesFromDiscussion(recipient: (discussion?.recipient)!, completionHandler: {[weak self] result in
+        guard let recipient = discussion?.recipient else {return}
+        messageStorage?.fetchMessagesFromDiscussion(recipient: recipient, completionHandler: {[weak self] result in
             guard let strongSelf = self else {return}
             switch result {
             case .failure(let error):
@@ -34,6 +36,15 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        userTextView.delegate = self
+        placeholderLabel = UILabel()
+        placeholderLabel.text = "Tap your text here."
+        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (userTextView.font?.pointSize)!)
+        placeholderLabel.sizeToFit()
+        userTextView.addSubview(placeholderLabel)
+        placeholderLabel.frame.origin = CGPoint(x: 5, y: (userTextView.font?.pointSize)! / 2)
+        placeholderLabel.textColor = UIColor.lightGray
+        placeholderLabel.isHidden = !userTextView.text.isEmpty
     }
     
     @IBAction func sendButtonTaped(_ sender: Any) {
@@ -106,5 +117,9 @@ extension ChatViewController: UITextViewDelegate {
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         textView.resignFirstResponder()
         return true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        placeholderLabel.isHidden = !textView.text.isEmpty
     }
 }

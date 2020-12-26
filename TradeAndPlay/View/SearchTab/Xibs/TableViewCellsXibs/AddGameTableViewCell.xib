@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="196"/>
                                 <color key="backgroundColor" red="0.6000829339" green="0.82166296240000003" blue="0.61566299199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="cds-Cn-wRJ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="cds-Cn-wRJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="15"/>
                                 <state key="normal" title="who has it?">
@@ -61,7 +61,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meg-BC-g2z">
                                 <rect key="frame" x="100" y="0.0" width="80" height="196"/>
                                 <color key="backgroundColor" red="0.89674144980000003" green="0.54882335660000003" blue="0.58431613449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="12"/>
                                 <state key="normal" title="Add to search list">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -83,7 +83,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgk-EX-WYo">
                                 <rect key="frame" x="200" y="0.0" width="80" height="196"/>
                                 <color key="backgroundColor" red="0.40306270119999998" green="0.55350995059999997" blue="0.76473730799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="12"/>
                                 <state key="normal" title="Add to owned list">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -132,7 +132,7 @@
                 <outlet property="addToSearchListButton" destination="meg-BC-g2z" id="pG7-To-u8X"/>
                 <outlet property="seeWhoButton" destination="gIy-e9-Oik" id="gin-IK-NXr"/>
             </connections>
-            <point key="canvasLocation" x="-71.014492753623188" y="64.285714285714278"/>
+            <point key="canvasLocation" x="-241" y="71"/>
         </tableViewCell>
     </objects>
     <resources>

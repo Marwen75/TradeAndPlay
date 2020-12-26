@@ -29,7 +29,6 @@
     </entity>
     <entity name="Trade" representedClassName="Trade" syncable="YES" codeGenerationType="class">
         <attribute name="beginAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="comment" optional="YES" attributeType="String"/>
         <attribute name="recipient" optional="YES" attributeType="String"/>
         <relationship name="ownedGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OwnedGame" inverseName="trade" inverseEntity="OwnedGame"/>
     </entity>
@@ -46,7 +45,7 @@
         <element name="Message" positionX="759.2734375" positionY="-380.40234375" width="128" height="118"/>
         <element name="OwnedGame" positionX="775.8125" positionY="-53.890625" width="128" height="133"/>
         <element name="SearchedGame" positionX="378.43359375" positionY="-288.83984375" width="128" height="103"/>
-        <element name="Trade" positionX="512.15625" positionY="-24.03515625" width="128" height="103"/>
+        <element name="Trade" positionX="512.15625" positionY="-24.03515625" width="128" height="88"/>
         <element name="User" positionX="579.88671875" positionY="-250.63671875" width="128" height="133"/>
     </elements>
 </model>

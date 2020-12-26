@@ -67,6 +67,10 @@ class SearchViewController: UIViewController {
             case .failure(let error):
                 strongSelf.displayAlert(title: error.errorDescription, message: error.failureReason)
             case .success(let games):
+                guard games.count > 0 else {
+                    strongSelf.displayAlert(title: "Oups!", message: "No game found with this name on this platform, check for misspeling and try again.")
+                    return
+                }
                 strongSelf.games = games
                 strongSelf.performSegue(withIdentifier: SearchViewController.segueId, sender: nil)
             }

@@ -17,15 +17,10 @@ class OwnedGameTableViewCell: UITableViewCell {
     
     var didTapTrade: (() -> Void)?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        gameImageView.image = nil
+        gameImageView.backgroundColor = .black
     }
     
     @IBAction func tradeButtonTaped(_ sender: Any) {

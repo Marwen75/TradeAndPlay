@@ -116,6 +116,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Trade&amp;Play" id="Oe1-aX-o0w">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ZGO-Zk-Fen"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="message" id="Onz-di-ofN">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -141,11 +142,11 @@
             <objects>
                 <viewController id="59d-qY-rI3" customClass="PlayerViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7m-8b-ahd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2D8-o7-dhQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                 <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
@@ -193,7 +194,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBo-hr-DoM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="276" y="122"/>
+            <point key="canvasLocation" x="171" y="121"/>
         </scene>
         <!--Trade&Play-->
         <scene sceneID="hqe-RN-Vb4">
@@ -236,52 +237,74 @@
             <objects>
                 <viewController id="XT0-7F-oQK" customClass="ChatViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Xt-be-4ON">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLR-Zm-Y8y">
-                                <rect key="frame" x="0.0" y="384" width="320" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PqF-2x-jKF">
+                                <rect key="frame" x="0.0" y="395" width="320" height="80"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F27-PF-ApP">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
-                                        <color key="backgroundColor" name="Sand"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="aon-aG-Jvp"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLR-Zm-Y8y">
+                                        <rect key="frame" x="10" y="10" width="300" height="60"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F27-PF-ApP">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="60"/>
+                                                <color key="backgroundColor" name="DarkBlue"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="aon-aG-Jvp"/>
+                                                </constraints>
+                                                <color key="textColor" name="AccentColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="yes" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="DarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-3h-yoR">
+                                                <rect key="frame" x="250" y="0.0" width="50" height="60"/>
+                                                <color key="backgroundColor" name="DarkBlue"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="f6t-tp-20z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <state key="normal" title="Send">
+                                                    <color key="titleColor" name="Sand"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sendButtonTaped:" destination="XT0-7F-oQK" eventType="touchUpInside" id="pOw-zt-SAO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="DarkBlue"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" name="DarkBlue"/>
+                                                <color key="value" name="Sand"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-3h-yoR">
-                                        <rect key="frame" x="200" y="0.0" width="120" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="oHn-nv-BwS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Send">
-                                            <color key="titleColor" red="0.40306270119999998" green="0.55350995059999997" blue="0.76473730799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sendButtonTaped:" destination="XT0-7F-oQK" eventType="touchUpInside" id="pOw-zt-SAO"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" name="DarkBlue"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="YZL-yi-nWp"/>
+                                    <constraint firstItem="KLR-Zm-Y8y" firstAttribute="top" secondItem="PqF-2x-jKF" secondAttribute="top" constant="10" id="H3L-jD-fu0"/>
+                                    <constraint firstAttribute="trailing" secondItem="KLR-Zm-Y8y" secondAttribute="trailing" constant="10" id="Qk7-Gj-Yh5"/>
+                                    <constraint firstItem="KLR-Zm-Y8y" firstAttribute="leading" secondItem="PqF-2x-jKF" secondAttribute="leading" constant="10" id="SNB-Cl-IBk"/>
+                                    <constraint firstAttribute="bottom" secondItem="KLR-Zm-Y8y" secondAttribute="bottom" constant="10" id="cfj-Nx-h9Q"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="rZt-g8-ea2"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WF7-wU-f9K">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="384"/>
-                                <color key="backgroundColor" name="Sand"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                                <color key="backgroundColor" name="DarkBlue"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XT0-7F-oQK" id="viS-sS-5Xi"/>
                                     <outlet property="delegate" destination="XT0-7F-oQK" id="wRd-gT-oHz"/>
@@ -292,15 +315,19 @@
                         <color key="backgroundColor" name="Sand"/>
                         <constraints>
                             <constraint firstItem="WF7-wU-f9K" firstAttribute="leading" secondItem="YUB-BU-hOk" secondAttribute="leading" id="0jP-Qi-IbP"/>
-                            <constraint firstItem="KLR-Zm-Y8y" firstAttribute="leading" secondItem="YUB-BU-hOk" secondAttribute="leading" id="9nk-9b-MsW"/>
-                            <constraint firstItem="YUB-BU-hOk" firstAttribute="trailing" secondItem="KLR-Zm-Y8y" secondAttribute="trailing" id="SdO-Ec-ti3"/>
+                            <constraint firstItem="YUB-BU-hOk" firstAttribute="bottom" secondItem="PqF-2x-jKF" secondAttribute="bottom" id="7Ci-9n-GzX"/>
+                            <constraint firstItem="YUB-BU-hOk" firstAttribute="trailing" secondItem="PqF-2x-jKF" secondAttribute="trailing" id="GLl-M9-vQk"/>
+                            <constraint firstItem="PqF-2x-jKF" firstAttribute="top" secondItem="WF7-wU-f9K" secondAttribute="bottom" id="Rve-v2-Okx"/>
                             <constraint firstItem="WF7-wU-f9K" firstAttribute="top" secondItem="YUB-BU-hOk" secondAttribute="top" id="ZzG-yN-8YQ"/>
-                            <constraint firstItem="KLR-Zm-Y8y" firstAttribute="bottom" secondItem="YUB-BU-hOk" secondAttribute="bottom" id="iNO-JG-IQU"/>
                             <constraint firstItem="YUB-BU-hOk" firstAttribute="trailing" secondItem="WF7-wU-f9K" secondAttribute="trailing" id="jT4-fg-bt7"/>
-                            <constraint firstItem="KLR-Zm-Y8y" firstAttribute="top" secondItem="WF7-wU-f9K" secondAttribute="bottom" id="xkO-w0-OCB"/>
+                            <constraint firstItem="PqF-2x-jKF" firstAttribute="leading" secondItem="YUB-BU-hOk" secondAttribute="leading" id="s6P-Wv-i0k"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KN9-id-mUc"/>
+                    <navigationItem key="navigationItem" id="KN9-id-mUc">
+                        <barButtonItem key="backBarButtonItem" systemItem="add" id="hYs-L7-sTN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messagesTableView" destination="WF7-wU-f9K" id="Ehc-eH-rfL"/>
                         <outlet property="sendButton" destination="5Aj-3h-yoR" id="dwh-CH-3gr"/>
@@ -374,13 +401,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JQ-qB-mPC" customClass="CustomPicker" customModule="TradeAndPlay" customModuleProvider="target">
-                                <rect key="frame" x="10" y="236.5" width="300" height="100"/>
+                                <rect key="frame" x="10" y="236.5" width="300" height="118.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="MBN-xf-wFx"/>
-                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a platform" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bs-tT-9Ki">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Select a platform" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bs-tT-9Ki">
                                 <rect key="frame" x="99.5" y="201.5" width="121.5" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="18"/>
                                 <color key="textColor" name="DarkBlue"/>
@@ -400,7 +424,7 @@
                             <constraint firstItem="S4I-he-GEO" firstAttribute="centerX" secondItem="hod-P4-1Pn" secondAttribute="centerX" id="a1l-MT-iYQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b6R-U6-hKJ" secondAttribute="trailing" constant="20" id="fgk-2w-Xp6"/>
                             <constraint firstItem="7bs-tT-9Ki" firstAttribute="top" secondItem="8CJ-WH-mHQ" secondAttribute="bottom" constant="20" id="fsJ-y8-hkJ"/>
-                            <constraint firstItem="b6R-U6-hKJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2JQ-qB-mPC" secondAttribute="bottom" constant="20" id="iVz-nn-GW0"/>
+                            <constraint firstItem="b6R-U6-hKJ" firstAttribute="top" secondItem="2JQ-qB-mPC" secondAttribute="bottom" constant="40" id="iVz-nn-GW0"/>
                             <constraint firstItem="S4I-he-GEO" firstAttribute="top" secondItem="hR4-ZW-t0N" secondAttribute="top" constant="20" id="kea-Nc-4J9"/>
                             <constraint firstItem="8CJ-WH-mHQ" firstAttribute="centerX" secondItem="hod-P4-1Pn" secondAttribute="centerX" id="mbG-Wr-8r8"/>
                             <constraint firstItem="7bs-tT-9Ki" firstAttribute="centerX" secondItem="hod-P4-1Pn" secondAttribute="centerX" id="qLi-C6-Ouj"/>
@@ -410,7 +434,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Trade&amp;Play " id="GvJ-le-N4T">
-                        <barButtonItem key="backBarButtonItem" systemItem="search" id="nsR-MY-1qJ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="nsR-MY-1qJ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
@@ -425,7 +449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ko7-Ep-5bQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1190" y="122"/>
+            <point key="canvasLocation" x="1054" y="121"/>
         </scene>
         <!--Games View Controller-->
         <scene sceneID="bvw-7h-MLP">
@@ -456,9 +480,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LJE-Mi-4Ws">
-                        <barButtonItem key="backBarButtonItem" systemItem="search" id="bdn-jM-0lU">
-                            <color key="tintColor" red="0.96078431369999995" green="0.94901960780000005" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="kot-yn-5xp"/>
                     </navigationItem>
                     <connections>
                         <outlet property="gamesTableView" destination="KyH-n4-sZj" id="JoO-SR-nZi"/>
@@ -467,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGt-cn-Md5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2179" y="122"/>
+            <point key="canvasLocation" x="2004" y="121"/>
         </scene>
         <!--Game Detail View Controller-->
         <scene sceneID="eVd-jL-Mzq">
@@ -503,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUr-Vp-hlH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3020" y="122"/>
+            <point key="canvasLocation" x="2828" y="120"/>
         </scene>
         <!--Trade Form View Controller-->
         <scene sceneID="p3B-7g-a33">
@@ -568,7 +590,7 @@
                                     <action selector="confirmTradeButtonTaped:" destination="lrv-Oe-cdP" eventType="touchUpInside" id="NEj-nI-bLE"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hBf-Kv-zZ2">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hBf-Kv-zZ2">
                                 <rect key="frame" x="141.5" y="380.5" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
@@ -586,6 +608,7 @@
                             <constraint firstItem="TPZ-Tp-WyW" firstAttribute="trailing" secondItem="pGJ-4J-eXG" secondAttribute="trailing" constant="20" id="ktI-Co-c51"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ClB-GI-rl8"/>
                     <connections>
                         <outlet property="activityIndicator" destination="hBf-Kv-zZ2" id="nFg-Xw-z5i"/>
                         <outlet property="confirmTradeButton" destination="PnY-Ea-mCQ" id="rlF-yH-XWU"/>
@@ -604,7 +627,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hnH-BM-wdV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hnH-BM-wdV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                                 <color key="backgroundColor" name="Sand"/>
                                 <connections>
@@ -624,7 +647,7 @@
                     </view>
                     <connections>
                         <outlet property="ownedGamesTableView" destination="hnH-BM-wdV" id="10p-sX-rN6"/>
-                        <segue destination="lrv-Oe-cdP" kind="presentation" identifier="ownedToForm" id="5h1-lh-i6B"/>
+                        <segue destination="lrv-Oe-cdP" kind="show" identifier="ownedToForm" id="5h1-lh-i6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRk-NF-3YN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -639,7 +662,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="seG-Rf-yFt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="seG-Rf-yFt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                                 <color key="backgroundColor" name="Sand"/>
                                 <color key="sectionIndexBackgroundColor" name="Sand"/>
@@ -675,7 +698,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CHc-zf-MpS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CHc-zf-MpS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                                 <color key="backgroundColor" name="Sand"/>
                                 <connections>
@@ -703,13 +726,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="THe-wc-GuZ"/>
-        <segue reference="ZYv-TV-H8x"/>
+        <segue reference="GI7-Qz-pCL"/>
+        <segue reference="wOY-6x-eZK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Library" width="35" height="31.5"/>
         <image name="games" width="35" height="35"/>
         <image name="message" width="25" height="25"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DarkBlue">
             <color red="0.14000000059604645" green="0.289000004529953" blue="0.36500000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

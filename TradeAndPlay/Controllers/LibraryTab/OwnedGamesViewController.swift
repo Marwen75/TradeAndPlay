@@ -26,7 +26,6 @@ class OwnedGamesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchOwnedGames?()
         configureTableView()
     }
     
@@ -70,14 +69,18 @@ extension OwnedGamesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell: OwnedGameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         ownedGames = ownedGames.sorted(by: {$0.platform ?? "" > $1.platform ?? ""})
         cell.configure(withOwnedGame: ownedGames[indexPath.row])
-        if ownedGames[indexPath.row].isTraded == true {
+        if ownedGames[indexPath.row].isTraded == false {
+            cell.tradeButton.isHidden = false
+            cell.tradeLabel.isHidden = true
+            cell.backgroundColor = UIColor(named: "Sand")
+        } else {
             cell.tradeButton.isHidden = true
             cell.tradeLabel.isHidden = false
             cell.backgroundColor = .gray
-            return cell
         }
         cell.didTapTrade = {[weak self] in
             guard let strongSelf = self else {return}
@@ -89,7 +92,7 @@ extension OwnedGamesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HeaderView()
-        header.headerLabel.text = "You don't have any games in your owned game list. Find the correct versions of your games by using the search tab to fill your list."
+        header.headerLabel.text = "You don't have any games in \n your owned game list.\n Find the correct versions of your games \n by using the search tab to fill your list."
         return header
     }
     // setting the height for our header that displays the message

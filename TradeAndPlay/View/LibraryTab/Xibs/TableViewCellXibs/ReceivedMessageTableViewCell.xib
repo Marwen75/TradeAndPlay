@@ -19,27 +19,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-wz-CqT">
-                        <rect key="frame" x="235.5" y="84" width="30" height="20"/>
+                        <rect key="frame" x="213" y="84" width="30" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="T8l-wI-8ph"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="T8l-wI-8ph"/>
                             <constraint firstAttribute="height" constant="20" id="lSi-aL-uEm"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-PQ-iif">
-                        <rect key="frame" x="267.5" y="5" width="47.5" height="99"/>
+                        <rect key="frame" x="245" y="5" width="70" height="99"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DJqz" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVR-NG-00C">
-                                <rect key="frame" x="7" y="5" width="33.5" height="79"/>
+                                <rect key="frame" x="7" y="5" width="56" height="79"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="DarkBlue"/>
+                        <color key="backgroundColor" red="0.27185201640000001" green="0.56987494230000002" blue="0.44312626119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="ET6-H0-t5F"/>
                             <constraint firstAttribute="bottom" secondItem="CVR-NG-00C" secondAttribute="bottom" constant="15" id="Hxg-dj-QK9"/>
                             <constraint firstItem="CVR-NG-00C" firstAttribute="leading" secondItem="L4j-PQ-iif" secondAttribute="leading" constant="7" id="RnS-Kx-SJZ"/>
                             <constraint firstAttribute="trailing" secondItem="CVR-NG-00C" secondAttribute="trailing" constant="7" id="Up0-QJ-LLr"/>
@@ -52,7 +53,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="Sand"/>
+                <color key="backgroundColor" name="DarkBlue"/>
                 <constraints>
                     <constraint firstItem="OvQ-wz-CqT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1zu-b4-Sw0"/>
                     <constraint firstItem="L4j-PQ-iif" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Bgg-wH-WG2"/>
@@ -73,9 +74,6 @@
     <resources>
         <namedColor name="DarkBlue">
             <color red="0.14000000059604645" green="0.289000004529953" blue="0.36500000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="Sand">
-            <color red="0.94499999284744263" green="0.91500002145767212" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

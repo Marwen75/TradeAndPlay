@@ -10,6 +10,14 @@
 		63905BEF08E8CE5247B83EE5 /* Pods_TradeAndPlay_TradeAndPlayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE4DFDF83F4B7B46D9A9E37 /* Pods_TradeAndPlay_TradeAndPlayUITests.framework */; };
 		89B50B9FAC4C54026F371672 /* Pods_TradeAndPlayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD37F05C46699BF90DA4A187 /* Pods_TradeAndPlayTests.framework */; };
 		C2050C72258FA3AE003C2522 /* FakeUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2050C71258FA3AE003C2522 /* FakeUserData.swift */; };
+		C21F84222597329A0013A7A4 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F84212597329A0013A7A4 /* Extension+Date.swift */; };
+		C21F843525974E060013A7A4 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F843425974E060013A7A4 /* TestCoreDataStack.swift */; };
+		C21F843A25974E750013A7A4 /* GameStorageTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F843925974E750013A7A4 /* GameStorageTestCase.swift */; };
+		C21F844225976E950013A7A4 /* MessageStorageTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F844125976E950013A7A4 /* MessageStorageTestCase.swift */; };
+		C21F8447259786570013A7A4 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F8446259786570013A7A4 /* FakeResponseData.swift */; };
+		C21F844C259786DC0013A7A4 /* IGDB.json in Resources */ = {isa = PBXBuildFile; fileRef = C21F844B259786DC0013A7A4 /* IGDB.json */; };
+		C21F8451259787B90013A7A4 /* UrlSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F8450259787B90013A7A4 /* UrlSessionFake.swift */; };
+		C21F8459259788B20013A7A4 /* IgdbServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F8458259788B20013A7A4 /* IgdbServiceTestCase.swift */; };
 		C229E666258DDDD800717707 /* MessageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C229E665258DDDD800717707 /* MessageStorage.swift */; };
 		C229E66B258DE3F500717707 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C229E66A258DE3F500717707 /* ConversationsViewController.swift */; };
 		C229E671258DE42900717707 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C229E670258DE42900717707 /* ChatViewController.swift */; };
@@ -19,7 +27,6 @@
 		C229E680258E041200717707 /* ReceivedMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C229E67E258E041200717707 /* ReceivedMessageTableViewCell.xib */; };
 		C229E686258E06E200717707 /* SendingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C229E684258E06E200717707 /* SendingMessageTableViewCell.swift */; };
 		C229E687258E06E200717707 /* SendingMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C229E685258E06E200717707 /* SendingMessageTableViewCell.xib */; };
-		C229E68C258F479A00717707 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C229E68B258F479A00717707 /* UserStorage.swift */; };
 		C230D7B6257F8ED100ED28C2 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = C230D7B5257F8ED100ED28C2 /* CustomTextField.xib */; };
 		C230D7BB257F961800ED28C2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C230D7BA257F961800ED28C2 /* CustomTextField.swift */; };
 		C230D7D2257FCB4C00ED28C2 /* GameDetailPresentationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C230D7D0257FCB4C00ED28C2 /* GameDetailPresentationTableViewCell.swift */; };
@@ -63,7 +70,6 @@
 		C2B36FBD2573C09D00282E45 /* TradeAndPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FBB2573C09D00282E45 /* TradeAndPlay.xcdatamodeld */; };
 		C2B36FBF2573C0A000282E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B36FBE2573C0A000282E45 /* Assets.xcassets */; };
 		C2B36FC22573C0A000282E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B36FC02573C0A000282E45 /* LaunchScreen.storyboard */; };
-		C2B36FCD2573C0A100282E45 /* TradeAndPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FCC2573C0A100282E45 /* TradeAndPlayTests.swift */; };
 		C2B36FD82573C0A100282E45 /* TradeAndPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FD72573C0A100282E45 /* TradeAndPlayUITests.swift */; };
 		C2B36FF62573E12C00282E45 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FF52573E12C00282E45 /* SearchViewController.swift */; };
 		C2B36FFE2574026900282E45 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B36FFD2574026900282E45 /* ApiKey.swift */; };
@@ -110,6 +116,15 @@
 		AD37F05C46699BF90DA4A187 /* Pods_TradeAndPlayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeAndPlayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE4DFDF83F4B7B46D9A9E37 /* Pods_TradeAndPlay_TradeAndPlayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeAndPlay_TradeAndPlayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2050C71258FA3AE003C2522 /* FakeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserData.swift; sourceTree = "<group>"; };
+		C21F84212597329A0013A7A4 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
+		C21F843325974E060013A7A4 /* TradeAndPlayTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TradeAndPlayTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		C21F843425974E060013A7A4 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		C21F843925974E750013A7A4 /* GameStorageTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStorageTestCase.swift; sourceTree = "<group>"; };
+		C21F844125976E950013A7A4 /* MessageStorageTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageStorageTestCase.swift; sourceTree = "<group>"; };
+		C21F8446259786570013A7A4 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		C21F844B259786DC0013A7A4 /* IGDB.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = IGDB.json; sourceTree = "<group>"; };
+		C21F8450259787B90013A7A4 /* UrlSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionFake.swift; sourceTree = "<group>"; };
+		C21F8458259788B20013A7A4 /* IgdbServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgdbServiceTestCase.swift; sourceTree = "<group>"; };
 		C229E665258DDDD800717707 /* MessageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageStorage.swift; sourceTree = "<group>"; };
 		C229E66A258DE3F500717707 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		C229E670258DE42900717707 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +134,6 @@
 		C229E67E258E041200717707 /* ReceivedMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceivedMessageTableViewCell.xib; sourceTree = "<group>"; };
 		C229E684258E06E200717707 /* SendingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingMessageTableViewCell.swift; sourceTree = "<group>"; };
 		C229E685258E06E200717707 /* SendingMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendingMessageTableViewCell.xib; sourceTree = "<group>"; };
-		C229E68B258F479A00717707 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		C230D7B5257F8ED100ED28C2 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		C230D7BA257F961800ED28C2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		C230D7D0257FCB4C00ED28C2 /* GameDetailPresentationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailPresentationTableViewCell.swift; sourceTree = "<group>"; };
@@ -166,7 +180,6 @@
 		C2B36FC12573C0A000282E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2B36FC32573C0A000282E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2B36FC82573C0A100282E45 /* TradeAndPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeAndPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2B36FCC2573C0A100282E45 /* TradeAndPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeAndPlayTests.swift; sourceTree = "<group>"; };
 		C2B36FCE2573C0A100282E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2B36FD32573C0A100282E45 /* TradeAndPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeAndPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B36FD72573C0A100282E45 /* TradeAndPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeAndPlayUITests.swift; sourceTree = "<group>"; };
@@ -227,6 +240,34 @@
 				AD37F05C46699BF90DA4A187 /* Pods_TradeAndPlayTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C21F845D25978E6C0013A7A4 /* FakeData */ = {
+			isa = PBXGroup;
+			children = (
+				C21F843425974E060013A7A4 /* TestCoreDataStack.swift */,
+				C21F8446259786570013A7A4 /* FakeResponseData.swift */,
+				C21F8450259787B90013A7A4 /* UrlSessionFake.swift */,
+			);
+			path = FakeData;
+			sourceTree = "<group>";
+		};
+		C21F845E25978E9D0013A7A4 /* CoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				C21F843925974E750013A7A4 /* GameStorageTestCase.swift */,
+				C21F844125976E950013A7A4 /* MessageStorageTestCase.swift */,
+			);
+			path = CoreDataTests;
+			sourceTree = "<group>";
+		};
+		C21F845F25978EB60013A7A4 /* IgdbTests */ = {
+			isa = PBXGroup;
+			children = (
+				C21F8458259788B20013A7A4 /* IgdbServiceTestCase.swift */,
+				C21F844B259786DC0013A7A4 /* IGDB.json */,
+			);
+			path = IgdbTests;
 			sourceTree = "<group>";
 		};
 		C230D79F257F7F0C00ED28C2 /* CustomComponents */ = {
@@ -425,8 +466,11 @@
 		C2B36FCB2573C0A100282E45 /* TradeAndPlayTests */ = {
 			isa = PBXGroup;
 			children = (
-				C2B36FCC2573C0A100282E45 /* TradeAndPlayTests.swift */,
 				C2B36FCE2573C0A100282E45 /* Info.plist */,
+				C21F845F25978EB60013A7A4 /* IgdbTests */,
+				C21F845D25978E6C0013A7A4 /* FakeData */,
+				C21F845E25978E9D0013A7A4 /* CoreDataTests */,
+				C21F843325974E060013A7A4 /* TradeAndPlayTests-Bridging-Header.h */,
 			);
 			path = TradeAndPlayTests;
 			sourceTree = "<group>";
@@ -500,6 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				C2B3704E2576997A00282E45 /* Extension+ViewController.swift */,
+				C21F84212597329A0013A7A4 /* Extension+Date.swift */,
 				C2B370B92577C03700282E45 /* Extension+UIImageView.swift */,
 				C230D8A0258363A000ED28C2 /* Extension+UITableView.swift */,
 				C230D8A52583C68300ED28C2 /* Extension+UICollectionView.swift */,
@@ -514,7 +559,6 @@
 			children = (
 				C2B36FBB2573C09D00282E45 /* TradeAndPlay.xcdatamodeld */,
 				C230D83B2581168800ED28C2 /* CoreDataStack.swift */,
-				C229E68B258F479A00717707 /* UserStorage.swift */,
 				C230D8EB2588904500ED28C2 /* GameStorage.swift */,
 				C229E665258DDDD800717707 /* MessageStorage.swift */,
 			);
@@ -635,6 +679,7 @@
 					};
 					C2B36FC72573C0A100282E45 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 						TestTargetID = C2B36FAE2573C09D00282E45;
 					};
 					C2B36FD22573C0A100282E45 = {
@@ -694,6 +739,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C21F844C259786DC0013A7A4 /* IGDB.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,7 +872,6 @@
 				C230D8B12583CBBC00ED28C2 /* Extension+UITableviewCell.swift in Sources */,
 				C230D8D02584A69600ED28C2 /* PlayerTableViewCell.swift in Sources */,
 				C229E678258DEE8A00717707 /* ConversationTableViewCell.swift in Sources */,
-				C229E68C258F479A00717707 /* UserStorage.swift in Sources */,
 				C230D876258252D000ED28C2 /* DataStorageError.swift in Sources */,
 				C230D8CA25849EBF00ED28C2 /* PlayerViewController.swift in Sources */,
 				C2B36FFE2574026900282E45 /* ApiKey.swift in Sources */,
@@ -839,6 +884,7 @@
 				C2B370F1257B953A00282E45 /* GameSearchResult.swift in Sources */,
 				C229E66B258DE3F500717707 /* ConversationsViewController.swift in Sources */,
 				C230D7D9257FCF5E00ED28C2 /* SummaryTableViewCell.swift in Sources */,
+				C21F84222597329A0013A7A4 /* Extension+Date.swift in Sources */,
 				C2B3704F2576997A00282E45 /* Extension+ViewController.swift in Sources */,
 				C2B3704025768C4900282E45 /* IgdbService.swift in Sources */,
 				C2B370BA2577C03700282E45 /* Extension+UIImageView.swift in Sources */,
@@ -872,7 +918,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2B36FCD2573C0A100282E45 /* TradeAndPlayTests.swift in Sources */,
+				C21F844225976E950013A7A4 /* MessageStorageTestCase.swift in Sources */,
+				C21F8451259787B90013A7A4 /* UrlSessionFake.swift in Sources */,
+				C21F8447259786570013A7A4 /* FakeResponseData.swift in Sources */,
+				C21F8459259788B20013A7A4 /* IgdbServiceTestCase.swift in Sources */,
+				C21F843A25974E750013A7A4 /* GameStorageTestCase.swift in Sources */,
+				C21F843525974E060013A7A4 /* TestCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1083,10 +1134,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PTPRZC36QH;
 				INFOPLIST_FILE = TradeAndPlayTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1094,6 +1146,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marwen.TradeAndPlayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TradeAndPlayTests/TradeAndPlayTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeAndPlay.app/TradeAndPlay";
@@ -1106,10 +1160,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PTPRZC36QH;
 				INFOPLIST_FILE = TradeAndPlayTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1117,6 +1172,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marwen.TradeAndPlayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TradeAndPlayTests/TradeAndPlayTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeAndPlay.app/TradeAndPlay";

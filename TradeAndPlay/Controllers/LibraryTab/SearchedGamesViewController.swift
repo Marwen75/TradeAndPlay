@@ -13,7 +13,6 @@ class SearchedGamesViewController: UIViewController {
     
     static let segueId = "searchedToPlayer"
     var searchedGames: [SearchedGame] = []
-    var userStorage: UserStorage?
     var gameStorage: GameStorage?
     var fakeUsers: [FakeUser] = FakeUserData.fakeUsers
     var messageStorage: MessageStorage?
@@ -95,5 +94,15 @@ extension SearchedGamesViewController: UITableViewDataSource {
             cell.whoHasItButton.isHidden = true
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = HeaderView()
+        header.headerLabel.text = "You don't have any games in your search list.\n Find the correct versions of your games \n by using the search tab to fill your list."
+        return header
+    }
+    // setting the height for our header that displays the message
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return searchedGames.isEmpty ? tableView.frame.size.height : 0
     }
 }

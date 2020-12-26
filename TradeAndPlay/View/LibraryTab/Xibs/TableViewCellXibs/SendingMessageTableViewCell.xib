@@ -21,11 +21,11 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjg-hb-0Y9">
                         <rect key="frame" x="279" y="81" width="30" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="nip-lV-XYU"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="nip-lV-XYU"/>
                             <constraint firstAttribute="height" constant="20" id="y8S-PF-Qe6"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0K-QE-6JW">
@@ -43,6 +43,7 @@
                             <constraint firstItem="lLJ-mZ-3wX" firstAttribute="top" secondItem="p0K-QE-6JW" secondAttribute="top" constant="5" id="ME2-AF-O6j"/>
                             <constraint firstAttribute="bottom" secondItem="lLJ-mZ-3wX" secondAttribute="bottom" constant="15" id="ODo-aL-zlg"/>
                             <constraint firstItem="lLJ-mZ-3wX" firstAttribute="leading" secondItem="p0K-QE-6JW" secondAttribute="leading" constant="7" id="osh-ka-5FE"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="r8V-2a-zZY"/>
                             <constraint firstAttribute="trailing" secondItem="lLJ-mZ-3wX" secondAttribute="trailing" constant="7" id="x2c-V0-Uuk"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -52,7 +53,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="Sand"/>
+                <color key="backgroundColor" name="DarkBlue"/>
                 <constraints>
                     <constraint firstItem="p0K-QE-6JW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="D1r-cJ-K4I"/>
                     <constraint firstAttribute="bottom" secondItem="p0K-QE-6JW" secondAttribute="bottom" constant="5" id="Eoc-vx-Hld"/>
@@ -71,8 +72,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="Sand">
-            <color red="0.94499999284744263" green="0.91500002145767212" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="DarkBlue">
+            <color red="0.14000000059604645" green="0.289000004529953" blue="0.36500000953674316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

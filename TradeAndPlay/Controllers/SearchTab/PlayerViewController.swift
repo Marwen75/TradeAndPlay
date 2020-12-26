@@ -58,9 +58,11 @@ extension PlayerViewController: UITableViewDataSource {
             guard let strongSelf = self, let fakeUser = strongSelf.fakeUsers?[indexPath.row] else {return}
             strongSelf.messageStorage?.fetchDiscussionByUser(named: (fakeUser.nickName), completionHandler: { result in
                 switch result {
-                case .failure(let error):
-                    print(error)
-                    strongSelf.messageStorage?.addNewDiscussion(recipient: fakeUser)
+                case .failure(_):
+                    strongSelf.messageStorage?.addNewDiscussion(recipient: fakeUser, completionHandler: { discussion in
+                        strongSelf.discussion = discussion
+                        strongSelf.performSegue(withIdentifier: PlayerViewController.segueId, sender: nil)
+                    })
                 case .success(let discussion):
                     strongSelf.discussion = discussion
                     strongSelf.performSegue(withIdentifier: PlayerViewController.segueId, sender: nil)

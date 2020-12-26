@@ -1,0 +1,59 @@
+[
+    {
+        "id": 4002,
+        "cover": {
+            "id": 84942,
+            "image_id": "co1tji"
+        },
+        "first_release_date": 956102400,
+        "genres": [
+            {
+                "id": 8,
+                "name": "Platform"
+            },
+            {
+                "id": 25,
+                "name": "Hack and slash/Beat 'em up"
+            },
+            {
+                "id": 31,
+                "name": "Adventure"
+            }
+        ],
+        "name": "MediEvil 2",
+        "platforms": [
+            {
+                "id": 7,
+                "name": "PlayStation"
+            }
+        ],
+        "rating": 80.578341123837,
+        "screenshots": [
+            {
+                "id": 40984,
+                "image_id": "icplrvkomsntp6ajlnff"
+            },
+            {
+                "id": 40985,
+                "image_id": "yhmilgy23rhhzhmd5oi4"
+            },
+            {
+                "id": 40986,
+                "image_id": "oodwdfmq2l1jdbblylwm"
+            },
+            {
+                "id": 40987,
+                "image_id": "l9jhisk092gujxmfpcrk"
+            },
+            {
+                "id": 40988,
+                "image_id": "bxz4daf8fwu7xnefzdru"
+            },
+            {
+                "id": 337351,
+                "image_id": "sc78av"
+            }
+        ],
+        "summary": "MediEvil 2 or MediEvil II in its NA release, sequel to the popular MediEvil takes place after the noble but bony Sir Dan Fortesque defeats the evil wizard Zarok. After a new villain by the name of Lord Palethorn arises, poor Dan is awakened along with everything dead and forgotten. The game allows you to explore past levels as well as collecting the Chalice which gives a new weapon once 100% of the souls have been returned in the level. The game has many comedic moments, such as when Sir Dan tries conversing with a bunch of midgets in the city sewers who think he is an almighty God."
+    }
+]

@@ -145,7 +145,7 @@ class GameStorage {
         }
     }
     
-    func fetchTrades(completionHandler: @escaping (Result<[OwnedGame], DataStorageError>) -> Void) {
+    func fetchCurrentTrades(completionHandler: @escaping (Result<[OwnedGame], DataStorageError>) -> Void) {
         let request: NSFetchRequest<OwnedGame> = OwnedGame.fetchRequest()
         request.predicate = NSPredicate(format: "isTraded == %@" ,NSNumber(booleanLiteral: true))
         guard let trades = try? objectContext.fetch(request) else {
@@ -157,18 +157,25 @@ class GameStorage {
     
     func addTrade(game: OwnedGame, recipient: FakeUser) {
         let trade = Trade(context: objectContext)
-        trade.beginAt = Date()
+        trade.beginAt = Date.init()
         trade.recipient = recipient.nickName
         game.trade = trade
         game.isTraded = true
         coreDataStack.saveContext()
     }
     
-    func deleteTrades() {
-        let request: NSFetchRequest<OwnedGame> = OwnedGame.fetchRequest()
-        guard let trades = try? objectContext.fetch(request) else {return}
-        trades.forEach { objectContext.delete($0) }
-        coreDataStack.saveContext()
+    func deleteTrade(game: OwnedGame) {
+        guard let gameName = game.name else {return}
+        let request: NSFetchRequest<Trade> = Trade.fetchRequest()
+        request.predicate = NSPredicate(format: "ownedGame.name == %@", gameName)
+        do {
+            let trades = try objectContext.fetch(request)
+            guard let trade = trades.last else {return}
+            objectContext.delete(trade)
+            game.isTraded = false
+            coreDataStack.saveContext()
+        } catch let error {
+            print(error)
+        }
     }
-    
 }

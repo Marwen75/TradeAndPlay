@@ -39,57 +39,42 @@ struct FakeUserData {
                                      ownedGamesList: [FakeOwnedGame(name: "The Witcher 3: Wild Hunt",
                                                                     cover: "co1wyy",
                                                                     platform: "PlayStation 4")],
-                                     searchGamesList: [FakeSearchedGame(name: "God of War",
-                                                                        cover: "co1tmu",
-                                                                        platform: "PlayStation 4")],
                                      messages: [FakeMessage(content: "Hello !",
                                                             sender: "Igo",
-                                                            date: Date())]),
+                                                            date: Date.init(timeIntervalSinceReferenceDate: 630000000))]),
                             FakeUser(nickName: "Franzy",
                                      city: "Boulogne",
                                      rating: 100,
                                      ownedGamesList: [FakeOwnedGame(name: "God of War",
                                                                     cover: "co1tmu",
                                                                     platform: "PlayStation 4")],
-                                     searchGamesList: [FakeSearchedGame(name: "",
-                                                                        cover: "",
-                                                                        platform: "")],
                                      messages: [FakeMessage(content: "Yooooo",
                                                             sender: "Franzy",
-                                                            date: Date())]),
+                                                            date: Date.init(timeIntervalSinceReferenceDate: 629000000))]),
                             FakeUser(nickName: "Elea",
                                      city: "Boulogne",
                                      rating: 100,
                                      ownedGamesList: [FakeOwnedGame(name: "Sekiro: Shadows Die Twice",
                                                                     cover: "co2a23",
                                                                     platform: "PlayStation 4")],
-                                     searchGamesList: [FakeSearchedGame(name: "",
-                                                                        cover: "",
-                                                                        platform: "")],
                                      messages: [FakeMessage(content: "Aloha",
                                                             sender: "Elea",
-                                                            date: Date())]),
+                                                            date: Date.init(timeIntervalSinceReferenceDate: 628000000))]),
                             FakeUser(nickName: "Flop",
                                      city: "Boulogne",
                                      rating: 100,
                                      ownedGamesList: [FakeOwnedGame(name: "Shenmue",
                                                                     cover: "co1yad",
                                                                     platform: "Dreamcast")],
-                                     searchGamesList: [FakeSearchedGame(name: "",
-                                                                        cover: "",
-                                                                        platform: "")],
                                      messages: [FakeMessage(content: "You here?",
                                                             sender: "Flop",
                                                             date: Date())]),
                             FakeUser(nickName: "Zari",
                                      city: "Arcueil",
                                      rating: 100,
-                                     ownedGamesList: [FakeOwnedGame(name: "Hagane: The Final Conflict",
-                                                                    cover: "co2gu4",
-                                                                    platform: "Super Nintendo Entertainment System (SNES)")],
-                                     searchGamesList: [FakeSearchedGame(name: "",
-                                                                        cover: "",
-                                                                        platform: "")],
+                                     ownedGamesList: [FakeOwnedGame(name: "MediEvil 2",
+                                                                    cover: "co1tji",
+                                                                    platform: "PlayStation")],
                                      messages: [FakeMessage(content: "",
                                                             sender: "",
                                                             date: Date())])
@@ -101,17 +86,10 @@ struct FakeUser {
     let city: String
     let rating: Int
     let ownedGamesList: [FakeOwnedGame]
-    let searchGamesList: [FakeSearchedGame]
     let messages: [FakeMessage]
 }
 
 struct FakeOwnedGame {
-    let name: String
-    let cover: String
-    let platform: String
-}
-
-struct FakeSearchedGame {
     let name: String
     let cover: String
     let platform: String

@@ -13,11 +13,11 @@ class TradesViewController: UIViewController {
     
     var ownedGamesTraded: [OwnedGame] = []
     var gameStorage: GameStorage?
-    var fetchTrades: (() -> Void)?
+    var fetchCurrentTrades: (() -> Void)?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchTrades?()
+        fetchCurrentTrades?()
         tradesTableView.reloadData()
     }
     
@@ -44,15 +44,32 @@ extension TradesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ownedGamesTraded.count
+        return ownedGamesTraded.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tradeCell: TradeTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        print(ownedGamesTraded.forEach({$0.trade?.recipient}))
-        let recipient = ownedGamesTraded[indexPath.row].trade?.recipient ?? "Jojo"
-        tradeCell.configure(game: ownedGamesTraded[indexPath.row], recipient: recipient)
+        let game = ownedGamesTraded[indexPath.row]
+        let recipient = game.trade?.recipient ?? "Jojo"
+        tradeCell.configure(game: game, recipient: recipient)
+        tradeCell.didTapTradeOver = { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.gameStorage?.deleteTrade(game: game)
+            strongSelf.displayAlert(title: "Done", message: "Your trade \(game.name ?? "") with \(recipient) is now considered over !")
+            strongSelf.ownedGamesTraded.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
         return tradeCell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = HeaderView()
+        header.headerLabel.text = "You don't have any current Trades."
+        return header
+    }
+    // setting the height for our header that displays the message
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return ownedGamesTraded.isEmpty ? tableView.frame.size.height : 0
     }
 }
 

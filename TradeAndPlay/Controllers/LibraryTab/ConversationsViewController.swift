@@ -34,7 +34,6 @@ class ConversationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        //set.allObjects
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

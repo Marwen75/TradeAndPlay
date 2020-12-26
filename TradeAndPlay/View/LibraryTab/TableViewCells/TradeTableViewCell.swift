@@ -17,15 +17,16 @@ class TradeTableViewCell: UITableViewCell {
     @IBOutlet weak var tradeDateLabel: UILabel!
     @IBOutlet weak var tradeOverButton: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var didTapTradeOver: (() -> Void)?
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        gameOwnedImageView.image = nil
+        gameOwnedImageView.backgroundColor = .black
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBAction func tradeOverButtonTaped(_ sender: Any) {
+        didTapTradeOver?()
     }
     
     func configure(game: OwnedGame, recipient: String) {
@@ -35,9 +36,7 @@ class TradeTableViewCell: UITableViewCell {
         let imgId = game.cover
         let stringUrl = "\(ApiConfig.imageUrl)\(imgId ?? "").png"
         gameOwnedImageView.load(url: URL(string: stringUrl)!)
-        print(game)
-        print(recipient)
-
+        let dateString = game.trade?.beginAt?.formatRelativeString()
+        tradeDateLabel.text = dateString
     }
-    
 }

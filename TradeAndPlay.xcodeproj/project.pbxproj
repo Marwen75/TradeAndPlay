@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		63905BEF08E8CE5247B83EE5 /* Pods_TradeAndPlay_TradeAndPlayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE4DFDF83F4B7B46D9A9E37 /* Pods_TradeAndPlay_TradeAndPlayUITests.framework */; };
 		89B50B9FAC4C54026F371672 /* Pods_TradeAndPlayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD37F05C46699BF90DA4A187 /* Pods_TradeAndPlayTests.framework */; };
+		C203136D259884BE003C86ED /* InternetConnectionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C203136C259884BE003C86ED /* InternetConnectionChecker.swift */; };
 		C2050C72258FA3AE003C2522 /* FakeUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2050C71258FA3AE003C2522 /* FakeUserData.swift */; };
 		C21F84222597329A0013A7A4 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F84212597329A0013A7A4 /* Extension+Date.swift */; };
 		C21F843525974E060013A7A4 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F843425974E060013A7A4 /* TestCoreDataStack.swift */; };
@@ -115,6 +116,7 @@
 		A9AED606D1AD06A4C0CDBD5D /* Pods-TradeAndPlayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradeAndPlayTests.release.xcconfig"; path = "Target Support Files/Pods-TradeAndPlayTests/Pods-TradeAndPlayTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD37F05C46699BF90DA4A187 /* Pods_TradeAndPlayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeAndPlayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE4DFDF83F4B7B46D9A9E37 /* Pods_TradeAndPlay_TradeAndPlayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradeAndPlay_TradeAndPlayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C203136C259884BE003C86ED /* InternetConnectionChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionChecker.swift; sourceTree = "<group>"; };
 		C2050C71258FA3AE003C2522 /* FakeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserData.swift; sourceTree = "<group>"; };
 		C21F84212597329A0013A7A4 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		C21F843325974E060013A7A4 /* TradeAndPlayTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TradeAndPlayTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 			children = (
 				C2B36FB22573C09D00282E45 /* AppDelegate.swift */,
 				C2B36FB42573C09D00282E45 /* SceneDelegate.swift */,
+				C203136C259884BE003C86ED /* InternetConnectionChecker.swift */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 				C230D8EC2588904500ED28C2 /* GameStorage.swift in Sources */,
 				C28F82B7258C8F8B00480290 /* SearchedGameTableViewCell.swift in Sources */,
 				C2B3705425769D1100282E45 /* GamesViewController.swift in Sources */,
+				C203136D259884BE003C86ED /* InternetConnectionChecker.swift in Sources */,
 				C230D89725827C2B00ED28C2 /* ApiConfig.swift in Sources */,
 				C2B370F1257B953A00282E45 /* GameSearchResult.swift in Sources */,
 				C229E66B258DE3F500717707 /* ConversationsViewController.swift in Sources */,

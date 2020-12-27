@@ -383,7 +383,7 @@
                                     <action selector="searchButtonTaped:" destination="YD5-Zi-Xmp" eventType="touchUpInside" id="lKF-2D-9lz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking for a game ? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4I-he-GEO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Looking for a game ? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4I-he-GEO">
                                 <rect key="frame" x="61.5" y="20" width="197" height="31.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="23"/>
                                 <color key="textColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -499,7 +499,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Il7-I4-k1A">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Il7-I4-k1A">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                 <color key="backgroundColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>

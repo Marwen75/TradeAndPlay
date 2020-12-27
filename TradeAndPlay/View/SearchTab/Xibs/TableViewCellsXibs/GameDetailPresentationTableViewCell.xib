@@ -22,10 +22,10 @@
                         <rect key="frame" x="10" y="10" width="419" height="52.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2O-zz-s0c">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="52.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="52.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QN4-FH-3Vj">
-                                        <rect key="frame" x="3" y="3" width="194" height="46.5"/>
+                                        <rect key="frame" x="3" y="3" width="164" height="46.5"/>
                                         <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                 </subviews>
@@ -35,8 +35,8 @@
                                     <constraint firstAttribute="trailing" secondItem="QN4-FH-3Vj" secondAttribute="trailing" constant="3" id="XrI-e0-Fof"/>
                                     <constraint firstItem="QN4-FH-3Vj" firstAttribute="top" secondItem="s2O-zz-s0c" secondAttribute="top" constant="3" id="faX-7i-Ykf"/>
                                     <constraint firstAttribute="bottom" secondItem="QN4-FH-3Vj" secondAttribute="bottom" constant="3" id="sA3-fv-mZ2"/>
-                                    <constraint firstAttribute="width" constant="200" id="sdf-lj-YdD"/>
-                                    <constraint firstAttribute="height" constant="200" id="xXE-ad-LyG"/>
+                                    <constraint firstAttribute="width" constant="170" id="sdf-lj-YdD"/>
+                                    <constraint firstAttribute="height" constant="170" id="xXE-ad-LyG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -54,22 +54,22 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Kaj-2R-UtC">
-                                <rect key="frame" x="210" y="0.0" width="209" height="52.5"/>
+                                <rect key="frame" x="180" y="0.0" width="239" height="52.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERB-OZ-lmH">
-                                        <rect key="frame" x="0.0" y="0.0" width="209" height="17.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="239" height="17.5"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
                                         <color key="textColor" name="DarkBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Released: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3o-av-8Nx">
-                                        <rect key="frame" x="0.0" y="17.5" width="209" height="17.5"/>
+                                        <rect key="frame" x="0.0" y="17.5" width="239" height="17.5"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
                                         <color key="textColor" name="DarkBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ratings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdl-0t-eqx">
-                                        <rect key="frame" x="0.0" y="35" width="209" height="17.5"/>
+                                        <rect key="frame" x="0.0" y="35" width="239" height="17.5"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
                                         <color key="textColor" name="DarkBlue"/>
                                         <nil key="highlightedColor"/>

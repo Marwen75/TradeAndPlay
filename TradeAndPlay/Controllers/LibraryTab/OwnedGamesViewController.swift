@@ -71,7 +71,7 @@ extension OwnedGamesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: OwnedGameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        ownedGames = ownedGames.sorted(by: {$0.platform ?? "" > $1.platform ?? ""})
+        ownedGames = ownedGames.sorted(by: { $0.platform ?? ""  > $1.platform ?? "" })
         cell.configure(withOwnedGame: ownedGames[indexPath.row])
         if ownedGames[indexPath.row].isTraded == false {
             cell.tradeButton.isHidden = false

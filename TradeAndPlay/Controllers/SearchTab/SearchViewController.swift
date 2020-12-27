@@ -54,12 +54,22 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func searchButtonTaped(_ sender: Any) {
-            searchGames()
+        do {
+            try searchGames()
+        } catch let error as ApiError {
+            displayAlert(title: error.errorDescription, message: error.failureReason)
+        } catch {
+            displayAlert(title: "Oups!", message: "Une erreur est survenue.")
+        }
     }
     
-    private func searchGames() {
+    private func searchGames() throws {
         guard let name = customTextField.gameTextField.text else {return}
         toggleActivityIndicator(shown: true)
+        guard InternetConnectionChecker.isConnectedToNetwork() else {
+            toggleActivityIndicator(shown: false)
+            throw ApiError.noInternet
+        }
         igdbService?.post(withName: name, platform: platform, completionHandler: { [weak self] result in
             guard let strongSelf = self else { return }
             strongSelf.toggleActivityIndicator(shown: false)

@@ -9,15 +9,18 @@ import UIKit
 
 class ChatViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var userTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     private var placeholderLabel: UILabel!
     
+    // MARK: - Properties
     var messages: [Message] = []
     var messageStorage: MessageStorage?
     var discussion: Discussion?
     
+    // MARK: - View life cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let recipient = discussion?.recipient else {return}
@@ -36,6 +39,7 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        // creatjng a placeholder for our text view that will hide whend the user starts typing
         userTextView.delegate = self
         placeholderLabel = UILabel()
         placeholderLabel.text = "Tap your text here."
@@ -47,10 +51,12 @@ class ChatViewController: UIViewController {
         placeholderLabel.isHidden = !userTextView.text.isEmpty
     }
     
+    // MARK: - Actions
     @IBAction func sendButtonTaped(_ sender: Any) {
         sendMessage()
     }
     
+    // MARK: - Methods
     private func sendMessage() {
         let content: String = userTextView.text
         guard !content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {return}
@@ -86,10 +92,7 @@ class ChatViewController: UIViewController {
     }
 }
 
-extension ChatViewController: UITableViewDelegate {
-    
-}
-
+// MARK: - Table view data source
 extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,6 +115,7 @@ extension ChatViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Text View Delegate
 extension ChatViewController: UITextViewDelegate {
     
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {

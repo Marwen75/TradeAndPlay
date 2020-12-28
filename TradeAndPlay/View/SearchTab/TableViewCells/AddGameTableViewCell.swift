@@ -8,15 +8,18 @@
 import UIKit
 
 class AddGameTableViewCell: UITableViewCell {
-
+    
+    // MARK: - Outlets
     @IBOutlet weak var seeWhoButton: UIButton!
     @IBOutlet weak var addToLibraryButton: UIButton!
     @IBOutlet weak var addToSearchListButton: UIButton!
     
+    // MARK: - Properties
     var didTapSeeWho: (() -> Void)?
     var didTapAdd: (() -> Void)?
     var didTapAddToSearch: (() -> Void)?
     
+    // MARK: - Actions
     @IBAction func seeWhoButtonTaped(_ sender: Any) {
         didTapSeeWho?()
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Our fake response data to mock an Api call
 class FakeResponseData {
     
     static let responseOK = HTTPURLResponse(url: URL(string: "https://www.hackingwithswift.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)

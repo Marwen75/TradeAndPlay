@@ -9,6 +9,10 @@ import UIKit
 
 class GamesViewController: UIViewController {
     
+    // MARK: - Outlets
+    @IBOutlet weak var gamesTableView: UITableView!
+    
+    // MARK: - Properties
     static let segueId = "listToDetail"
     var games: [GameModel] = []
     var platform: String?
@@ -16,8 +20,7 @@ class GamesViewController: UIViewController {
     var gameStorage: GameStorage?
     var messageStorage: MessageStorage?
     
-    @IBOutlet weak var gamesTableView: UITableView!
-    
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()

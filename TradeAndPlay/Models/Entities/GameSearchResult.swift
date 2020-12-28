@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// The decodable objects we will use to parse the JSON data returned by the API 
 struct Game: Decodable {
     let cover: Cover?
     let first_release_date: Int64?

@@ -9,13 +9,10 @@ import UIKit
 
 class ScreenshotCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Outlets
     @IBOutlet weak var screenshotImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
+    // MARK: - View life cycle
     override func prepareForReuse() {
         super .prepareForReuse()
         screenshotImageView.image = nil

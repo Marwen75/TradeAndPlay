@@ -7,15 +7,17 @@
 
 import UIKit
 
+// Our custom conversation table view cell
 class ConversationTableViewCell: UITableViewCell {
     
+    // MARK: - Outlets
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     
-    
+    // MARK: - Methods
     func configure(discussion: Discussion) {
         nickNameLabel.text = discussion.recipient
         let messagesArray = discussion.messages?.allObjects

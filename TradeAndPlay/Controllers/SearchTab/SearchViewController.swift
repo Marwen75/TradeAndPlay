@@ -9,13 +9,14 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var customTextField: CustomTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var lookingForLabel: UILabel!
     @IBOutlet weak var platformPickerView: CustomPicker!
     
-    
+    // MARK: - Properties
     static let segueId = "searchToGames"
     
     var igdbService: IgdbService?
@@ -35,6 +36,7 @@ class SearchViewController: UIViewController {
                                "Neo Geo AES", "Sega Master System",
                                "Sega Mega Drive/Genesis", "Sega Saturn", "Dreamcast"]
     
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
@@ -53,6 +55,7 @@ class SearchViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions
     @IBAction func searchButtonTaped(_ sender: Any) {
         do {
             try searchGames()
@@ -63,6 +66,7 @@ class SearchViewController: UIViewController {
         }
     }
     
+    // MARK: - Methods
     private func searchGames() throws {
         guard let name = customTextField.gameTextField.text else {return}
         toggleActivityIndicator(shown: true)
@@ -93,12 +97,14 @@ class SearchViewController: UIViewController {
     }
 }
 
+// MARK: - Text field delegate
 extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
 }
 
+// MARK: - Picker view delegate
 extension SearchViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -106,6 +112,7 @@ extension SearchViewController: UIPickerViewDelegate {
     }
 }
 
+// MARK: - Picker view data source
 extension SearchViewController: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -11,12 +11,14 @@ import CoreData
 
 class GameStorageTestCase: XCTestCase {
     
+    // MARK: - Properties
     var coreDataStack: CoreDataStack!
     var gameStorage: GameStorage!
     var gameModel: GameModel!
     var fakeUser: FakeUser!
     var expectation: XCTestExpectation!
     
+    // MARK: - Setup
     override func setUp() {
         super.setUp()
         coreDataStack = TestCoreDataStack()
@@ -46,6 +48,7 @@ class GameStorageTestCase: XCTestCase {
         expectation = nil
     }
     
+    // MARK: - Tests
     func testIfAGameIsAddedToOwnedListThenTheGameShouldAppearInCoreData() {
         gameStorage.addToOwnedList(game: gameModel, platform: gameModel.platform, completionHandler: { result in
             guard case .success(_) = result else {

@@ -342,16 +342,8 @@
 			children = (
 				C230D8D62584FFA800ED28C2 /* Xibs */,
 				C230D8D52584FF6F00ED28C2 /* TableViewCells */,
-				C230D85125812F6200ED28C2 /* CollectionViewCells */,
 			);
 			path = LibraryTab;
-			sourceTree = "<group>";
-		};
-		C230D85125812F6200ED28C2 /* CollectionViewCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		C230D88C25826B0700ED28C2 /* Entities */ = {

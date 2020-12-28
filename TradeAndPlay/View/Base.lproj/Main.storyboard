@@ -142,11 +142,11 @@
             <objects>
                 <viewController id="59d-qY-rI3" customClass="PlayerViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7m-8b-ahd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2D8-o7-dhQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
                                 <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
@@ -652,7 +652,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRk-NF-3YN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="-1335"/>
+            <point key="canvasLocation" x="195" y="-1335"/>
         </scene>
         <!--Searched Games View Controller-->
         <scene sceneID="R07-05-hxU">
@@ -688,7 +688,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1G-m2-coV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1466" y="-1335"/>
+            <point key="canvasLocation" x="1054" y="-1335"/>
         </scene>
         <!--Trades View Controller-->
         <scene sceneID="3Jp-CC-8gn">
@@ -722,12 +722,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RoZ-Vm-0Uf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2141" y="-1335"/>
+            <point key="canvasLocation" x="2003" y="-1335"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GI7-Qz-pCL"/>
-        <segue reference="wOY-6x-eZK"/>
+        <segue reference="ZYv-TV-H8x"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Library" width="35" height="31.5"/>

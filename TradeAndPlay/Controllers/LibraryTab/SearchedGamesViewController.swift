@@ -9,8 +9,10 @@ import UIKit
 
 class SearchedGamesViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var searchedGamesTableView: UITableView!
     
+    // MARK: - Properties
     static let segueId = "searchedToPlayer"
     var searchedGames: [SearchedGame] = []
     var gameStorage: GameStorage?
@@ -18,7 +20,7 @@ class SearchedGamesViewController: UIViewController {
     var messageStorage: MessageStorage?
     var fetchSearchedGames: (() -> Void)?
     
-    
+    // MARK: - View life cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fakeUsers = FakeUserData.fakeUsers
@@ -40,13 +42,21 @@ class SearchedGamesViewController: UIViewController {
         }
     }
     
+    // MARK: - Methods
     private func configureTableView() {
         searchedGamesTableView.rowHeight = 170
         searchedGamesTableView.register(cellType: SearchedGameTableViewCell.self)
     }
 }
 
+// MARK: - Table view delegate
 extension SearchedGamesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = HeaderView()
+        header.headerLabel.text = "You don't have any games in your search list.\n Find the correct versions of your games \n by using the search tab to fill your list."
+        return header
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let gameName = searchedGames[indexPath.row].name else { return }
@@ -62,6 +72,7 @@ extension SearchedGamesViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - Table view data source
 extension SearchedGamesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,12 +106,7 @@ extension SearchedGamesViewController: UITableViewDataSource {
         }
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = HeaderView()
-        header.headerLabel.text = "You don't have any games in your search list.\n Find the correct versions of your games \n by using the search tab to fill your list."
-        return header
-    }
+
     // setting the height for our header that displays the message
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return searchedGames.isEmpty ? tableView.frame.size.height : 0

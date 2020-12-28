@@ -7,6 +7,7 @@
 
 import UIKit
 
+// A class that will help us manage the init for our xibs
 class NibView: UIView {
     
     var contentView: UIView! = UIView()

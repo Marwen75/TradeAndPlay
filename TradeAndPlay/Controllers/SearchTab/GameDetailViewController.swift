@@ -9,8 +9,10 @@ import UIKit
 
 class GameDetailViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var gameDetailTableView: UITableView!
     
+    // MARK: - Properties
     static let segueId = "gameToPlayer"
     var gameStorage: GameStorage?
     var messageStorage: MessageStorage?
@@ -18,6 +20,7 @@ class GameDetailViewController: UIViewController {
     var fakeUsers: [FakeUser] = FakeUserData.fakeUsers
     private let ratingStarsImages: [UIImage?] = [UIImage(named: "etoile1"), UIImage(named: "etoile2"), UIImage(named: "etoile3"), UIImage(named: "etoile4"), UIImage(named: "etoile5")]
     
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -30,6 +33,7 @@ class GameDetailViewController: UIViewController {
         }
     }
     
+    // MARK: - Methods
     private func configureTableView() {
         gameDetailTableView.sectionHeaderHeight = 70
         gameDetailTableView.estimatedRowHeight = 44.0
@@ -55,20 +59,8 @@ class GameDetailViewController: UIViewController {
     }
 }
 
+// MARK: - Table view delegate
 extension GameDetailViewController: UITableViewDelegate {
-    
-}
-
-extension GameDetailViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HeaderView()
         switch section {
@@ -87,6 +79,18 @@ extension GameDetailViewController: UITableViewDataSource {
         default:
             return header
         }
+    }
+}
+
+// MARK: - Table view data source
+extension GameDetailViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -160,6 +164,7 @@ extension GameDetailViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Collection view data source
 extension GameDetailViewController: UICollectionViewDataSource {
     
     

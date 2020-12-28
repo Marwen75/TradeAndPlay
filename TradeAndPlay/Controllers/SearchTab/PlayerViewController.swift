@@ -9,14 +9,17 @@ import UIKit
 
 class PlayerViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var playersTableView: UITableView!
     
+    // MARK: - Properties
     static let segueId = "playerToChat"
     var fakeUsers: [FakeUser]?
     var messageStorage: MessageStorage?
     var discussions: [Discussion]?
     var discussion: Discussion?
     
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -30,19 +33,14 @@ class PlayerViewController: UIViewController {
         }
     }
     
+    // MARK: - Methods
     private func configureTableView() {
         playersTableView.register(cellType: PlayerTableViewCell.self)
         playersTableView.rowHeight = 150
     }
 }
 
-extension PlayerViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-}
-
+// MARK: - Table view data source
 extension PlayerViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

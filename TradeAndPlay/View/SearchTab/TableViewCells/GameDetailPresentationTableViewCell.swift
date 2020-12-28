@@ -8,7 +8,8 @@
 import UIKit
 
 class GameDetailPresentationTableViewCell: UITableViewCell {
-
+    
+    // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var genreLabel: UILabel!
@@ -16,6 +17,7 @@ class GameDetailPresentationTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingsLabel: UILabel!
     @IBOutlet weak var ratingsImageView: UIImageView!
     
+    // MARK: - Methods
     func configure(withModel model: GameModel) {
         genreLabel.text = model.genres.joined(separator: ", ")
         releaseLabel.text = "First released: \(configureDate(model: model))"

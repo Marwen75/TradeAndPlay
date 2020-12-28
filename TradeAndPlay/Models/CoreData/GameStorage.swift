@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+// This object will serve as our game storage
 class GameStorage {
     
     // MARK: - Properties
@@ -21,7 +22,6 @@ class GameStorage {
     }
     
     // MARK: - CRUD
-    
     func fetchOwnedGames(completionHandler: @escaping (Result<[OwnedGame], DataStorageError>) -> Void) {
         let request: NSFetchRequest<OwnedGame> = OwnedGame.fetchRequest()
         do {

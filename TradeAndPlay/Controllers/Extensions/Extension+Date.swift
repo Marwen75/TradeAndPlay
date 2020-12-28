@@ -7,6 +7,7 @@
 
 import Foundation
 
+// An extension to display date in different shapes 
 extension Date {
 
     func formatRelativeString() -> String {

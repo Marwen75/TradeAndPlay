@@ -7,30 +7,7 @@
 
 import Foundation
 
-/*Optional("co1wyy")
-Optional("The Witcher 3: Wild Hunt")
-Optional("PlayStation 4")
-Optional("co1tmu")
-Optional("God of War")
-Optional("PlayStation 4")
-Optional("co2gu4")
-Optional("Hagane: The Final Conflict")
-Optional("Super Nintendo Entertainment System (SNES)")
-Optional("co23jy")
-Optional("Super Mario World")
-Optional("Super Nintendo Entertainment System (SNES)")
-Optional("co25w2")
-Optional("Demon\'s Crest")
-Optional("Super Nintendo Entertainment System (SNES)")
-Optional("co2a23")
-Optional("Sekiro: Shadows Die Twice")
-Optional("PlayStation 4")
-Optional("co1yad")
-Optional("Shenmue")
-Optional("Dreamcast")
-*/
-
-
+// This object will mock users of the app and their data to show a demo of tha app features
 struct FakeUserData {
     
     static let fakeUsers = [FakeUser(nickName: "Igo",

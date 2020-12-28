@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreData
-
+// An object that will manage the core data stack and saving support
 class CoreDataStack {
     
     // MARK: - Properties

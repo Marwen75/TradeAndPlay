@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// An extension to allow us to use corner radius, shadows and borders in storyboard
 extension UIView {
     
     @IBInspectable

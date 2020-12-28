@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// Our game model object that we will use troughout our code 
 struct GameModel {
     let cover: String 
     let name: String

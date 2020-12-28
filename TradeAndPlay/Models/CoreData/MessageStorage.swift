@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+// This object will serve as ou messages storage 
 class MessageStorage {
     
     // MARK: - Properties
@@ -20,6 +21,7 @@ class MessageStorage {
         self.objectContext = coreDataStack.viewContext
     }
     
+    // MARK: - CRUD
     func addFakeDiscussion(fakeUser: FakeUser) {
         let discussion = Discussion(context: objectContext)
         let message = Message(context: objectContext)

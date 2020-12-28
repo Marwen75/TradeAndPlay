@@ -7,6 +7,7 @@
 
 import Foundation
 
+// An enum for the errors that can occur during our Datastorage usage
 enum DataStorageError: Error {
     
     case noPlayerFound

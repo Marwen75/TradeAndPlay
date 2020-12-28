@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Our tab bar viewcontroller where we will initialize coredata and URLSession
 class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
@@ -28,26 +29,3 @@ class TabBarViewController: UITabBarController {
         searchVc!.igdbService = IgdbService(session: session)
     }
 }
-
-/*Optional("co1wyy")
-Optional("The Witcher 3: Wild Hunt")
-Optional("PlayStation 4")
-Optional("co1tmu")
-Optional("God of War")
-Optional("PlayStation 4")
-Optional("co2gu4")
-Optional("Hagane: The Final Conflict")
-Optional("Super Nintendo Entertainment System (SNES)")
-Optional("co23jy")
-Optional("Super Mario World")
-Optional("Super Nintendo Entertainment System (SNES)")
-Optional("co25w2")
-Optional("Demon\'s Crest")
-Optional("Super Nintendo Entertainment System (SNES)")
-Optional("co2a23")
-Optional("Sekiro: Shadows Die Twice")
-Optional("PlayStation 4")
-Optional("co1yad")
-Optional("Shenmue")
-Optional("Dreamcast")
-*/

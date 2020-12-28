@@ -9,17 +9,20 @@ import UIKit
 
 class LibraryViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var tradesVc: UIView!
     @IBOutlet weak var ownedVc: UIView!
     @IBOutlet weak var searchVc: UIView!
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var messageButton: UIBarButtonItem!
     
+    // MARK: - Properties
     var gameStorage: GameStorage?
     var messageStorage: MessageStorage?
     var searchedGames: [SearchedGame] = []
     var ownedGames: [OwnedGame] = []
     
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchVc.isHidden = true
@@ -83,6 +86,7 @@ class LibraryViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions
     @IBAction func segmentTaped(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -105,5 +109,4 @@ class LibraryViewController: UIViewController {
     @IBAction func messageButtonTaped(_ sender: Any) {
         performSegue(withIdentifier: "toMessage", sender: nil)
     }
-    
 }

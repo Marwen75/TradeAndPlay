@@ -7,6 +7,7 @@
 
 import UIKit
 
+// A custom picker to choose the platform 
 class CustomPicker: NibView {
     
     @IBOutlet weak var platformPicker: UIPickerView! {

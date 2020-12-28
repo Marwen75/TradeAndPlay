@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// An extension using generics to give us an easier way to register an dequeue collection view cells
 extension UICollectionView {
     
     func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {

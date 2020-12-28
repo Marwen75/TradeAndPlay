@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// A protocol that will help us to register and dequeue in an easier way using a default reuse identifier
 protocol ReusableView {
     
     static var defaultReuseIdentifier: String { get }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// An enum for the errors that can occur during our API calls
 enum ApiError: Error {
     
     case noData

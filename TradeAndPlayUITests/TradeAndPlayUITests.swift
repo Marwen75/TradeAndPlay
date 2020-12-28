@@ -24,9 +24,10 @@ class TradeAndPlayUITests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: - Tests
     func testUiInSearchTab() {
         
-        app.textFields["Enter your research here"].tap()
+        app.textFields["Enter your text here"].tap()
         
         app/*@START_MENU_TOKEN@*/.keys["m"]/*[[".keyboards.keys[\"m\"]",".keys[\"m\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         
@@ -82,7 +83,7 @@ class TradeAndPlayUITests: XCTestCase {
     
     func testUiForTradingAgame() {
         
-        app.textFields["Enter your research here"].tap()
+        app.textFields["Enter your text here"].tap()
         
         app/*@START_MENU_TOKEN@*/.keys["d"]/*[[".keyboards.keys[\"d\"]",".keys[\"d\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         let iKey = app/*@START_MENU_TOKEN@*/.keys["i"]/*[[".keyboards.keys[\"i\"]",".keys[\"i\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
@@ -112,7 +113,7 @@ class TradeAndPlayUITests: XCTestCase {
         
         let tablesQuery2 = app.tables
         tablesQuery2/*@START_MENU_TOKEN@*/.staticTexts["Declare a Trade!"]/*[[".cells",".buttons[\"Declare a Trade!\"].staticTexts[\"Declare a Trade!\"]",".staticTexts[\"Declare a Trade!\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app.textFields["Enter your research here"].tap()
+        app.textFields["Enter your text here"].tap()
         
         app/*@START_MENU_TOKEN@*/.buttons["shift"]/*[[".keyboards",".buttons[\"majuscule\"]",".buttons[\"shift\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
         app/*@START_MENU_TOKEN@*/.keys["I"]/*[[".keyboards.keys[\"I\"]",".keys[\"I\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
@@ -132,7 +133,7 @@ class TradeAndPlayUITests: XCTestCase {
     
     func testUiForFindingAPlayer() {
         
-        app.textFields["Enter your research here"].tap()
+        app.textFields["Enter your text here"].tap()
         
         app/*@START_MENU_TOKEN@*/.keys["m"]/*[[".keyboards.keys[\"m\"]",".keys[\"m\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         let eKey = app/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
@@ -171,7 +172,7 @@ class TradeAndPlayUITests: XCTestCase {
     
     func testUiForSearchGame() {
         
-        app.textFields["Enter your research here"].tap()
+        app.textFields["Enter your text here"].tap()
         XCUIDevice.shared.orientation = .faceUp
         
         app/*@START_MENU_TOKEN@*/.keys["m"]/*[[".keyboards.keys[\"m\"]",".keys[\"m\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()

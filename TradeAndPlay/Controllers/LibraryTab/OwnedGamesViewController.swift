@@ -9,8 +9,10 @@ import UIKit
 
 class OwnedGamesViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var ownedGamesTableView: UITableView!
     
+    // MARK: - Properties
     static let segueId = "ownedToForm"
     var ownedGames: [OwnedGame] = []
     var ownedGame: OwnedGame?
@@ -18,6 +20,7 @@ class OwnedGamesViewController: UIViewController {
     var messageStorage: MessageStorage?
     var fetchOwnedGames: (() -> Void)?
     
+    // MARK: - View life cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchOwnedGames?()
@@ -43,7 +46,14 @@ class OwnedGamesViewController: UIViewController {
     }
 }
 
+// MARK: - Table view delegate
 extension OwnedGamesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = HeaderView()
+        header.headerLabel.text = "You don't have any games in \n your owned game list.\n Find the correct versions of your games \n by using the search tab to fill your list."
+        return header
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let gameName = ownedGames[indexPath.row].name else { return }
@@ -62,6 +72,7 @@ extension OwnedGamesViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - Table view data source
 extension OwnedGamesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,11 +101,6 @@ extension OwnedGamesViewController: UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = HeaderView()
-        header.headerLabel.text = "You don't have any games in \n your owned game list.\n Find the correct versions of your games \n by using the search tab to fill your list."
-        return header
-    }
     // setting the height for our header that displays the message
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return ownedGames.isEmpty ? tableView.frame.size.height : 0

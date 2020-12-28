@@ -9,14 +9,17 @@ import UIKit
 
 class ConversationsViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var conversationTableView: UITableView!
     
+    // MARK: - Properties
     var discussions: [Discussion] = []
     var discussion: Discussion?
     var messageStorage: MessageStorage?
     var messages: [Message] = []
     var recipient: String?
     
+    // MARK: - View life cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         messageStorage?.fetchDiscussions(completionHandler: { [weak self] result in
@@ -45,12 +48,14 @@ class ConversationsViewController: UIViewController {
         }
     }
     
+    // MARK: - Methods
     private func configureTableView() {
         conversationTableView.rowHeight = 100
         conversationTableView.register(cellType: ConversationTableViewCell.self)
     }
 }
 
+// MARK: - Table view delegate
 extension ConversationsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -69,6 +74,7 @@ extension ConversationsViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - Table view data source
 extension ConversationsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

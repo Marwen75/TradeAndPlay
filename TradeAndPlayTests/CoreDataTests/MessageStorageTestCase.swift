@@ -10,12 +10,14 @@ import XCTest
 import CoreData
 
 class MessageStorageTestCase: XCTestCase {
-
+    
+    // MARK: - Properties
     var coreDataStack: CoreDataStack!
     var messageStorage: MessageStorage!
     var fakeUser: FakeUser!
     var expectation: XCTestExpectation!
     
+    // MARK: - Setup
     override func setUp() {
         super.setUp()
         coreDataStack = TestCoreDataStack()
@@ -31,6 +33,7 @@ class MessageStorageTestCase: XCTestCase {
         expectation = nil
     }
     
+    // MARK: - Tests
     func testIfANewFakeDiscussionWithUserIsCreatedThenItShouldAppearInCoreData() {
         messageStorage.addFakeDiscussion(fakeUser: fakeUser)
         messageStorage.fetchDiscussions(completionHandler: {result in

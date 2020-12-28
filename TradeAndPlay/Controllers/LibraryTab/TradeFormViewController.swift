@@ -9,19 +9,23 @@ import UIKit
 
 class TradeFormViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var confirmTradeButton: UIButton!
     @IBOutlet weak var customTextField: CustomTextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // MARK: - Properties
     var fakeUsers = FakeUserData.fakeUsers
     var fakeUser: FakeUser?
     var gameStorage: GameStorage?
     var ownedGame: OwnedGame?
-
+    
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: - Actions
     @IBAction func confirmTradeButtonTaped(_ sender: Any) {
         if checkIfUserExists(users: fakeUsers) == true {
             self.navigationController?.popViewController(animated: true)
@@ -30,6 +34,7 @@ class TradeFormViewController: UIViewController {
         }
     }
     
+    // MARK: - Methods
     private func checkIfUserExists(users: [FakeUser]) -> Bool {
         toggleActivityIndicator(shown: true)
         let userNickName = customTextField.gameTextField.text

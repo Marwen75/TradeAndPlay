@@ -7,6 +7,7 @@
 
 import UIKit
 
+// An extension using generics to give us an easier way to register an dequeue tableview cells
 extension UITableView {
     
     func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {

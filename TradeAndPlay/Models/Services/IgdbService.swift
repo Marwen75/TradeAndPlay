@@ -7,14 +7,18 @@
 
 import Foundation
 
+// Our service that will use the IGDB api to make API calls
 class IgdbService {
     
+    // MARK: - Properties
     var session: URLSession
     
+    // MARK: - Init
     init(session: URLSession) {
         self.session = session
     }
     
+    // MARK: - Methods
     func post(withName name: String, platform: String, completionHandler: @escaping (Result<[GameModel], ApiError>) -> Void) {
         guard let url = createRequest(name: name, platform: platform) else {return}
         let task = session.dataTask(with: url) { (data, response, error) in
@@ -50,6 +54,7 @@ class IgdbService {
         return request
     }
     
+    // A function to help us create gameModels that are easier to work with
     private func createGameModels(response: [Game]) -> [GameModel] {
         var gameModels: [GameModel] = []
         response.forEach { game in
@@ -63,6 +68,7 @@ class IgdbService {
         return gameModels
     }
     
+    // A function to help us sort the arrays of screenshots and the array of genres returned by the API 
     private func sortGameData(i: Int, game: Game) -> [String] {
         var dataArray: [String] = []
         if i == 0 {

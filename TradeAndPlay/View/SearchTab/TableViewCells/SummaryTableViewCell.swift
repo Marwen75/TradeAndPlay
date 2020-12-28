@@ -9,8 +9,10 @@ import UIKit
 
 class SummaryTableViewCell: UITableViewCell {
     
+    // MARK: - Outlets
     @IBOutlet weak var summaryLabel: UILabel!
     
+    // MARK: - Methods
     func configure(withModel model: GameModel) {
         summaryLabel.text = model.summary
     }

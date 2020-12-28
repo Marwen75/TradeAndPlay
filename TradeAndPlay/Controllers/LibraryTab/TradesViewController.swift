@@ -9,12 +9,15 @@ import UIKit
 
 class TradesViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var tradesTableView: UITableView!
     
+    // MARK: - Outlets
     var ownedGamesTraded: [OwnedGame] = []
     var gameStorage: GameStorage?
     var fetchCurrentTrades: (() -> Void)?
     
+    // MARK: - View life cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchCurrentTrades?()
@@ -26,6 +29,7 @@ class TradesViewController: UIViewController {
         configureTableView()
     }
     
+    // MARK: - Methods
     private func configureTableView() {
         tradesTableView.estimatedRowHeight = 44
         tradesTableView.rowHeight = UITableView.automaticDimension
@@ -33,10 +37,16 @@ class TradesViewController: UIViewController {
     }
 }
 
+// MARK: - Table View Delegate
 extension TradesViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = HeaderView()
+        header.headerLabel.text = "You don't have any current Trades."
+        return header
+    }
 }
 
+// MARK: - Table view Data Source
 extension TradesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,12 +70,6 @@ extension TradesViewController: UITableViewDataSource {
             tableView.reloadData()
         }
         return tradeCell
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = HeaderView()
-        header.headerLabel.text = "You don't have any current Trades."
-        return header
     }
     // setting the height for our header that displays the message
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

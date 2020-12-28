@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// an extension to calculate the release date of a game using the unix timestamp provided by the API 
 extension UITableViewCell {
     func configureDate(model: GameModel) -> String {
         let timeStamp = model.firstReleaseDate

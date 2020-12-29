@@ -27,6 +27,13 @@ class LibraryViewController: UIViewController {
         super.viewDidLoad()
         self.searchVc.isHidden = true
         self.tradesVc.isHidden = true
+        if #available(iOS 13, *) {
+            //Keep our segmented control as it is
+        } else {
+            segment.backgroundColor = UIColor(named: "DarkBlue")
+            segment.tintColor = UIColor(named: "Sand")
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

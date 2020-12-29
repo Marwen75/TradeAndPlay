@@ -30,7 +30,7 @@ class GameStorageTestCase: XCTestCase {
                               screenshots: ["yyvzhgyt4ycz5cuatidm", "prgkaeeug1puvn501szs",
                                             "nb2gwjgvtrsvuysa9h5x", "cwotp16jsnfttmyip1op",
                                             "tmak1bz9kvng33n67cbl"])
-        fakeUser = FakeUser(nickName: "lolo", city: "Paris", rating: 100,
+        fakeUser = FakeUser(nickName: "lolo", city: "Paris",
                             ownedGamesList: [FakeOwnedGame(name: "",
                                                            cover: "",
                                                            platform: "")],

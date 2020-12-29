@@ -22,7 +22,7 @@ class MessageStorageTestCase: XCTestCase {
         super.setUp()
         coreDataStack = TestCoreDataStack()
         messageStorage = MessageStorage(coreDataStack: coreDataStack)
-        fakeUser = FakeUser(nickName: "lolo", city: "Paris", rating: 100, ownedGamesList: [FakeOwnedGame(name: "", cover: "", platform: "")], messages: [FakeMessage(content: "Hello", sender: "lolo", date: Date.init())])
+        fakeUser = FakeUser(nickName: "lolo", city: "Paris", ownedGamesList: [FakeOwnedGame(name: "", cover: "", platform: "")], messages: [FakeMessage(content: "Hello", sender: "lolo", date: Date.init())])
         expectation = XCTestExpectation(description: "Wait for queue change.")
     }
     

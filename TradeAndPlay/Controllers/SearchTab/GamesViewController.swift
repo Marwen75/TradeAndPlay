@@ -42,12 +42,6 @@ class GamesViewController: UIViewController {
         gamesTableView.rowHeight = 300
         gamesTableView.register(cellType: GameTableViewCell.self)
     }
-    
-    private func updateView() {
-        let hasGames = games.count > 0
-        gamesTableView.isHidden = !hasGames
-        //messageLabel.isHidden = hasGames
-    }
 }
 
 // MARK: - Table view delegate

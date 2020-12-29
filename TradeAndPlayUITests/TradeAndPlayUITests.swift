@@ -55,7 +55,7 @@ class TradeAndPlayUITests: XCTestCase {
         let tablesQuery = app.tables
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Summary"]/*[[".otherElements[\"Summary\"].staticTexts[\"Summary\"]",".staticTexts[\"Summary\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         XCUIDevice.shared.orientation = .faceUp
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Add to owned list"]/*[[".cells",".buttons[\"Add to owned list\"].staticTexts[\"Add to owned list\"]",".staticTexts[\"Add to owned list\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery.staticTexts["Add to owned"].tap()
         
         XCTAssertNotNil(tablesQuery)
     }
@@ -106,7 +106,7 @@ class TradeAndPlayUITests: XCTestCase {
         
         let tablesQuery = app.tables
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Screenshots"]/*[[".otherElements[\"Screenshots\"].staticTexts[\"Screenshots\"]",".staticTexts[\"Screenshots\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Add to owned list"]/*[[".cells",".buttons[\"Add to owned list\"].staticTexts[\"Add to owned list\"]",".staticTexts[\"Add to owned list\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery.staticTexts["Add to owned"].tap()
         app.alerts["Done!"].scrollViews.otherElements.buttons["OK"].tap()
         
         app.tabBars["Tab Bar"].buttons["Library"].tap()
@@ -153,7 +153,7 @@ class TradeAndPlayUITests: XCTestCase {
         app.tables/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Genres: Platform, Hack and slash/Beat 'em up, Adventure")/*[[".cells.containing(.staticText, identifier:\"First released: 2000-04-19\")",".cells.containing(.staticText, identifier:\"Genres: Platform, Hack and slash\/Beat 'em up, Adventure\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.staticTexts["Tap to see details"].tap()
 
         let tablesQuery = app.tables
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Summary"]/*[[".otherElements[\"Summary\"].staticTexts[\"Summary\"]",".staticTexts[\"Summary\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        //tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Summary"]/*[[".otherElements[\"Summary\"].staticTexts[\"Summary\"]",".staticTexts[\"Summary\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["who has it?"]/*[[".cells",".buttons[\"who has it?\"].staticTexts[\"who has it?\"]",".staticTexts[\"who has it?\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Contact?"]/*[[".cells.buttons[\"Contact?\"]",".buttons[\"Contact?\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.textViews.staticTexts["Tap your text here."].tap()
@@ -189,7 +189,7 @@ class TradeAndPlayUITests: XCTestCase {
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Tap to see details"]/*[[".cells.staticTexts[\"Tap to see details\"]",".staticTexts[\"Tap to see details\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Screenshots"]/*[[".otherElements[\"Screenshots\"].staticTexts[\"Screenshots\"]",".staticTexts[\"Screenshots\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         XCUIDevice.shared.orientation = .faceUp
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Add to search list"]/*[[".cells",".buttons[\"Add to search list\"].staticTexts[\"Add to search list\"]",".staticTexts[\"Add to search list\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery.staticTexts["Add to search"].tap()
         app.alerts["Done!"].scrollViews.otherElements.buttons["OK"].tap()
         app.tabBars["Tab Bar"].buttons["Library"].tap()
         

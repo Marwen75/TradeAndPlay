@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-wz-CqT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="12:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-wz-CqT">
                         <rect key="frame" x="213" y="84" width="30" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="T8l-wI-8ph"/>
@@ -55,7 +55,7 @@
                 </subviews>
                 <color key="backgroundColor" name="DarkBlue"/>
                 <constraints>
-                    <constraint firstItem="OvQ-wz-CqT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1zu-b4-Sw0"/>
+                    <constraint firstItem="OvQ-wz-CqT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="1zu-b4-Sw0"/>
                     <constraint firstItem="L4j-PQ-iif" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Bgg-wH-WG2"/>
                     <constraint firstAttribute="trailing" secondItem="L4j-PQ-iif" secondAttribute="trailing" constant="5" id="HJH-Ot-heX"/>
                     <constraint firstAttribute="bottom" secondItem="L4j-PQ-iif" secondAttribute="bottom" constant="5" id="MdD-fb-4i3"/>

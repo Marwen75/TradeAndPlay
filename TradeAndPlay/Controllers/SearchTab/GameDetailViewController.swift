@@ -132,18 +132,12 @@ extension GameDetailViewController: UITableViewDataSource {
             addCell.didTapSeeWho = { [weak self] in
                 guard let strongSelf = self else {return}
                 let gameName = game.name
-                var gameOwner = [FakeUser]()
-                for user in strongSelf.fakeUsers {
-                    for game in user.ownedGamesList {
-                        if game.name == gameName {
-                            gameOwner.append(user)
-                            strongSelf.fakeUsers = gameOwner
-                            strongSelf.performSegue(withIdentifier: GameDetailViewController.segueId, sender: nil)
-                        }
-                    }
-                }
-                if gameOwner.count == 0 {
+                let gameOwners = strongSelf.fakeUsers.filter { !$0.ownedGamesList.filter {$0.name == gameName}.isEmpty }
+                strongSelf.fakeUsers = gameOwners
+                if gameOwners.count == 0 {
                     strongSelf.displayAlert(title: "Oups", message: "Nobody Owns this game yet")
+                } else {
+                    strongSelf.performSegue(withIdentifier: GameDetailViewController.segueId, sender: nil)
                 }
             }
             addCell.didTapAddToSearch = { [weak self] in

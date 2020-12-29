@@ -54,7 +54,7 @@ extension SearchedGamesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HeaderView()
-        header.headerLabel.text = "You don't have any games in your search list.\n Find the correct versions of your games \n by using the search tab to fill your list."
+        header.headerLabel.text = "You don't have any games in your search list.\n Find the correct versions \n of your games \n by using the search tab to fill your list."
         return header
     }
     
@@ -84,14 +84,7 @@ extension SearchedGamesViewController: UITableViewDataSource {
         searchedGames = searchedGames.sorted(by: {$0.platform ?? "" > $1.platform ?? ""})
         cell.configure(withSearchedGame: searchedGames[indexPath.row])
         let gameName = searchedGames[indexPath.row].name
-        var gameOwners = [FakeUser]()
-        for fakeUser in fakeUsers {
-            for game in fakeUser.ownedGamesList {
-                if game.name == gameName {
-                    gameOwners.append(fakeUser)
-                }
-            }
-        }
+        let gameOwners = fakeUsers.filter { !$0.ownedGamesList.filter {$0.name == gameName}.isEmpty }
         if gameOwners.count > 0 {
             cell.noUserFoundLabel.isHidden = true
             cell.whoHasItButton.isHidden = false

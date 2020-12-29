@@ -60,25 +60,11 @@ class IgdbService {
         response.forEach { game in
             gameModels.append(GameModel(cover: game.cover?.image_id ?? "",
                                         name: game.name, platform: "",
-                                        genres: sortGameData(i: 1, game: game),
+                                        genres: game.genres?.compactMap {$0.name} ?? ["N/A"],
                                         firstReleaseDate: game.first_release_date ?? 0,
                                         summary: game.summary ?? "N/A",
                                         rating: game.rating ?? 0,
-                                        screenshots: sortGameData(i: 0, game: game))) }
+                                        screenshots: game.screenshots?.compactMap {$0.image_id}))}
         return gameModels
     }
-    
-    // A function to help us sort the arrays of screenshots and the array of genres returned by the API 
-    private func sortGameData(i: Int, game: Game) -> [String] {
-        var dataArray: [String] = []
-        if i == 0 {
-            game.screenshots?.forEach {dataArray.append($0.image_id)}
-            return dataArray
-        } else {
-            game.genres?.forEach {dataArray.append($0.name)}
-            return dataArray
-        }
-    }
 }
-
-

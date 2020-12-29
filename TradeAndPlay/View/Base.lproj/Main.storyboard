@@ -42,10 +42,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jHI-Lu-hla">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="DarkBlue"/>
+                        <color key="barTintColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
-                            <color key="textColor" name="Sand"/>
+                            <color key="textColor" red="0.94453805690000003" green="0.91471230979999996" blue="0.8313677907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -61,7 +61,7 @@
             <objects>
                 <viewController id="pde-gx-Cve" customClass="LibraryViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MPC-Kd-TE6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFz-a5-t1o">
@@ -116,7 +116,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Trade&amp;Play" id="Oe1-aX-o0w">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="ZGO-Zk-Fen"/>
+                        <barButtonItem key="backBarButtonItem" id="ZGO-Zk-Fen">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="message" id="Onz-di-ofN">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -137,16 +139,16 @@
             </objects>
             <point key="canvasLocation" x="1054" y="-726"/>
         </scene>
-        <!--Player View Controller-->
+        <!--Game Owners-->
         <scene sceneID="gQb-aM-qHG">
             <objects>
                 <viewController id="59d-qY-rI3" customClass="PlayerViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7m-8b-ahd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2D8-o7-dhQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="444"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                 <color key="backgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.13954678179999999" green="0.28904882069999999" blue="0.3647195399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
@@ -164,7 +166,11 @@
                             <constraint firstItem="2D8-o7-dhQ" firstAttribute="top" secondItem="eBm-2W-GHk" secondAttribute="top" id="n6Z-89-7JF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Vaa-8E-RbZ"/>
+                    <navigationItem key="navigationItem" title="Game Owners" id="Vaa-8E-RbZ">
+                        <barButtonItem key="backBarButtonItem" id="qrN-Oc-EIg">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="playersTableView" destination="2D8-o7-dhQ" id="nhL-K0-M1C"/>
                         <segue destination="XT0-7F-oQK" kind="show" identifier="playerToChat" id="THe-wc-GuZ"/>
@@ -196,12 +202,12 @@
             </objects>
             <point key="canvasLocation" x="171" y="121"/>
         </scene>
-        <!--Trade&Play-->
+        <!--Messages-->
         <scene sceneID="hqe-RN-Vb4">
             <objects>
                 <viewController id="8rX-Lh-ddB" customClass="ConversationsViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3HV-SF-wtq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qL1-bB-vP0">
@@ -222,7 +228,11 @@
                             <constraint firstItem="D7p-nL-f0r" firstAttribute="bottom" secondItem="qL1-bB-vP0" secondAttribute="bottom" id="fL2-Oh-3bT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Trade&amp;Play" id="fPj-NS-BwX"/>
+                    <navigationItem key="navigationItem" title="Messages" id="fPj-NS-BwX">
+                        <barButtonItem key="backBarButtonItem" id="Eew-7g-5Bg">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="conversationTableView" destination="qL1-bB-vP0" id="wDu-vl-lNs"/>
                         <segue destination="XT0-7F-oQK" kind="show" identifier="toChat" id="GI7-Qz-pCL"/>
@@ -232,12 +242,12 @@
             </objects>
             <point key="canvasLocation" x="2006" y="-726"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--Chat-->
         <scene sceneID="y5c-Vf-Xp3">
             <objects>
                 <viewController id="XT0-7F-oQK" customClass="ChatViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Xt-be-4ON">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PqF-2x-jKF">
@@ -323,8 +333,8 @@
                             <constraint firstItem="PqF-2x-jKF" firstAttribute="leading" secondItem="YUB-BU-hOk" secondAttribute="leading" id="s6P-Wv-i0k"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KN9-id-mUc">
-                        <barButtonItem key="backBarButtonItem" systemItem="add" id="hYs-L7-sTN">
+                    <navigationItem key="navigationItem" title="Chat" id="KN9-id-mUc">
+                        <barButtonItem key="backBarButtonItem" id="hYs-L7-sTN">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
@@ -434,7 +444,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Trade&amp;Play " id="GvJ-le-N4T">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="nsR-MY-1qJ">
+                        <barButtonItem key="backBarButtonItem" id="nsR-MY-1qJ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
@@ -451,7 +461,7 @@
             </objects>
             <point key="canvasLocation" x="1054" y="121"/>
         </scene>
-        <!--Games View Controller-->
+        <!--Search Results-->
         <scene sceneID="bvw-7h-MLP">
             <objects>
                 <viewController id="oay-SO-oxz" customClass="GamesViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
@@ -479,8 +489,10 @@
                             <constraint firstItem="KyH-n4-sZj" firstAttribute="top" secondItem="7aO-4d-3cF" secondAttribute="top" id="gO9-q4-gFh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LJE-Mi-4Ws">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="kot-yn-5xp"/>
+                    <navigationItem key="navigationItem" title="Search Results" id="LJE-Mi-4Ws">
+                        <barButtonItem key="backBarButtonItem" id="kot-yn-5xp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="gamesTableView" destination="KyH-n4-sZj" id="JoO-SR-nZi"/>
@@ -491,7 +503,7 @@
             </objects>
             <point key="canvasLocation" x="2004" y="121"/>
         </scene>
-        <!--Game Detail View Controller-->
+        <!--Game Details-->
         <scene sceneID="eVd-jL-Mzq">
             <objects>
                 <viewController id="aQp-ll-qTC" customClass="GameDetailViewController" customModule="TradeAndPlay" customModuleProvider="target" sceneMemberID="viewController">
@@ -517,7 +529,11 @@
                             <constraint firstItem="1rn-0e-IH4" firstAttribute="trailing" secondItem="Il7-I4-k1A" secondAttribute="trailing" id="gf5-Lf-ULi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="c5w-kU-3rW"/>
+                    <navigationItem key="navigationItem" title="Game Details" id="c5w-kU-3rW">
+                        <barButtonItem key="backBarButtonItem" id="mA9-uL-Jzs">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="gameDetailTableView" destination="Il7-I4-k1A" id="yuF-3w-Vmc"/>
                         <segue destination="59d-qY-rI3" kind="show" identifier="gameToPlayer" id="wOY-6x-eZK"/>
@@ -688,7 +704,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1G-m2-coV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="-1335"/>
+            <point key="canvasLocation" x="1053.75" y="-1335.2112676056338"/>
         </scene>
         <!--Trades View Controller-->
         <scene sceneID="3Jp-CC-8gn">
@@ -726,8 +742,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GI7-Qz-pCL"/>
-        <segue reference="ZYv-TV-H8x"/>
+        <segue reference="THe-wc-GuZ"/>
+        <segue reference="wOY-6x-eZK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Library" width="35" height="31.5"/>

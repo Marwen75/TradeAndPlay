@@ -16,10 +16,17 @@ class CoreDataStack {
     init() {
     }
     
+    
+    static let managedObjectModel: NSManagedObjectModel = {
+       let modelURL = Bundle.main.url(forResource: CoreDataStack.modelName, withExtension: "momd")!
+       return NSManagedObjectModel(contentsOf: modelURL)!
+     }()
+   
+    
     // MARK: - Core Data Stack
     lazy var persistentContainer: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: CoreDataStack.modelName)
+        let container = NSPersistentContainer(name: CoreDataStack.modelName, managedObjectModel: CoreDataStack.managedObjectModel)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 print(error.userInfo)

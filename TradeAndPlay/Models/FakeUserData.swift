@@ -12,7 +12,6 @@ struct FakeUserData {
     
     static let fakeUsers = [FakeUser(nickName: "Igo",
                                      city: "Boulogne",
-                                     rating: 100,
                                      ownedGamesList: [FakeOwnedGame(name: "The Witcher 3: Wild Hunt",
                                                                     cover: "co1wyy",
                                                                     platform: "PlayStation 4")],
@@ -21,7 +20,6 @@ struct FakeUserData {
                                                             date: Date.init(timeIntervalSinceReferenceDate: 630000000))]),
                             FakeUser(nickName: "Franzy",
                                      city: "Boulogne",
-                                     rating: 100,
                                      ownedGamesList: [FakeOwnedGame(name: "God of War",
                                                                     cover: "co1tmu",
                                                                     platform: "PlayStation 4")],
@@ -30,7 +28,6 @@ struct FakeUserData {
                                                             date: Date.init(timeIntervalSinceReferenceDate: 629000000))]),
                             FakeUser(nickName: "Elea",
                                      city: "Boulogne",
-                                     rating: 100,
                                      ownedGamesList: [FakeOwnedGame(name: "Sekiro: Shadows Die Twice",
                                                                     cover: "co2a23",
                                                                     platform: "PlayStation 4")],
@@ -39,7 +36,6 @@ struct FakeUserData {
                                                             date: Date.init(timeIntervalSinceReferenceDate: 628000000))]),
                             FakeUser(nickName: "Flop",
                                      city: "Boulogne",
-                                     rating: 100,
                                      ownedGamesList: [FakeOwnedGame(name: "Shenmue",
                                                                     cover: "co1yad",
                                                                     platform: "Dreamcast")],
@@ -48,7 +44,6 @@ struct FakeUserData {
                                                             date: Date())]),
                             FakeUser(nickName: "Zari",
                                      city: "Arcueil",
-                                     rating: 100,
                                      ownedGamesList: [FakeOwnedGame(name: "MediEvil 2",
                                                                     cover: "co1tji",
                                                                     platform: "PlayStation")],
@@ -61,7 +56,6 @@ struct FakeUserData {
 struct FakeUser {
     let nickName: String
     let city: String
-    let rating: Int
     let ownedGamesList: [FakeOwnedGame]
     let messages: [FakeMessage]
 }

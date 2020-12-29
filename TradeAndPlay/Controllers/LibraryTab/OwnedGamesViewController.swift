@@ -51,7 +51,8 @@ extension OwnedGamesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HeaderView()
-        header.headerLabel.text = "You don't have any games in \n your owned game list.\n Find the correct versions of your games \n by using the search tab to fill your list."
+        header.headerLabel.text = "You don't have any games in \n your owned game list.\n Find the correct versions \n of your games \n by using the search tab to fill your list."
+        header.layoutIfNeeded()
         return header
     }
     

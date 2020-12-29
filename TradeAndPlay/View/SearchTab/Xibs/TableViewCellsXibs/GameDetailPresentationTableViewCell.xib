@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="283" id="KGk-i7-Jjw" customClass="GameDetailPresentationTableViewCell" customModule="TradeAndPlay" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="439" height="283"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="125" id="KGk-i7-Jjw" customClass="GameDetailPresentationTableViewCell" customModule="TradeAndPlay" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="439" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="439" height="283"/>
+                <rect key="frame" x="0.0" y="0.0" width="439" height="125"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fyV-wC-C5K">
@@ -81,10 +81,10 @@
                         <color key="backgroundColor" name="Sand"/>
                     </stackView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="64J-Ru-RzD">
-                        <rect key="frame" x="45" y="72.5" width="349" height="50"/>
+                        <rect key="frame" x="45" y="72.5" width="349" height="40"/>
                         <color key="backgroundColor" name="Sand"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="hwa-QW-S0a"/>
+                            <constraint firstAttribute="height" constant="40" id="hwa-QW-S0a"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -121,7 +121,7 @@
                 <outlet property="ratingsLabel" destination="Vdl-0t-eqx" id="bbN-ay-TtU"/>
                 <outlet property="releaseLabel" destination="W3o-av-8Nx" id="VSE-kY-dG9"/>
             </connections>
-            <point key="canvasLocation" x="-219.56521739130437" y="43.191964285714285"/>
+            <point key="canvasLocation" x="-219.56521739130437" y="-9.7098214285714288"/>
         </tableViewCell>
     </objects>
     <resources>

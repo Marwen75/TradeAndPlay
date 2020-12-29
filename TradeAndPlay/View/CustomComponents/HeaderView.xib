@@ -20,20 +20,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNC-1j-d7c">
-                    <rect key="frame" x="0.0" y="45" width="414" height="224"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="226"/>
                     <color key="backgroundColor" name="Sand"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                     <color key="textColor" name="DarkBlue"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
+                            <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" name="Sand"/>
+                            <color key="value" name="DarkBlue"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
@@ -41,9 +41,9 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="DarkBlue"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DNC-1j-d7c" secondAttribute="bottom" constant="1" id="6nG-Dt-xcg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DNC-1j-d7c" secondAttribute="bottom" id="6nG-Dt-xcg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DNC-1j-d7c" secondAttribute="trailing" id="9Qe-Qk-jB3"/>
-                <constraint firstItem="DNC-1j-d7c" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="1" id="A9h-Mu-HPI"/>
+                <constraint firstItem="DNC-1j-d7c" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="A9h-Mu-HPI"/>
                 <constraint firstItem="DNC-1j-d7c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hhC-pv-HtR"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
